@@ -1,23 +1,23 @@
 <%--
   Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/3
-  Time: 16:13
+  User: WaneT
+  Date: 2018/7/1
+  Time: 21:04
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="商品分类管理"/>
+<c:set var="title" value="服务分类管理"/>
 <%@include file="common/adminHeader.jsp" %>
-<c:set var="light" value="2"/>
+<c:set var="light" value="3"/>
 <%@include file="common/adminNavigator.jsp" %>
 
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li class="active">分类管理</li>
+        <li class="active">服务分类管理</li>
     </ol>
     <table class="table table-hover table-striped">
         <thead>
@@ -33,15 +33,15 @@
         </tr>
         </thead>
         <tbody>
-        <jsp:useBean id="categories" scope="request" type="java.util.List"/>
-        <c:forEach items="${categories}" var="c" varStatus="vs">
+        <jsp:useBean id="types" scope="request" type="java.util.List"/>
+        <c:forEach items="${types}" var="c" varStatus="vs">
             <tr>
                 <th scope="row">${c.id}</th>
                 <td>${c.recommend}</td>
-                <td><img src="../../../${categoryImgDir}${c.imgPath}" height="40px"></td>
+                <td><img src="../../../${typeImgDir}${c.imgPath}" height="40px"></td>
                 <td>${c.name}</td>
                 <td><a href="../property/list?cid=${c.id}"><span class="glyphicon glyphicon-list-alt"></span></a></td>
-                <td><a href="../product/list?cid=${c.id}"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+                <td><a href="../service/list?cid=${c.id}"><span class="glyphicon glyphicon-book"></span></a></td>
                 <td><a href="edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td><a href="delete?id=${c.id}" class="delete-button"><span class="glyphicon glyphicon-trash"></span></a></td>
             </tr>

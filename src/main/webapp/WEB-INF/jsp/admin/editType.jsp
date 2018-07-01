@@ -1,36 +1,36 @@
 <%--
   Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 20:57
+  User: WaneT
+  Date: 2018/7/1
+  Time: 20:55
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="编辑商品分类"/>
+<c:set var="title" value="编辑服务分类"/>
 <%@include file="common/adminHeader.jsp" %>
-<c:set var="light" value="2"/>
+<c:set var="light" value="3"/>
 <%@include file="common/adminNavigator.jsp" %>
 <div class="container" >
     <ol class="breadcrumb">
-        <li><a href="../category/list">所有商品分类</a></li>
-        <li>${category.name}</li>
+        <li><a href="../type/list">所有服务分类</a></li>
+        <li>${type.name}</li>
     </ol>
 </div>
 <div class="container">
-    <h4 class="page-header">编辑商品分类</h4>
+    <h4 class="page-header">编辑服务分类</h4>
     <div class="row" >
         <div class="panel panel-default" style="width: 600px;margin:0 auto">
-            <div class="panel-heading">编辑商品分类</div>
+            <div class="panel-heading">编辑服务分类</div>
             <div class="panel-body">
                 <form class="form-horizontal" method="post" id="add-form" action="update" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">分类名字</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="name" name="name"
-                                   placeholder="请输入分类名字" value="${category.name}">
+                                   placeholder="请输入分类名字" value="${type.name}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -43,10 +43,10 @@
                         <label for="recommend" class="col-sm-2 control-label">推荐优先级</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="recommend" name="recommend"
-                                   placeholder="默认为0不推荐，首页不显示产品大图。优先级越高排越前" value="${category.recommend}">
+                                   placeholder="默认为0不推荐，首页不显示产品大图。优先级越高排越前" value="${type.recommend}">
                         </div>
                     </div>
-                    <input type="hidden" name="id" value="${category.id}">
+                    <input type="hidden" name="id" value="${type.id}">
 
                     <div class="form-group">
                         <div style="text-align: center">

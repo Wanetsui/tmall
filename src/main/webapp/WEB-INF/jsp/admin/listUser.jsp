@@ -11,7 +11,7 @@
 
 <c:set var="title" value="用户管理"/>
 <%@include file="common/adminHeader.jsp" %>
-<c:set var="light" value="2"/>
+<c:set var="light" value="1"/>
 <%@include file="common/adminNavigator.jsp" %>
 
 

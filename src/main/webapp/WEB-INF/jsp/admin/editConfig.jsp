@@ -11,7 +11,7 @@
 
 <c:set var="title" value="网站设置"/>
 <%@include file="common/adminHeader.jsp" %>
-<c:set var="light" value="4"/>
+<c:set var="light" value="6"/>
 <%@include file="common/adminNavigator.jsp" %>
 <div class="container" >
     <ol class="breadcrumb">

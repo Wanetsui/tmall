@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 21:56
+  User: WaneT
+  Date: 2018/7/2
+  Time: 0:33
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="商品分类管理 - 属性管理"/>
+<c:set var="title" value="服务分类管理 - 属性管理"/>
 <%@include file="common/adminHeader.jsp" %>
 
 <%@include file="common/adminNavigator.jsp" %>
@@ -17,8 +17,8 @@
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li><a href="../../../admin/category/list">分类管理</a></li>
-        <li>${category.name}</li>
+        <li><a href="../../../admin/type/list">分类管理</a></li>
+        <li>${type.name}</li>
         <li class="active">属性管理</li>
     </ol>
     <table class="table table-hover table-striped">
@@ -58,7 +58,7 @@
                             <input type="text" class="form-control" id="name" name="name"
                                    placeholder="请输入属性名字">
                         </div>
-                        <input name="cid" value="${category.id}" type="hidden">
+                        <input name="cid" value="${type.id}" type="hidden">
                     </div>
                     <div class="form-group">
                         <div style="text-align: center">

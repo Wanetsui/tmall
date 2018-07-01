@@ -1,24 +1,24 @@
 <%--
   Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 21:56
+  User: WaneT
+  Date: 2018/7/2
+  Time: 0:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="商品管理 - 图片管理"/>
+<c:set var="title" value="服务管理 - 图片管理"/>
 <%@include file="common/adminHeader.jsp" %>
-<c:set var="light" value="2"/>
+<c:set var="light" value="3"/>
 <%@include file="common/adminNavigator.jsp" %>
 
 <div class="container">
     <ol class="breadcrumb">
-        <li><a href="../../category/list">所有分类</a></li>
-        <li><a href="../list?cid=${product.category.id}">${product.category.name}</a></li>
-        <li>${product.name}</li>
+        <li><a href="../../type/list">所有分类</a></li>
+        <li><a href="../list?cid=${service.type.id}">${service.type.name}</a></li>
+        <li>${service.name}</li>
         <li>图片管理</li>
     </ol>
 
@@ -34,13 +34,13 @@
             </tr>
             </thead>
             <tbody>
-            <c:if test="${!empty productCoverImage}">
-                <tr>
-                    <th scope="row">${productCoverImage.id}</th>
-                    <td><img src="../../../${productImgDir}${productCoverImage.path}" height="50px"></td>
-                    <td><a href="delete?id=${productCoverImage.id}" class="delete-button"><span
-                            class="glyphicon glyphicon-trash"></span></a></td>
-                </tr>
+            <c:if test="${!empty serviceCoverImage}">
+            <tr>
+                <th scope="row">${serviceCoverImage.id}</th>
+                <td><img src="../../../${serviceImgDir}${serviceCoverImage.path}" height="50px"></td>
+                <td><a href="delete?id=${serviceCoverImage.id}" class="delete-button"><span
+                        class="glyphicon glyphicon-trash"></span></a></td>
+            </tr>
             </tbody>
             </c:if>
         </table>
@@ -56,7 +56,7 @@
                             <input id="file3" name="image" type="file" class="file">
                         </div>
                     </div>
-                    <input type="hidden" value="${product.id}" name="pid">
+                    <input type="hidden" value="${service.id}" name="pid">
                     <input type="hidden" value="cover" name="type">
                     <div class="form-group">
                         <div style="text-align: center">
@@ -83,10 +83,10 @@
             </thead>
             <tbody>
 
-            <c:forEach items="${productTopImages}" var="ti" varStatus="vs">
+            <c:forEach items="${serviceTopImages}" var="ti" varStatus="vs">
                 <tr>
                     <th scope="row">${ti.id}</th>
-                    <td><img src="../../../${productImgDir}${ti.path}" height="50px"></td>
+                    <td><img src="../../../${serviceImgDir}${ti.path}" height="50px"></td>
                     <td><a href="  delete?id=${ti.id}" class="delete-button"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
@@ -105,7 +105,7 @@
                             <input id="file" name="image" type="file" class="file">
                         </div>
                     </div>
-                    <input type="hidden" value="${product.id}" name="pid">
+                    <input type="hidden" value="${service.id}" name="pid">
                     <input type="hidden" value="top" name="type">
                     <div class="form-group">
                         <div style="text-align: center">
@@ -132,10 +132,10 @@
             </thead>
             <tbody>
 
-            <c:forEach items="${productDetailImages}" var="ti" varStatus="vs">
+            <c:forEach items="${serviceDetailImages}" var="ti" varStatus="vs">
                 <tr>
                     <th scope="row">${ti.id}</th>
-                    <td><img src="../../../${productImgDir}${ti.path}" height="50px"></td>
+                    <td><img src="../../../${serviceImgDir}${ti.path}" height="50px"></td>
                     <td><a href="delete?id=${ti.id}" class="delete-button"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
@@ -154,7 +154,7 @@
                             <input id="file2" name="image" type="file" class="file">
                         </div>
                     </div>
-                    <input type="hidden" value="${product.id}" name="pid">
+                    <input type="hidden" value="${service.id}" name="pid">
                     <input type="hidden" value="detail" name="type">
                     <div class="form-group">
                         <div style="text-align: center">

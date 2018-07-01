@@ -1,25 +1,25 @@
 <%--
   Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 21:56
+  User: WaneT
+  Date: 2018/7/2
+  Time: 0:24
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="商品分类管理 - 属性管理 - 修改属性"/>
+<c:set var="title" value="服务分类管理 - 属性管理 - 修改属性"/>
 <%@include file="common/adminHeader.jsp" %>
-<c:set var="light" value="2"/>
+<c:set var="light" value="3"/>
 <%@include file="common/adminNavigator.jsp" %>
 
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li><a href="../category/list">商品分类管理</a></li>
-        <li><a href="../property/list?cid=${property.category.id}">${property.category.name}</a></li>
-		<li>${property.name}</li>
+        <li><a href="../type/list">服务分类管理</a></li>
+        <li><a href="../property/list?cid=${property.type.id}">${property.type.name}</a></li>
+        <li>${property.name}</li>
     </ol>
 </div>
 
@@ -35,8 +35,8 @@
                             <input type="text" class="form-control" id="name" name="name"
                                    placeholder="请输入属性名字" value="${property.name}">
                         </div>
-                        <input name="cid" value="${property.category.id}" type="hidden">
-						<input name="id" value = "${property.id}" type="hidden">
+                        <input name="cid" value="${property.type.id}" type="hidden">
+                        <input name="id" value = "${property.id}" type="hidden">
                     </div>
                     <div class="form-group">
                         <div style="text-align: center">

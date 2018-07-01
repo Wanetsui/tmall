@@ -1,25 +1,25 @@
 <%--
   Created by IntelliJ IDEA.
-  User: xen
-  Date: 2017/12/5
-  Time: 21:56
+  User: WaneT
+  Date: 2018/7/2
+  Time: 0:27
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="商品分类管理 - 产品管理 - 修改属性值"/>
+<c:set var="title" value="服务分类管理 - 产品管理 - 修改属性值"/>
 <%@include file="common/adminHeader.jsp" %>
-<c:set var="light" value="2"/>
+<c:set var="light" value="3"/>
 <%@include file="common/adminNavigator.jsp" %>
 
 
 <div class="container">
     <ol class="breadcrumb">
-        <li><a href="../../category/list">所有分类</a></li>
-        <li><a href="../list?cid=${product.category.id}">${product.category.name}</a></li>
-        <li>${product.name}</li>
+        <li><a href="../../type/list">所有分类</a></li>
+        <li><a href="../list?cid=${service.type.id}">${service.type.name}</a></li>
+        <li>${service.name}</li>
         <li>属性值管理</li>
     </ol>
 </div>
@@ -41,7 +41,7 @@
                                    placeholder="请输入${p.property.name}" value="${p.value}">
                         </div>
                     </c:forEach>
-                    <input type="hidden" name="pid" value="${product.id}">
+                    <input type="hidden" name="pid" value="${service.id}">
                 </div>
 
                 <div class="form-group">

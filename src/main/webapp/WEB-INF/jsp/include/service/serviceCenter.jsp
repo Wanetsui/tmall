@@ -37,6 +37,7 @@
             <span class="t-score item">送积分 <em>${service.id*7}</em></span>
         </div>
         <div class="service-num">
+            <input type="text" class="input" value="1" id="buy-number">
             <%--<span class="buy-num left">数量</span>
             <input type="text" class="input" value="1" id="buy-number">
             <span class="arrow">

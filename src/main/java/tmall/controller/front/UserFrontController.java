@@ -57,7 +57,7 @@ public class UserFrontController extends FrontBaseController {
             return "login";
         }
         session.setAttribute("user",userFromDB);
-        return "shome";
+        return "redirect:index";
     }
     @RequestMapping("logout")
     public String logout(@Nullable String refer,HttpSession session){

@@ -7,10 +7,10 @@ import tmall.pojo.ServiceExample;
 import tmall.service.ServiceService;
 @Service
 public class ServiceServiceImpl extends BaseServiceImpl<ServiceMapper, ServiceExample> implements ServiceService{
-    @Autowired
-    private ServiceMapper serviceMapper;
-    @Override
-    public tmall.pojo.Service findServiceByKeyword(String keyword) {
-        return serviceMapper.findServiceByName(keyword);
-    }
+//    @Autowired
+//    private ServiceMapper serviceMapper;
+//    @Override
+//    public tmall.pojo.Service findServiceByKeyword(String keyword) {
+//        return serviceMapper.findServiceByName(keyword);
+//    }
 }

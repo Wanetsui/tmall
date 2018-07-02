@@ -26,6 +26,7 @@ public class ConfigController extends AdminBaseController {
         configService.update(id, value, "value");
         //使设置马上生效
         session.removeAttribute("productImgDir");
+        session.removeAttribute("ServiceImgDir");
         return "redirect:edit";
     }
 

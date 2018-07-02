@@ -15,6 +15,8 @@ public class BaseController {
     @Autowired
     public PropertyService propertyService;
     @Autowired
+    public SPropertyService spropertyService;
+    @Autowired
     public CategoryService categoryService;
     @Autowired
     public TypeService typeService;
@@ -25,15 +27,23 @@ public class BaseController {
     @Autowired
     public ProductImageService productImageService;
     @Autowired
+    public ServiceImageService serviceImageService;
+    @Autowired
     public PropertyValueService propertyValueService;
+    @Autowired
+    public SPropertyValueService spropertyValueService;
     @Autowired
     public ConfigService configService;
     @Autowired
     public OrderService orderService;
     @Autowired
+    public DetailsSevice detailsService;
+    @Autowired
     public UserService userService;
     @Autowired
     public OrderItemService orderItemService;
+    @Autowired
+    public AdvanceService advanceService;
     @Autowired
     public CommentService commentService;
     @Autowired

@@ -229,7 +229,7 @@
       deleteAt = #{deleteAt,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <!--&lt;select id="findServiceByName" resultMap="tmall.pojo.Service"&gt;-->
+  <!--&amp;amp;lt;select id="findServiceByName" resultMap="tmall.pojo.Service"&amp;amp;gt;-->
     <!--SELECT * FROM service WHERE name = #{name}-->
-  <!--&lt;/select&gt;-->
+  <!--&amp;amp;lt;/select&amp;amp;gt;-->
 </mapper>

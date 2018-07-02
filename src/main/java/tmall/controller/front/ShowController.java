@@ -114,7 +114,7 @@ public class ShowController extends FrontBaseController {
             return "searchService";
         }
         System.out.println("search keyword" + keyword + "  " + sort + "  ");
-         List<Service> services = serviceService.list("name_like",keyword,"order",handleSort(sort),"stock_gt",0);
+         List<Service> services = serviceService.list("name_like",keyword);
 
         model.addAttribute("services", services);
         model.addAttribute("keyword", keyword);

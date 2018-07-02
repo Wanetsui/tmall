@@ -37,6 +37,8 @@ public class BaseController {
     @Autowired
     public OrderService orderService;
     @Autowired
+    public DetailsSevice detailsService;
+    @Autowired
     public UserService userService;
     @Autowired
     public OrderItemService orderItemService;

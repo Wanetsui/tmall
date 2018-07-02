@@ -261,3 +261,112 @@ CREATE TABLE `cartitem` (
 # Data for table "cartitem"
 #
 
+CREATE TABLE `type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `recommend` int(11) NOT NULL DEFAULT '0',
+  `deleteAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `service` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cid` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `subTitle` varchar(255) NOT NULL DEFAULT '',
+  `price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00',
+  `stock` int(11) unsigned NOT NULL DEFAULT '0',
+  `imgid` int(11) DEFAULT NULL,
+  `createDate` datetime DEFAULT NULL,
+  `saleCount` int(11) unsigned NOT NULL DEFAULT '0',
+  `deleteAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_service_type` (`cid`),
+  KEY `fk_service_service_image` (`imgid`),
+  CONSTRAINT `fk_service_type` FOREIGN KEY (`cid`) REFERENCES `type` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `service_image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `deleteAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_service_image` (`pid`),
+  CONSTRAINT `fk_service_image` FOREIGN KEY (`pid`) REFERENCES `service` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `details_` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL,
+  `orderCode` varchar(255) NOT NULL DEFAULT '',
+  `sum` decimal(10,2) unsigned NOT NULL DEFAULT '0.00',
+  `totalNumber` int(11) unsigned NOT NULL DEFAULT '0',
+  `address` varchar(255) DEFAULT '',
+  `receiver` varchar(255) DEFAULT '',
+  `mobile` varchar(255) DEFAULT '',
+  `userMessage` varchar(255) DEFAULT '',
+  `createDate` datetime DEFAULT NULL,
+  `payDate` datetime DEFAULT NULL,
+  `deliverDate` datetime DEFAULT NULL,
+  `confirmDate` datetime DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `deleteAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_details_user` (`uid`),
+  CONSTRAINT `fk_details_user` FOREIGN KEY (`uid`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `detailsitem` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `oid` int(11) DEFAULT NULL,
+  `pid` int(11) DEFAULT NULL,
+  `number` int(11) unsigned NOT NULL DEFAULT '0',
+  `sum` decimal(10,2) unsigned NOT NULL DEFAULT '0.00',
+  `deleteAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_detailsitem_service` (`pid`),
+  KEY `fk_detailsitem_details_` (`oid`), 
+  CONSTRAINT `fk_detailsitem_details_` FOREIGN KEY (`oid`) REFERENCES `details_` (`id`),
+  CONSTRAINT `fk_detailsitem_service` FOREIGN KEY (`pid`) REFERENCES `service` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `advance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL,
+  `pid` int(11) DEFAULT NULL,
+  `number` int(11) NOT NULL DEFAULT '0',
+  `sum` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `deleteAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_advance_service` (`pid`),
+  KEY `fk_advance_user` (`uid`),
+  CONSTRAINT `fk_advance_service` FOREIGN KEY (`pid`) REFERENCES `service` (`id`),
+  CONSTRAINT `fk_advance_user` FOREIGN KEY (`uid`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `propertyService` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cid` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `deleteAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_propertyService_type` (`cid`),
+  CONSTRAINT `fk_propertyService_type` FOREIGN KEY (`cid`) REFERENCES `type` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `propertyService_value` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pid` int(11) DEFAULT NULL,
+  `ptid` int(11) DEFAULT NULL,
+  `value` varchar(255) NOT NULL DEFAULT '',
+  `deleteAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_propertyService_value_propertyService` (`ptid`),
+  KEY `fk_propertyService_value_service` (`pid`),
+  CONSTRAINT `fk_propertyService_value_service` FOREIGN KEY (`pid`) REFERENCES `service` (`id`),
+  CONSTRAINT `fk_propertyService_value_propertyService` FOREIGN KEY (`ptid`) REFERENCES `propertyService` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

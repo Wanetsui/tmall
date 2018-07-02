@@ -51,7 +51,7 @@
                 <td>${p.nowPrice}</td>--%>
                 <td>${p.stock}</td>
                 <td><a href="image/list?pid=${p.id}"><span class="glyphicon glyphicon-picture"></span></a></td>
-                <td><a href="propertyValue/edit?pid=${p.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
+                <td><a href="propertyServiceValue/edit?pid=${p.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>
                 <td><a href="edit?id=${p.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td><a href="delete?id=${p.id}" class="delete-button"><span class="glyphicon glyphicon-trash"></span></a></td>
             </tr>

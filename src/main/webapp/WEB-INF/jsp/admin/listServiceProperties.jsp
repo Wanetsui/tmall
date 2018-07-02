@@ -17,7 +17,7 @@
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li><a href="../../../admin/type/list">分类管理</a></li>
+        <li><a href="../../../admin/type/list">服务分类管理</a></li>
         <li>${type.name}</li>
         <li class="active">属性管理</li>
     </ol>
@@ -32,7 +32,7 @@
         </thead>
         <tbody>
 
-        <c:forEach items="${properties}" var="p" varStatus="vs">
+        <c:forEach items="${serviceproperties}" var="p" varStatus="vs">
             <tr>
                 <th scope="row">${p.id}</th>
                 <td>${p.name}</td>

@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="title" value=" 支付 - ${website_name}" />
 <%@include file="include/header.jsp"%>
-<%@include file="include/top.jsp"%>
+<%@include file="include/topService.jsp"%>
 <%@include file="include/buy/buyHeader.jsp"%>
 <%@include file="include/buy/bookPage.jsp"%>
 <%@include file="include/footer.jsp"%>

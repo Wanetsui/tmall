@@ -59,7 +59,7 @@
             <tr  style="display: none">
                 <td colspan="10" >
                     <div class="panel panel-default" style="width: 600px;margin:0 auto">
-                        <div class="panel-heading">订单详情</div>
+                        <div class="panel-heading">预约详情</div>
                         <div class="panel-body">
                             <table class="table table-striped">
                                 <c:forEach items="${o.orderItems}" var="item" varStatus="vs">

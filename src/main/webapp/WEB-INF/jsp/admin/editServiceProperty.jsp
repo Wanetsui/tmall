@@ -18,8 +18,8 @@
 <div class="container" >
     <ol class="breadcrumb">
         <li><a href="../type/list">服务分类管理</a></li>
-        <li><a href="../property/list?cid=${property.type.id}">${property.type.name}</a></li>
-        <li>${property.name}</li>
+        <li><a href="../propertyService/list?cid=${propertyService.type.id}">${propertyService.type.name}</a></li>
+        <li>${propertyService.name}</li>
     </ol>
 </div>
 
@@ -33,10 +33,10 @@
                         <label for="name" class="col-sm-2 control-label">属性名字</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="name" name="name"
-                                   placeholder="请输入属性名字" value="${property.name}">
+                                   placeholder="请输入属性名字" value="${propertyService.name}">
                         </div>
-                        <input name="cid" value="${property.type.id}" type="hidden">
-                        <input name="id" value = "${property.id}" type="hidden">
+                        <input name="cid" value="${propertyService.type.id}" type="hidden">
+                        <input name="id" value = "${propertyService.id}" type="hidden">
                     </div>
                     <div class="form-group">
                         <div style="text-align: center">

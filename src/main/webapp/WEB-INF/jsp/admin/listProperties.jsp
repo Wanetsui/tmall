@@ -17,7 +17,7 @@
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li><a href="../../../admin/category/list">分类管理</a></li>
+        <li><a href="../../../admin/category/list">商品分类管理</a></li>
         <li>${category.name}</li>
         <li class="active">属性管理</li>
     </ol>

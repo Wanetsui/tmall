@@ -18,7 +18,7 @@
 <div class="container" >
     <ol class="breadcrumb">
         <li><a href="../type/list">服务分类管理</a></li>
-        <li><a href="../property/list?cid=${service.type.id}">${service.type.name}</a></li>
+        <li><a href="../propertyService/list?cid=${service.type.id}">${service.type.name}</a></li>
         <li>${service.name}</li>
     </ol>
 </div>

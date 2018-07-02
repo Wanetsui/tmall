@@ -33,12 +33,12 @@
             <form class="form-horizontal" method="get" id="add-form" action="update">
 
                 <div class="form-group">
-                    <c:forEach items="${propertyValues}" var="p" varStatus="vs">
-                        <label for="name${vs.count}" class="col-sm-2 control-label" style="margin-bottom: 10px;">${p.property.name}</label>
+                    <c:forEach items="${propertyServiceValues}" var="p" varStatus="vs">
+                        <label for="name${vs.count}" class="col-sm-2 control-label" style="margin-bottom: 10px;">${p.propertyService.name}</label>
                         <div class="col-sm-4" style="margin-bottom: 10px;">
                             <input type="hidden" name="id" value="${p.id}">
                             <input type="text" class="form-control" id="name${vs.count}" name="value"
-                                   placeholder="请输入${p.property.name}" value="${p.value}">
+                                   placeholder="请输入${p.propertyService.name}" value="${p.value}">
                         </div>
                     </c:forEach>
                     <input type="hidden" name="pid" value="${service.id}">

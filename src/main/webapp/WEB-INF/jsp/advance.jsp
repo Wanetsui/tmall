@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="title" value="预约列表 - ${website_name}" />
 <%@include file="include/header.jsp"%>
-<%@include file="include/top.jsp"%>
+<%@include file="include/topService.jsp"%>
 <%@include file="include/simpleSearchService.jsp"%>
 <%@include file="include/buy/advancePage.jsp"%>
 <%@include file="include/footer.jsp"%>

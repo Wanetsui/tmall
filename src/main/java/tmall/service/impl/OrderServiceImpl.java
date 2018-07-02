@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tmall.mapper.OrderMapper;
 import tmall.pojo.*;
+import tmall.pojo.extension.OrderExtension;
 import tmall.service.CartItemService;
 import tmall.service.OrderItemService;
 import tmall.service.OrderService;

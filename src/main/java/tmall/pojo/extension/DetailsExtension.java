@@ -16,11 +16,16 @@ public class DetailsExtension extends BasePOJO {
     @JoinColumn(name="uid")
     private User user;
     @Enumerated(var = "status")
-    private DetailsExtension.Status statusEnum;
+    private Status statusEnum;
     @OneToMany
     @JoinColumn(name = "oid")
     private List<Detailsitem> detailsitems;
-
+    public void setStatus(DetailsExtension.Status statusEnum) {
+        this.statusEnum = statusEnum;
+    }
+    public String getStatusText() {
+        return statusEnum.getName();
+    }
     public Status getStatusEnum() {
         return statusEnum;
     }

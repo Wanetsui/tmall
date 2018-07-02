@@ -22,6 +22,7 @@ public class DetailsController extends AdminBaseController {
     public String list(Model model, Pagination pagination) throws Exception {
         List<Details> details = detailsService.
                 list("pagination", pagination, "depth", 3);
+        System.out.println(details.size());
         model.addAttribute("details", details);
         return "admin/listDetails";
     }
@@ -30,7 +31,7 @@ public class DetailsController extends AdminBaseController {
     @RequestMapping("deliver")
     public String list(Integer oid) throws Exception {
         Details details = (Details) detailsService.get(oid);
-        details.setStatus(Details.Status.waitConfirm.getName());
+        details.setStatus(Details.Status.waitConfirm);
         details.setDeliverDate(new Date());
         advanceService.update(details);
         return "redirect:list";

@@ -7,6 +7,7 @@ import tmall.annotation.Auth;
 import tmall.exception.AuthException;
 import tmall.exception.ParameterException;
 import tmall.pojo.*;
+import tmall.pojo.extension.DetailsExtension;
 
 import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
@@ -58,6 +59,44 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("msg", msg);
         return "msg";
     }
+    @RequestMapping("addAdvance")
+    public String addAdvance(Integer pid, Integer num, Model model, HttpSession session) throws Exception {
+        Service service = (Service) serviceService.get(pid);
+        User user = (User) session.getAttribute("user");
+        String msg;
+
+        Advance advance = (Advance) advanceService
+                .getOne("uid", user.getId(), "pid", service.getId());
+        Boolean isInDB = advance != null;
+        //判断是否超出库存
+
+        if (isInDB) {
+            num += advance.getNumber();
+        } else {
+            advance = new Advance();
+            advance.setService(service);
+            advance.setUser(user);
+        }
+
+        if (num > service.getStock()) {
+            msg = "OutOfStock";
+            model.addAttribute("msg", msg);
+            return "msg";
+        }
+
+        advance.setNumber(num);
+        advance.setSum(service.getPrice().subtract(new BigDecimal(num)));
+
+        if (isInDB) {
+            advanceService.update(advance);
+        } else {
+            advanceService.add(advance);
+        }
+
+        msg = "success";
+        model.addAttribute("msg", msg);
+        return "msg";
+    }
 
     @RequestMapping("cart")
     public String cart(Model model, HttpSession session) throws Exception {
@@ -65,6 +104,13 @@ public class OrderFrontController extends FrontBaseController {
         List<CartItem> cartItems = cartItemService.list("uid", user.getId());
         model.addAttribute("cartItems", cartItems);
         return "cart";
+    }
+    @RequestMapping("advance")
+    public String advance(Model model, HttpSession session) throws Exception {
+        User user = (User) session.getAttribute("user");
+        List<Advance> advances = advanceService.list("uid", user.getId());
+        model.addAttribute("advance", advances);
+        return "advance";
     }
 
     @RequestMapping("changeCartNum")
@@ -83,7 +129,22 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("msg", msg);
         return "msg";
     }
-
+    @RequestMapping("changeAdvanceNum")
+    public String changeAdvanceNum(Integer id, Integer num, Model model, HttpSession session) throws Exception {
+        User user = (User) session.getAttribute("user");
+        Advance advanceFromDB = (Advance) advanceService.get(id);
+        String msg = "fail";
+        checkUser(user, advanceFromDB.getUser());
+        if (advanceFromDB.getService().getStock() >= num) {
+            advanceFromDB.setNumber(num);
+            advanceFromDB.setSum(advanceFromDB.getService()
+                    .getPrice().subtract(new BigDecimal(num)));
+            advanceService.update(advanceFromDB);
+            msg = "success";
+        }
+        model.addAttribute("msg", msg);
+        return "msg";
+    }
     @RequestMapping("deleteCartItem")
     public String deleteCartItem(Integer id, Model model, HttpSession session) throws Exception {
         User user = (User) session.getAttribute("user");
@@ -93,11 +154,28 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("msg", "success");
         return "msg";
     }
+    @RequestMapping("deleteAdvance")
+    public String deleteAdvance(Integer id, Model model, HttpSession session) throws Exception {
+        User user = (User) session.getAttribute("user");
+        Advance advanceFromDB = (Advance) advanceService.get(id);
+        checkUser(user, advanceFromDB.getUser());
+        advanceService.delete(advanceFromDB);
+        model.addAttribute("msg", "success");
+        return "msg";
+    }
 
     @RequestMapping("cartNumber")
     public String cartNumber(Model model, HttpSession session) throws Exception {
         User user = (User) session.getAttribute("user");
         int number = cartItemService.list("uid", user.getId()).size();
+        String msg = String.valueOf(number);
+        model.addAttribute("msg", msg);
+        return "msg";
+    }
+    @RequestMapping("advanceNumber")
+    public String advanceNumber(Model model, HttpSession session) throws Exception {
+        User user = (User) session.getAttribute("user");
+        int number = advanceService.list("uid", user.getId()).size();
         String msg = String.valueOf(number);
         model.addAttribute("msg", msg);
         return "msg";
@@ -115,6 +193,19 @@ public class OrderFrontController extends FrontBaseController {
         cartItem.setId(-1);
         session.setAttribute("tempCartItem", cartItem);
         return "redirect:buy?ciid=-1";
+    }
+    @RequestMapping("buyOnes")
+    public String buyOnes(Integer pid, Integer num, Model model, HttpSession session) throws Exception {
+        Service service = (Service) serviceService.get(pid);
+        User user = (User) session.getAttribute("user");
+        Advance advance = new Advance();
+        advance.setUser(user);
+        advance.setService(service);
+        advance.setNumber(num);
+        advance.setSum(service.getPrice().multiply(new BigDecimal(num)));
+        advance.setId(-1);
+        session.setAttribute("tempAdvance", advance);
+        return "redirect:buys?ciid=-1";
     }
 
     @RequestMapping("buy")
@@ -145,6 +236,34 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("sum", sum);
         return "buy";
     }
+    @RequestMapping("buys")
+    public String buys(Integer[] ciid, Model model, HttpSession session) throws Exception {
+        List<Advance> advances = new ArrayList<>();
+        User user = (User) session.getAttribute("user");
+        int totalNum = 0;
+        BigDecimal sum = new BigDecimal(0);
+        for (Integer id : ciid) {
+            Advance advance = null;
+            if (id == -1) {
+                //由buyOne跳转而来
+                advance = (Advance) session.getAttribute("tempAdvance");
+            } else {
+                //由购物车跳转而来
+                advance = (Advance) advanceService.get(id);
+            }
+            // 检查
+            checkUser(user, advance.getUser());
+
+            totalNum += advance.getNumber();
+            sum = sum.add(advance.getSum());
+            advances.add(advance);
+
+        }
+        session.setAttribute("advances", advances);
+        model.addAttribute("totalNum", totalNum);
+        model.addAttribute("sum", sum);
+        return "buys";
+    }
 
     @RequestMapping("createOrder")
     public String createOrder(String address, String post, String receiver,
@@ -168,6 +287,28 @@ public class OrderFrontController extends FrontBaseController {
         orderService.createOrder(order, cartItems);
         return "redirect:pay?oid=" + order.getId();
     }
+    @RequestMapping("createDetails")
+    public String createDetails(String address, String receiver,
+                              String mobile,
+                              String userMessage,
+                              HttpSession session) throws Exception {
+        List<Advance> advances = (List<Advance>) session.getAttribute("advances");
+        User user = (User) session.getAttribute("user");
+        //简单校验下手机
+        Pattern pattern = Pattern.compile("1[0-9]{10}");
+        if (!pattern.matcher(mobile).matches()) {
+            throw new ParameterException("手机号填写错误");
+        }
+        Details details = new Details();
+        details.setAddress(address);
+        //details.setPost(post);
+        details.setReceiver(receiver);
+        details.setMobile(mobile);
+        details.setUserMessage(userMessage);
+        details.setUser(user);
+        detailsService.createDetails(details, advances);
+        return "redirect:pays?oid=" + details.getId();
+    }
 
     @RequestMapping("pay")
     public String pay(Integer oid, HttpSession session, Model model) throws Exception {
@@ -176,6 +317,14 @@ public class OrderFrontController extends FrontBaseController {
         checkUser(user, order.getUser());
         model.addAttribute("order", order);
         return "pay";
+    }
+    @RequestMapping("pays")
+    public String pays(Integer oid, HttpSession session, Model model) throws Exception {
+        User user = (User) session.getAttribute("user");
+        Details details = (Details) detailsService.get(oid);
+        checkUser(user, details.getUser());
+        model.addAttribute("details", details);
+        return "pays";
     }
 
     @RequestMapping("payed")
@@ -189,6 +338,17 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("order", order);
         return "payed";
     }
+    @RequestMapping("payeds")
+    public String payeds(Integer oid, HttpSession session, Model model) throws Exception {
+        User user = (User) session.getAttribute("user");
+        Details details = (Details) detailsService.get(oid);
+        checkUser(user, details.getUser());
+        details.setStatus(Details.Status.waitDeliver);
+        details.setPayDate(new Date());
+        detailsService.update(details);
+        model.addAttribute("details", details);
+        return "payeds";
+    }
 
     @RequestMapping("myOrder")
     public String myOrder(HttpSession session, Model model) throws Exception {
@@ -198,6 +358,13 @@ public class OrderFrontController extends FrontBaseController {
         return "myOrder";
     }
 
+    @RequestMapping("myDetails")
+    public String myOrders(HttpSession session, Model model) throws Exception {
+        User user = (User) session.getAttribute("user");
+        List<Details> details = detailsService.list("uid", user.getId(), "depth", 3);
+        model.addAttribute("detailss", details);
+        return "myDetails";
+    }
     @RequestMapping("deliver")
     public String deliver(Integer oid, HttpSession session, Model model) throws Exception {
         Order order = (Order) orderService.get(oid);
@@ -208,6 +375,16 @@ public class OrderFrontController extends FrontBaseController {
         orderService.update(order);
         return "redirect:myOrder";
     }
+    @RequestMapping("delivers")
+    public String delivers(Integer oid, HttpSession session, Model model) throws Exception {
+        Details details= (Details) detailsService.get(oid);
+        User user = (User) session.getAttribute("user");
+        checkUser(user, details.getUser());
+        details.setStatus(Details.Status.waitConfirm);
+        details.setDeliverDate(new Date());
+        detailsService.update(details);
+        return "redirect:myDetails";
+    }
 
     @RequestMapping("confirmPay")
     public String confirmPay(Integer oid, HttpSession session, Model model) throws Exception {
@@ -216,6 +393,14 @@ public class OrderFrontController extends FrontBaseController {
         checkUser(user, order.getUser());
         model.addAttribute("order", order);
         return "confirmPay";
+    }
+    @RequestMapping("confirmPays")
+    public String confirmPays(Integer oid, HttpSession session, Model model) throws Exception {
+        Details details = (Details) detailsService.get(oid, 3);
+        User user = (User) session.getAttribute("user");
+        checkUser(user, details.getUser());
+        model.addAttribute("details", details);
+        return "confirmPays";
     }
 
     @RequestMapping("confirmed")
@@ -229,6 +414,17 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("order", order);
         return "confirmed";
     }
+    @RequestMapping("confirmeds")
+    public String confirmeds(Integer oid, HttpSession session, Model model) throws Exception {
+        Details details = (Details) detailsService.get(oid);
+        User user = (User) session.getAttribute("user");
+        checkUser(user, details.getUser());
+        details.setStatus(Details.Status.finish);
+        details.setConfirmDate(new Date());
+        detailsService.update(details);
+        model.addAttribute("details", details);
+        return "confirmeds";
+    }
 
     @RequestMapping("deleteOrder")
     public String deleteOrder(Integer oid, HttpSession session, Model model) throws Exception {
@@ -236,6 +432,15 @@ public class OrderFrontController extends FrontBaseController {
         User user = (User) session.getAttribute("user");
         String msg = "fail";
         checkUser(user, order.getUser());
+        model.addAttribute("msg", msg);
+        return "msg";
+    }
+    @RequestMapping("deleteDetails")
+    public String deleteDetails(Integer oid, HttpSession session, Model model) throws Exception {
+        Details details = (Details) detailsService.get(oid);
+        User user = (User) session.getAttribute("user");
+        String msg = "fail";
+        checkUser(user, details.getUser());
         model.addAttribute("msg", msg);
         return "msg";
     }

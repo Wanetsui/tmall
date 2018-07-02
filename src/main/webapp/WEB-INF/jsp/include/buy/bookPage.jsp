@@ -35,7 +35,7 @@
     });
 </script>
 <main class="buy-page">
-    <form action="createOrder" method="post">
+    <form action="createDetails" method="post">
         <div class="address-tip">输入服务地址</div>
         <table class="address-table">
             <tbody>
@@ -68,6 +68,7 @@
                     <a href="#nowhere" class="wangwang-link"> <span class="wangwang-small"></span> </a>
                 </th>
                 <th width="120px">价格</th>
+                <th width="120px">数量</th>
                 <th width="120px">小计</th>
             </tr>
             <tr class="row-border">
@@ -89,6 +90,9 @@
                     </td>
                     <td class="buy-item-price">
                         <span>￥${item.service.price}</span>
+                    </td>
+                    <td class="buy-item-num">
+                        <span>${item.number}</span>
                     </td>
                     <td class="buy-item-sum">
                         <span>￥${item.sum}</span>

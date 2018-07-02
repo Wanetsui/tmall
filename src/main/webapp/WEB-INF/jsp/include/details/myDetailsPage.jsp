@@ -60,7 +60,7 @@
         <th width="120px">交易操作</th>
         </thead>
     </table>
-    <c:forEach items="${detailses}" var="o" varStatus="vs">
+    <c:forEach items="${detailss}" var="o" varStatus="vs">
         <table class="line-table" details-status="${o.status}" oid="${o.id}">
             <tr class="item-head">
                 <td colspan="2" class="time-and-details">

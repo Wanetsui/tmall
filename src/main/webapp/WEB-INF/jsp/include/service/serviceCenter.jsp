@@ -57,8 +57,8 @@
             <span class="inventory" id="inventory" stock="${service.stock}">人数${service.stock}人</span>
         </div>
         <div class="buy">
-            <a href="buyOne?pid=${service.id}" id="buy-link" class="display:none;"></a>
-            <a href="addBook?pid=${service.id}" id="cart-link" class="display:none;"></a>
+            <a href="buyOnes?pid=${service.id}" id="buy-link" class="display:none;"></a>
+            <a href="addAdvance?pid=${service.id}" id="cart-link" class="display:none;"></a>
             <button class="buy-button" id="buy-button">立即购买</button>
             <button class="car-button" id="cart-button"><span class="glyphicon glyphicon-shopping-cart"></span>预约服务</button>
         </div>

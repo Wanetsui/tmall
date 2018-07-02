@@ -10,7 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 <script src="js/book.js"></script>
 <main class="book">
-    <form action = "bought">
+    <form action = "buys">
         <div class="sum-top">
             <div class="pull-right">
                 <span>已选商品（不含运费）</span>

@@ -35,7 +35,7 @@
     });
 </script>
 <main class="buy-page">
-    <form action="createOrder" method="post">
+    <form action="createDetails" method="post">
         <div class="address-tip">输入服务地址</div>
         <table class="address-table">
             <tbody>

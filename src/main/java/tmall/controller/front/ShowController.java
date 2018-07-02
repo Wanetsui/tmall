@@ -18,11 +18,18 @@ public class ShowController extends FrontBaseController {
         pagination.setCount(13);
         List<Category> categories = categoryService.
                 list("depth",1,"pagination",pagination,"recommend_gt",0, "order", "recommend desc, id desc");
+//        List<Type> types = typeService.
+//                list("depth",1,"pagination",pagination,"recommend_gt",0, "order", "recommend desc, id desc");
         for(Category category:categories){
             category.setProducts(productService
                     .list("cid",category.getId(),"stock_gt",0));
         }
+//        for(Type type:types){
+//            type.setServices(productService
+//                    .list("cid",type.getId(),"stock_gt",0));
+//        }
         model.addAttribute("categories",categories);
+//        model.addAttribute("types",types);
         return "home";
     }
     @RequestMapping("product")
@@ -48,16 +55,43 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("category",category);
         return "category";
     }
+    @RequestMapping("type")
+    public String type(Integer id, @Nullable String sort, Model model) throws Exception {
+        System.out.println("id  "+id);
+        Type type = (Type)typeService.get(id);
+        List<Service> services = productService
+                .list("cid",type.getId(),"order",handleSort(sort),"stock_gt",0);
+        model.addAttribute("services",services);
+        model.addAttribute("type",type);
+        return "type";
+    }
     @RequestMapping("search")
     public String search(String keyword, @Nullable String sort, Model model) throws Exception {
         if(keyword.length()==0) {
             return "search";
         }
+        System.out.println("search keyword"+keyword+"  "+sort+"  ");
         List<Product> products = productService
                 .list("name_like",keyword,"order",handleSort(sort),"stock_gt",0);
         model.addAttribute("products",products);
         model.addAttribute("keyword",keyword);
         return "search";
+    }
+    @RequestMapping("searchService")
+    public String searchService(String keyword, @Nullable String sort, Model model) throws Exception {
+        if(keyword.length()==0) {
+            return "searchService";
+        }
+        System.out.println("search keyword"+keyword+"  "+sort+"  ");
+        //List<Service> services = serviceService.list(keyword);
+       // List<Service> services = serviceService.list("name_like",keyword,"order",handleSort(sort),"stock_gt",0);
+        Service services = serviceService.findServiceByKeyword(keyword);
+     //   List<Integer> idlist = serviceService.findServiceByKeyword(keyword).getIdlist();
+      // System.out.println("service"+idlist.size());
+        System.out.println(services.getName());
+        model.addAttribute("services",services);
+        model.addAttribute("keyword",keyword);
+        return "searchService";
     }
     private String handleSort(String sort){
         sort = sort==null?"":sort;

@@ -24,7 +24,7 @@
             <property name="suppressDate" value="true" />
         </commentGenerator>
 
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost/tmall" userId="root" password="admin">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://47.100.58.159:3306/tmall" userId="root" password="123456">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -39,70 +39,117 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="tmall.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
-        <table tableName="category" domainObjectName="Category" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="category" domainObjectName="Category" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.CategoryExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
 
         </table>
-        <table tableName="property" domainObjectName="Property" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="property" domainObjectName="Property" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.PropertyExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.ProductExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="product_image" domainObjectName="ProductImage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="product_image" domainObjectName="ProductImage" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.ProductImageExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="order_" domainObjectName="Order" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="order_" domainObjectName="Order" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.OrderExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="property_value" domainObjectName="PropertyValue" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="property_value" domainObjectName="PropertyValue" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.PropertyValueExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="comment" domainObjectName="Comment" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="comment" domainObjectName="Comment" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.CommentExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
             <!--MBG对 sql的text 兼容不佳，需手动指定 jdbcTYPE，否则使用有一场-->
-            <columnOverride column="content" jdbcType="VARCHAR" />
+            <columnOverride column="content" jdbcType="VARCHAR"/>
         </table>
-        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.UserExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="orderitem" domainObjectName="OrderItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="orderitem" domainObjectName="OrderItem" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.OrderItemExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="cartitem" domainObjectName="CartItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="cartitem" domainObjectName="CartItem" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true"
+               selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.CartItemExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
-        <table tableName="config" domainObjectName="Config" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <table tableName="config" domainObjectName="Config" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+            <property name="rootClass" value="tmall.pojo.extension.ConfigExtension"/>
+            <property name="my.isgen.usekeys" value="true"/>
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="advance" domainObjectName="Advance" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <property name="rootClass" value="tmall.pojo.extension.ConfigExtension"/>
+        <property name="my.isgen.usekeys" value="true"/>
+        <property name="useActualColumnNames" value="true"/>
+        <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="details" domainObjectName="Details" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+            <property name="rootClass" value="tmall.pojo.extension.ConfigExtension"/>
+            <property name="my.isgen.usekeys" value="true"/>
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="service" domainObjectName="Service" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+            <property name="rootClass" value="tmall.pojo.extension.ConfigExtension"/>
+            <property name="my.isgen.usekeys" value="true"/>
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="type" domainObjectName="Type" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
+        <property name="rootClass" value="tmall.pojo.extension.ConfigExtension"/>
+        <property name="my.isgen.usekeys" value="true"/>
+        <property name="useActualColumnNames" value="true"/>
+        <generatedKey column="id" sqlStatement="JDBC"/>
+    </table>
+        <table tableName="detailsitem" domainObjectName="Detailsitem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="true" selectByExampleQueryId="false">
             <property name="rootClass" value="tmall.pojo.extension.ConfigExtension"/>
             <property name="my.isgen.usekeys" value="true"/>
             <property name="useActualColumnNames" value="true"/>

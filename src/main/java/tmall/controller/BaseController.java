@@ -17,7 +17,11 @@ public class BaseController {
     @Autowired
     public CategoryService categoryService;
     @Autowired
+    public TypeService typeService;
+    @Autowired
     public ProductService productService;
+    @Autowired
+    public ServiceService serviceService;
     @Autowired
     public ProductImageService productImageService;
     @Autowired
@@ -36,6 +40,8 @@ public class BaseController {
     public CartItemService cartItemService;
     @Autowired
     public FileUtil fileUtil;
+
+
 
     /**
      * 全局异常处理

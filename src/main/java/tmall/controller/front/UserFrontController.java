@@ -49,7 +49,7 @@ public class UserFrontController extends FrontBaseController {
         return "login";
     }
     @RequestMapping("loginIn")
-    public String loginIn(String name ,String password , Model model, HttpSession session,String refer){
+    public String loginIn(String name ,String password , Model model, HttpSession session,@Nullable String refer){
         User userFromDB = userService.get(name,password);
         if(userFromDB == null){
             String msg = "用户名密码错误，请重试";
@@ -57,7 +57,7 @@ public class UserFrontController extends FrontBaseController {
             return "login";
         }
         session.setAttribute("user",userFromDB);
-        return "redirect:"+refer;
+        return "shome";
     }
     @RequestMapping("logout")
     public String logout(@Nullable String refer,HttpSession session){

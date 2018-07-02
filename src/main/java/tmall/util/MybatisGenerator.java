@@ -16,7 +16,7 @@ import java.util.List;
 public class MybatisGenerator {
 
     public static void main(String[] args) throws Exception {
-        Boolean run = true;
+        Boolean run = false;
         if (run)
             return;
         List<String> warnings = new ArrayList<String>();

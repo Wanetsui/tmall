@@ -17,11 +17,11 @@
 <section class="head-bar">
     <div class="a-menu">
         <span class="glyphicon glyphicon-link"></span>
-        <a href="home.jsp">萱萱商城</a></li>
+        <a href="home">萱萱商城</a></li>
     </div>
     <div class="b-menu">
             <span class="glyphicon glyphicon-link"></span>
-            <a href="shome.jsp">家政服务</a></li>
+            <a href="shome">家政服务</a></li>
     </div>
     <div class="c-menu">
         <span class="glyphicon glyphicon-link"></span>
@@ -29,6 +29,6 @@
     </div>
     <div class="d-menu">
         <span class="glyphicon glyphicon-link"></span>
-        <a href="home.jsp">楼盘信息</a></li>
+        <a href="#">楼盘信息</a></li>
     </div>
 </section>

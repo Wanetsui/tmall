@@ -1,7 +1,6 @@
 package tmall.pojo;
 
 import tmall.mapper.TypeMapper;
-import tmall.pojo.extension.ConfigExtension;
 import tmall.pojo.extension.TypeExtension;
 
 public class Type extends TypeExtension implements tmall.pojo.ORM.POJOMapper<TypeMapper> {

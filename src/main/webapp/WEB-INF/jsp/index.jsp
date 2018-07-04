@@ -23,12 +23,8 @@
             <span class="glyphicon glyphicon-link"></span>
             <a href="shome">家政服务</a></li>
     </div>
-    <div class="c-menu">
-        <span class="glyphicon glyphicon-link"></span>
-        <a href="#">求职招聘</a></li>
-    </div>
     <div class="d-menu">
         <span class="glyphicon glyphicon-link"></span>
-        <a href="#">楼盘信息</a></li>
+        <a href="#">信息发布</a></li>
     </div>
 </section>

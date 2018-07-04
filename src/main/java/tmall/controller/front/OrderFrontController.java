@@ -245,10 +245,10 @@ public class OrderFrontController extends FrontBaseController {
         for (Integer id : ciid) {
             Advance advance = null;
             if (id == -1) {
-                //由buyOne跳转而来
+                //由buyOnes跳转而来
                 advance = (Advance) session.getAttribute("tempAdvance");
             } else {
-                //由购物车跳转而来
+                //由预约列表跳转而来
                 advance = (Advance) advanceService.get(id);
             }
             // 检查
@@ -307,7 +307,7 @@ public class OrderFrontController extends FrontBaseController {
         details.setUserMessage(userMessage);
         details.setUser(user);
         detailsService.createDetails(details, advances);
-        return "redirect:pays?oid=" + details.getId();
+        return "redirect:payHome?oid=" + details.getId();
     }
 
     @RequestMapping("pay")
@@ -318,13 +318,13 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("order", order);
         return "pay";
     }
-    @RequestMapping("pays")
+    @RequestMapping("payHome")
     public String pays(Integer oid, HttpSession session, Model model) throws Exception {
         User user = (User) session.getAttribute("user");
         Details details = (Details) detailsService.get(oid);
         checkUser(user, details.getUser());
         model.addAttribute("details", details);
-        return "pays";
+        return "payHome";
     }
 
     @RequestMapping("payed")
@@ -338,7 +338,7 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("order", order);
         return "payed";
     }
-    @RequestMapping("payeds")
+    @RequestMapping("payedHome")
     public String payeds(Integer oid, HttpSession session, Model model) throws Exception {
         User user = (User) session.getAttribute("user");
         Details details = (Details) detailsService.get(oid);
@@ -347,7 +347,7 @@ public class OrderFrontController extends FrontBaseController {
         details.setPayDate(new Date());
         detailsService.update(details);
         model.addAttribute("details", details);
-        return "payeds";
+        return "payedHome";
     }
 
     @RequestMapping("myOrder")
@@ -394,13 +394,13 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("order", order);
         return "confirmPay";
     }
-    @RequestMapping("confirmPays")
+    @RequestMapping("confirmPayHome")
     public String confirmPays(Integer oid, HttpSession session, Model model) throws Exception {
         Details details = (Details) detailsService.get(oid, 3);
         User user = (User) session.getAttribute("user");
         checkUser(user, details.getUser());
         model.addAttribute("details", details);
-        return "confirmPays";
+        return "confirmPayHome";
     }
 
     @RequestMapping("confirmed")
@@ -414,7 +414,7 @@ public class OrderFrontController extends FrontBaseController {
         model.addAttribute("order", order);
         return "confirmed";
     }
-    @RequestMapping("confirmeds")
+    @RequestMapping("confirmedHome")
     public String confirmeds(Integer oid, HttpSession session, Model model) throws Exception {
         Details details = (Details) detailsService.get(oid);
         User user = (User) session.getAttribute("user");
@@ -423,7 +423,7 @@ public class OrderFrontController extends FrontBaseController {
         details.setConfirmDate(new Date());
         detailsService.update(details);
         model.addAttribute("details", details);
-        return "confirmeds";
+        return "confirmedHome";
     }
 
     @RequestMapping("deleteOrder")

@@ -28,7 +28,7 @@ public class DetailsServiceImpl extends BaseServiceImpl<DetailsMapper,DetailsExa
         String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSS").format(new Date())+ RandomUtils.nextInt();
         details.setOrderCode(orderCode);
         details.setCreateDate(new Date());
-        details.setStatus(Details.Status.waitPay);
+        details.setStatus("waitDeliver");
         BigDecimal sum = new BigDecimal(0);
         int totalNumber = 0;
         for(Advance item:advances){
@@ -37,6 +37,7 @@ public class DetailsServiceImpl extends BaseServiceImpl<DetailsMapper,DetailsExa
         }
         details.setSum(sum);
         details.setTotalNumber(totalNumber);
+        System.out.println(details.getStatus());
         detailsMapper.insert(details);
         //add(details);
         for(Advance item:advances){

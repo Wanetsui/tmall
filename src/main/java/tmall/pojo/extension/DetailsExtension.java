@@ -20,6 +20,8 @@ public class DetailsExtension extends BasePOJO {
     @OneToMany
     @JoinColumn(name = "oid")
     private List<Detailsitem> detailsitems;
+
+
     public void setStatus(DetailsExtension.Status statusEnum) {
         this.statusEnum = statusEnum;
     }

@@ -23,7 +23,7 @@ public class DetailsController extends AdminBaseController {
         List<Details> details = detailsService.
                 list("pagination", pagination, "depth", 3);
         System.out.println(details.size());
-        model.addAttribute("details", details);
+        model.addAttribute("detailses", details);
         return "admin/listDetails";
     }
 

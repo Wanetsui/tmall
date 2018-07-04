@@ -62,7 +62,7 @@
                         <div class="panel-heading">预约详情</div>
                         <div class="panel-body">
                             <table class="table table-striped">
-                                <c:forEach items="${o.orderItems}" var="item" varStatus="vs">
+                                <c:forEach items="${o.detailsitems}" var="item" varStatus="vs">
                                     <tr>
                                         <td><img width="40px" height="40px" src="../../../${serviceImgDir}${item.service.image.path}"></td>
                                         <td>${item.service.name}</td>

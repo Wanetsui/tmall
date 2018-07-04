@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class ShowController extends FrontBaseController {
-    @RequestMapping("index")
+    @RequestMapping("/index")
     public String loginIn( Model model){
 
         return "index";

@@ -1,11 +1,13 @@
 package tmall.controller.front;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.annotation.Auth;
 import tmall.exception.AuthException;
 import tmall.exception.ParameterException;
+import tmall.mapper.DetailsMapper;
 import tmall.pojo.*;
 import tmall.pojo.extension.DetailsExtension;
 
@@ -20,6 +22,8 @@ import java.util.regex.Pattern;
 @Controller
 @RequestMapping("/")
 public class OrderFrontController extends FrontBaseController {
+    @Autowired
+    DetailsMapper detailsMapper;
     //购物车相关
     @RequestMapping("addCart")
     public String addCart(Integer pid, Integer num, Model model, HttpSession session) throws Exception {
@@ -321,8 +325,10 @@ public class OrderFrontController extends FrontBaseController {
     @RequestMapping("payHome")
     public String pays(Integer oid, HttpSession session, Model model) throws Exception {
         User user = (User) session.getAttribute("user");
-        Details details = (Details) detailsService.get(oid);
-        checkUser(user, details.getUser());
+        System.out.println(oid);
+        Details details = (Details) detailsMapper.selectByPrimaryKey(oid);
+       // Details details = (Details) detailsService.get(oid);
+       // checkUser(user, details.getUser());
         model.addAttribute("details", details);
         return "payHome";
     }

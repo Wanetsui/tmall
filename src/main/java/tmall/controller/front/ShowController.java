@@ -3,6 +3,7 @@ package tmall.controller.front;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import tmall.annotation.Nullable;
 import tmall.pojo.*;
 import tmall.util.Pagination;
@@ -12,6 +13,10 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class ShowController extends FrontBaseController {
+    @RequestMapping("/")
+    public String pageIndex(){
+        return "index";
+    }
     @RequestMapping("/index")
     public String loginIn( Model model){
 
@@ -29,6 +34,15 @@ public class ShowController extends FrontBaseController {
         }
         model.addAttribute("categories", categories);
         return "home";
+    }
+    @RequestMapping("/information")
+    public String information(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model) throws Exception {
+        System.out.println(informationService.selectByPrimaryKey(1));
+        System.out.println(informationService.selectCount());
+        //List<Information> informations =   informationService.selectInformationList();
+        model.addAttribute("pagemsg", informationService.findByPage(currentPage));
+        model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
+        return "information";
     }
 
     @RequestMapping("/shome")

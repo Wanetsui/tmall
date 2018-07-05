@@ -25,6 +25,6 @@
     </div>
     <div class="d-menu">
         <span class="glyphicon glyphicon-link"></span>
-        <a href="#">信息发布</a></li>
+        <a href="information?currentPage=1">信息发布</a></li>
     </div>
 </section>

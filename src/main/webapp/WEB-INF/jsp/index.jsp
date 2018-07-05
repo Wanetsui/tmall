@@ -20,8 +20,8 @@
         <a href="home">萱萱商城</a></li>
     </div>
     <div class="b-menu">
-            <span class="glyphicon glyphicon-link"></span>
-            <a href="shome">家政服务</a></li>
+        <span class="glyphicon glyphicon-link"></span>
+        <a href="shome">家政服务</a></li>
     </div>
     <div class="d-menu">
         <span class="glyphicon glyphicon-link"></span>

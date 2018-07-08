@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tmall.mapper.WorkerMapper">
+
+  <!--查询所有用户数据 -->
+  <select id="selectWorkerList" resultType="tmall.pojo.Worker">
+    select
+    *
+    from worker
+    WHERE sid = #{sid}
+  </select>
+</mapper>

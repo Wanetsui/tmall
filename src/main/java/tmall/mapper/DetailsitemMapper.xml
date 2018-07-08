@@ -81,7 +81,7 @@
     select 
     <include refid="Base_Column_List" />
     from detailsitem
-    where id = #{id,jdbcType=INTEGER}
+    where oid = #{oid,jdbcType=INTEGER}
     and deleteAt is NULL
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">

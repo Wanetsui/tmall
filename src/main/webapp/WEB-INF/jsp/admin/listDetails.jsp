@@ -53,7 +53,7 @@
                         <a href="deliver?oid=${o.id}">
                             <button class="btn btn-primary btn-xs">预约</button>
                         </a>
-                        <a href="choice">
+                        <a href="choice?oid=${o.id}&mobile=${o.mobile}">
                             <button class="btn btn-primary btn-xs">分配人员</button>
                         </a>
                     </c:if>

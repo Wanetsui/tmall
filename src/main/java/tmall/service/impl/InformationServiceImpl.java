@@ -58,4 +58,9 @@ public class InformationServiceImpl  implements InformationService {
 
         return pageBean;
     }
+
+    @Override
+    public int insert(Information information) {
+        return informationMapper.insert(information);
+    }
 }

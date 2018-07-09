@@ -10,4 +10,5 @@ public interface InformationService {
     List<Information> selectInformationList();
     int selectCount();
     PageBean<Information> findByPage(int currentPage);
+    int insert(Information information);
 }

@@ -1,5 +1,6 @@
 package tmall.controller.front;
 
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +9,7 @@ import tmall.annotation.Nullable;
 import tmall.pojo.*;
 import tmall.util.Pagination;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -39,10 +41,26 @@ public class ShowController extends FrontBaseController {
     public String information(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model) throws Exception {
         System.out.println(informationService.selectByPrimaryKey(1));
         System.out.println(informationService.selectCount());
+
         //List<Information> informations =   informationService.selectInformationList();
         model.addAttribute("pagemsg", informationService.findByPage(currentPage));
         model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
         return "information";
+    }
+    @RequestMapping("/gopublish")
+    public String gopublish(){
+        return "publish";
+    }
+    @RequestMapping("/publish")
+    public String publish(HttpServletRequest request){
+        String title =  request.getParameter("title");
+        String info =  request.getParameter("context");
+
+        Information information = new Information();
+        information.setTitle(title);
+        information.setInfo(info);
+        informationService.insert(information);
+        return "redirect:/information";
     }
 
     @RequestMapping("/shome")

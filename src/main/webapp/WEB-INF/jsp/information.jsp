@@ -10,7 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
 <main class="info">
-    <button href="publish">我要发布</button>
+    <a href="gopublish">我要发布</a>
     <form action = "info">
         <table class="info-list">
             <thead>

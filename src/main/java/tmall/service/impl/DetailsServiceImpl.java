@@ -47,7 +47,7 @@ public class DetailsServiceImpl extends BaseServiceImpl<DetailsMapper,DetailsExa
             detailsItem.setService(item.getService());
             detailsItem.setSum(item.getSum());
             if(item.getId()>0) {
-                detailsItemService.delete(item);
+                advanceService.delete(item);
             }
             tmall.pojo.Service service = detailsItem.getService();
             service.setStock(service.getStock()-item.getNumber());

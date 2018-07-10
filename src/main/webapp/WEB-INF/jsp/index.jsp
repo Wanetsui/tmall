@@ -60,7 +60,7 @@
 
             <div>
                 <span class="icon fa-bug"></span>
-                <h3> <a href="information">信息发布</a></h3>
+                <h3> <a href="inform">社区信息</a></h3>
                 <p>物业公告 社区通知</p>
                 <p>二手物品 信息交流</p>
             </div>

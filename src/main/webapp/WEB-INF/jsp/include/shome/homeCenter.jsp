@@ -37,22 +37,22 @@
         <div role="listbox" class="carousel-inner">
             <div class="item active">
                 <a href="/service?id=27" target="_blank">
-                    <img src="img/1.jpg" class="carousel carousel-image">
+                    <img src="img/5.jpg" class="carousel carousel-image">
                 </a>
             </div>
             <div class="item">
                 <a href="/service?id=1" target="_blank">
-                    <img src="img/2.jpg" class="carousel-image">
+                    <img src="img/6.jpg" class="carousel-image">
                 </a>
             </div>
             <div class="item">
                 <a href="/service?id=20" target="_blank">
-                    <img src="img/3.png" class="carousel-image">
+                    <img src="img/7.jpg" class="carousel-image">
                 </a>
             </div>
             <div class="item">
                 <a href="/service?id=30" target="_blank">
-                    <img src="img/4.png" class="carousel-image">
+                    <img src="img/8.jpg" class="carousel-image">
                 </a>
             </div>
         </div>

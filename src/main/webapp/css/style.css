@@ -326,10 +326,24 @@ main.index .products{
     width:930px;
     margin: 0 auto 10px;
 }
+main.index .services{
+    width:930px;
+    margin: 0 auto 10px;
+}
 main.index .products .title-bar{
     margin-bottom: 15px;
 }
+main.index .services .title-bar{
+    margin-bottom: 15px;
+}
 main.index .products .color-mark{
+    display: inline-block;
+    width:5px;
+    height:18px;
+    background-color: #EA5F8D;
+    vertical-align: middle; /*行居中有奇效*/
+}
+main.index .services .color-mark{
     display: inline-block;
     width:5px;
     height:18px;
@@ -343,8 +357,20 @@ main.index .products .category-title{
     vertical-align: middle;
     padding-left:10px;
 }
+main.index .services .type-title{
+    font-size:18px;
+    color:#000;
+    height:28px;
+    vertical-align: middle;
+    padding-left:10px;
+}
 
 main.index .products .product-items{
+    height:618px;
+    margin-left: -13px;
+    overflow: hidden;
+}
+main.index .services .service-items{
     height:618px;
     margin-left: -13px;
     overflow: hidden;
@@ -358,7 +384,21 @@ main.index .products .item{
     float:left;
     height:297px;
 }
+main.index .services .item{
+    border:transparent 1px solid;
+    width:222px;
+    margin:0 0 13px 13px;
+    background: #fff;
+    float:left;
+    height:297px;
+}
 main.index .products .item img{
+    height:185px;
+    width:185px;
+    margin: 10px auto;
+    display: block;
+}
+main.index .services .item img{
     height:185px;
     width:185px;
     margin: 10px auto;
@@ -372,7 +412,22 @@ main.index .products .item-title{
     overflow: hidden;
     margin: 8px auto;
 }
+main.index .services .item-title{
+    width:135px;
+    height:38px;
+    font-size: 14px;
+    color:#333;
+    overflow: hidden;
+    margin: 8px auto;
+}
 main.index .products .item-price{
+    font-size: 18px;
+    text-align: center;
+    line-height: 18px;
+    color: #FF0036;
+    margin: 10px auto;
+}
+main.index .services .item-price{
     font-size: 18px;
     text-align: center;
     line-height: 18px;
@@ -415,7 +470,13 @@ main.index .end-png{
     main.index .products{
         width:1200px;
     }
+    main.index .services{
+        width:1200px;
+    }
     main.index .products .item{
+        width:229px;
+    }
+    main.index .services .item{
         width:229px;
     }
 }
@@ -663,8 +724,23 @@ header.product{
     height:60px;
     border-bottom: 1px solid #E5E5E5;
 }
+header.service{
+    width:1190px;
+    margin: 24px auto 0;
+    position: relative;
+    height:60px;
+    border-bottom: 1px solid #E5E5E5;
+}
 
 header.product .search{
+    background: #FF0036;
+    width:460px;
+    height:36px;
+    margin-top: -10px;
+    padding: 0;
+    float:right;
+}
+header.service .search{
     background: #FF0036;
     width:460px;
     height:36px;
@@ -684,7 +760,27 @@ header.product .search input{
     outline: none; /*兼容性设置*/
 
 }
+header.service .search input{
+    height:30px; /*留出上下3px做边框*/
+    width:367px; /*和 margin 1 + button 110填满search*/
+    border: 0;/*取消边框*/
+    margin:3px 0 3px 3px;/*用背景色做出一个边框 */
+    float:left; /*不浮动有诡异的上 margin*/
+    padding: 3px 0 0 5px; /*调节提示文字位置*/
+    font-size: 15px;
+    outline: none; /*兼容性设置*/
+
+}
 header.product .search button{
+    width:90px;
+    border:0;/*取消边框*/
+    background: #FF0036;/*和背景色融为一体*/
+    color:white;
+    font-size:18px;
+    letter-spacing: 4px;
+    height:36px; /*和search同高*/
+}
+header.service.search button{
     width:90px;
     border:0;/*取消边框*/
     background: #FF0036;/*和背景色融为一体*/
@@ -702,8 +798,21 @@ header.product .search-below{
     width:300px;
     margin-left :-12px; /*抵消第一个li的padding*/
 }
-
+header.service.search-below{
+    margin-top: 5px;
+    font-size:12px;
+    height:14px;
+    overflow: hidden;
+    width:300px;
+    margin-left :-12px; /*抵消第一个li的padding*/
+}
 header.product .search-below li{
+    float:left;
+    padding: 0 12px;
+    border-left:1px solid #ccc;
+    line-height: 1.1;
+}
+header.service.search-below li{
     float:left;
     padding: 0 12px;
     border-left:1px solid #ccc;
@@ -712,11 +821,21 @@ header.product .search-below li{
 header.product .search-below :first-child{ /*取消第一个li的边框*/
     border:0;
 }
+header.service .search-below :first-child{ /*取消第一个li的边框*/
+    border:0;
+}
 header.product .search-below span{
     color:#999;
 }
-
+header.service .search-below span{
+    color:#999;
+}
 header.product img{
+    position: absolute;
+    left:0;
+    height:21px;
+}
+header.service img{
     position: absolute;
     left:0;
     height:21px;
@@ -772,6 +891,11 @@ section.property .detail{
     color: #999;
 }
 section.property .detail .product-title{
+    font-size:16px;
+    font-weight: 700;
+    color:#000;
+}
+section.property .detail .service-title{
     font-size:16px;
     font-weight: 700;
     color:#000;
@@ -849,7 +973,19 @@ section.property .product-num{
     height:50px;
     width:510px;
 }
+section.property .service-num{
+    margin-top: 15px;
+    height:50px;
+    width:510px;
+}
 section.property .product-num input{
+    width:30px;
+    border:solid 1px #a7a6ab;
+    height:25px;
+    display: inline-block;
+    vertical-align: center;
+}
+section.property .service-num input{
     width:30px;
     border:solid 1px #a7a6ab;
     height:25px;
@@ -916,8 +1052,17 @@ main.product-content{
     padding-left: 200px;
     margin: 0 auto 20px;
 }
+main.service-content{
+    width:990px;
+    padding-left: 200px;
+    margin: 0 auto 20px;
+}
 
 main.product-content .product-bar{
+    border :1px solid #DFDFDF;
+    height:49px;
+}
+main.service-content .service-bar{
     border :1px solid #DFDFDF;
     height:49px;
 }
@@ -929,7 +1074,22 @@ main.product-content .product-bar .product-select{
     height:48px;
     cursor: pointer;
 }
+main.service-content .service-bar .service-select{
+    display: block;
+    float:left;
+    color:#333333;
+    line-height:48px;
+    height:48px;
+    cursor: pointer;
+}
 main.product-content .product-select a{
+    position: relative;
+    border-right:1px dotted #D2D2D2;
+    padding:0 20px;
+    color:#000;
+    text-decoration: none;
+}
+main.service-content .service-select a{
     position: relative;
     border-right:1px dotted #D2D2D2;
     padding:0 20px;
@@ -947,7 +1107,22 @@ main.product-content .product-select.selected{
     left:-1px;
     height:49px;
 }
+main.service-content .service-select.selected{
+    border-right:1px dotted #cfbfb1;
+    border-left:1px dotted #cfbfb1;
+    border-top: 1px solid #FF0036;;
+    color:#FF0036;
+    position: relative;
+    top:-1px;
+    left:-1px;
+    height:49px;
+}
 main.product-content .product-select.selected a{
+    color:#FF0036;
+    font-weight: 700;
+    border: none;
+}
+main.service-content .service-select.selected a{
     color:#FF0036;
     font-weight: 700;
     border: none;
@@ -964,11 +1139,31 @@ main.product-content .product-select.selected:before{
     left:50%;
     margin-left: -5px;
 }
+main.service-content .service-select.selected:before{
+    content:"";
+    display: block;
+    height:0;
+    width:0;
+    border: 5px solid transparent;
+    border-top-color: #FF0036;
+    position: absolute;
+    top:-1px;
+    left:50%;
+    margin-left: -5px;
+}
 
 main.product-content .product-comment-number{
     color:#38b;
 }
+main.service-content .service-comment-number{
+    color:#38b;
+}
 main.product-content .product-top{
+    border: 1px solid #e6e6e6;
+    padding:20px 10px 0 20px;
+    margin-bottom: 20px;
+}
+main.service-content .service-top{
     border: 1px solid #e6e6e6;
     padding:20px 10px 0 20px;
     margin-bottom: 20px;
@@ -979,10 +1174,28 @@ main.product-content .product-key-title{
     font-weight: 700;
     margin-bottom: 10px;
 }
+main.service-content .service-key-title{
+    line-height: 22px;
+    color: #999;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
 main.product-content .product-key{
     overflow: hidden;
 }
+main.service-content .service-key{
+    overflow: hidden;
+}
 main.product-content .product-key li{
+    float:left;
+    width:240px;
+    height:18px;
+    overflow: hidden;
+    color:#666;
+    display: block;
+    margin: 0 0 10px;
+}
+main.service-content .service-key li{
     float:left;
     width:240px;
     height:18px;
@@ -995,10 +1208,14 @@ main.product-content .product-key li{
 main.product-content .product-content-part img{
     max-width:790px;
 }
+main.service-content .service-content-part img{
+    max-width:790px;
+}
 
 main.product-content table.comment tr{
     border-bottom: 1px solid #e3e3e3;;
 }
+
 main.product-content table.comment td{
     padding:10px 0;
     word-wrap: break-word;
@@ -1026,7 +1243,16 @@ main.cart{
     width:990px;
     margin: 20px auto;
 }
+main.book{
+    width:990px;
+    margin: 20px auto;
+}
 main.cart .sum-top{
+    overflow: hidden;
+    padding-bottom: 20px;
+    border-bottom:1px solid #e6e6e6;
+}
+main.book .sum-top{
     overflow: hidden;
     padding-bottom: 20px;
     border-bottom:1px solid #e6e6e6;
@@ -1036,7 +1262,15 @@ main.cart .sum-top .cart-sum-price-small,main.cart .sum-top .yen-small{
     font-size: 14px;
     margin-right: 5px;
 }
+main.book .sum-top .book-sum-price-small,main.book .sum-top .yen-small{
+    color:#FF0036;
+    font-size: 14px;
+    margin-right: 5px;
+}
 main.cart .sum-top .yen-small{
+    margin-left: 5px;
+}
+main.book .sum-top .yen-small{
     margin-left: 5px;
 }
 
@@ -1048,7 +1282,22 @@ main.cart .sum-top .crate-order-small{
     line-height: 25px;
     cursor: not-allowed;
 }
+main.book .sum-top .crate-order-small{
+    background: #aaa;
+    border:none;
+    color:white;
+    width:55px;
+    line-height: 25px;
+    cursor: not-allowed;
+}
 main.cart .sum-bottom{
+    background: #E5E5E5;
+    line-height: 50px;
+    margin: 20px 0;
+    color: #000;
+    padding-left: 20px;
+}
+main.book .sum-bottom{
     background: #E5E5E5;
     line-height: 50px;
     margin: 20px 0;
@@ -1064,7 +1313,21 @@ main.cart .sum-bottom .crate-order-big{
     color:#fff;
     cursor: not-allowed;
 }
+main.book .sum-bottom .crate-order-big{
+    border: none;
+    background: #aaa;
+    width:120px;
+    height:50px;
+    font-size: 20px;
+    color:#fff;
+    cursor: not-allowed;
+}
 main.cart .select-img{
+    position: relative;
+    top:-1px;
+    cursor: pointer;
+}
+main.book .select-img{
     position: relative;
     top:-1px;
     cursor: pointer;
@@ -1074,10 +1337,22 @@ main.cart .sum-bottom .cart-num{
     font-size: 18px;
     font-weight: bold;
 }
+main.book .sum-bottom .book-num{
+    color:#FF0036;
+    font-size: 18px;
+    font-weight: bold;
+}
 main.cart .sum-bottom .sum-text{
     margin-left: 25px;
 }
+main.book .sum-bottom .sum-text{
+    margin-left: 25px;
+}
 main.cart .sum-bottom .yen-big{
+    margin-left: 10px;
+    color:#FF0036;
+}
+main.book .sum-bottom .yen-big{
     margin-left: 10px;
     color:#FF0036;
 }
@@ -1087,7 +1362,16 @@ main.cart .sum-bottom .cart-sum-price-big{
     color:#FF0036;
     margin-right: 5px;
 }
+main.book .sum-bottom .book-sum-price-big{
+    font-size: 18px;
+    font-weight: bold;
+    color:#FF0036;
+    margin-right: 5px;
+}
 main.cart table.cart-list{
+    width: 100%;
+}
+main.book table.book-list{
     width: 100%;
 }
 main.cart table.cart-list th,main.cart table.cart-list td{
@@ -1095,19 +1379,41 @@ main.cart table.cart-list th,main.cart table.cart-list td{
     font-weight: normal;
     color: #3C3C3C;
 }
+main.book table.book-list th,main.book table.book-list td{
+    padding: 20px;
+    font-weight: normal;
+    color: #3C3C3C;
+}
 main.cart table.cart-list th.item-price{
+    width:150px;
+}
+main.book table.book-list th.item-price{
     width:150px;
 }
 main.cart table.cart-list .select-and-image{
     width:150px;
 }
+main.book table.book-list .select-and-image{
+    width:150px;
+}
 main.cart table.cart-list .delete-button{
+    width:50px;
+}
+main.book table.book-list .delete-button{
     width:50px;
 }
 main.cart table.cart-list .select-img{
     margin-right: 5px;
 }
+main.book table.book-list .select-img{
+    margin-right: 5px;
+}
 main.cart table.cart-list .cart-item-jpg{
+    width:80px;
+    height:80px;
+    border:1px solid #eee;
+}
+main.book table.book-list .book-item-jpg{
     width:80px;
     height:80px;
     border:1px solid #eee;
@@ -1116,7 +1422,14 @@ main.cart table.cart-list .item-name{
     vertical-align: top;
     position: relative;
 }
+main.book table.book-list .item-name{
+    vertical-align: top;
+    position: relative;
+}
 main.cart table.cart-list .cart-item-title{
+    color:#3c3c3c;
+}
+main.book table.book-list .book-item-title{
     color:#3c3c3c;
 }
 main.cart table.cart-list .cart-item-title:hover{
@@ -1124,7 +1437,17 @@ main.cart table.cart-list .cart-item-title:hover{
     text-decoration: underline;
     cursor: pointer;
 }
+main.book table.book-list .book-item-title:hover{
+    color:#FF0036;
+    text-decoration: underline;
+    cursor: pointer;
+}
 main.cart table.cart-list .cart-item-title-bottom{
+    position: absolute;
+    bottom: 20px;
+    height:20px;
+}
+main.book table.book-list .book-item-title-bottom{
     position: absolute;
     bottom: 20px;
     height:20px;
@@ -1139,13 +1462,27 @@ main.cart .cart-item-now-price{
     font-weight: 700;
     color:#3c3c3c;
 }
+main.book.book-item-now-price{
+    display: block;
+    font-weight: 700;
+    color:#3c3c3c;
+}
 main.cart .cart-change{
     border: 1px solid #e5e5e5;
     width:66px;
     height:25px;
     background: #f0f0f0;
 }
+main.book .book-change{
+    border: 1px solid #e5e5e5;
+    width:66px;
+    height:25px;
+    background: #f0f0f0;
+}
 main.cart .cart-change a{
+    text-decoration: none;
+}
+main.book .book-change a{
     text-decoration: none;
 }
 main.cart .cart-change-button{
@@ -1159,10 +1496,33 @@ main.cart .cart-change-button{
     top:-1px;
 
 }
+main.book .book-change-button{
+    width:17px;
+    display: inline-block;
+    text-align: center;
+    height:24.3px;
+    border:1px solid transparent;
+    line-height: 23px;
+    position: relative;
+    top:-1px;
+
+}
 main.cart .cart-change-button:hover{
     border:1px solid #FF0036;
 }
+main.book .book-change-button:hover{
+    border:1px solid #FF0036;
+}
 main.cart input{
+    width:30px;
+    border: 1px solid #aaa;
+    height:24px;
+    position: relative;
+    top:-1px;
+    margin: 0;
+    text-align: center;
+}
+main.book input{
     width:30px;
     border: 1px solid #aaa;
     height:24px;
@@ -1177,7 +1537,15 @@ main.cart .cart-item-sum{
     color:#FF0036;
     font-size: 14px;
 }
+main.book .book-item-sum{
+    font-weight: 700;
+    color:#FF0036;
+    font-size: 14px;
+}
 main.cart .delete-button{
+    color:#3c3c3c;
+}
+main.book .delete-button{
     color:#3c3c3c;
 }
 

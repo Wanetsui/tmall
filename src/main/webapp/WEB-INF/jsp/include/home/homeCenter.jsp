@@ -40,12 +40,12 @@
             </div>
             <div class="item">
                 <a href="/product?id=20" target="_blank">
-                <img src="img/3.png" class="carousel-image">
+                <img src="img/3.jpg" class="carousel-image">
                 </a>
             </div>
             <div class="item">
                 <a href="/product?id=30" target="_blank">
-                <img src="img/4.png" class="carousel-image">
+                <img src="img/4.jpg" class="carousel-image">
                 </a>
             </div>
         </div>

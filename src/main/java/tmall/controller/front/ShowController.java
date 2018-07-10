@@ -37,7 +37,7 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("categories", categories);
         return "home";
     }
-    @RequestMapping("/information")
+    /*@RequestMapping("/information")
     public String information(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model) throws Exception {
         System.out.println(informationService.selectByPrimaryKey(1));
         System.out.println(informationService.selectCount());
@@ -46,6 +46,16 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("pagemsg", informationService.findByPage(currentPage));
         model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
         return "information";
+    }*/
+    @RequestMapping("/inform")
+    public String inform(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model) throws Exception {
+        System.out.println(informationService.selectByPrimaryKey(1));
+        System.out.println(informationService.selectCount());
+
+        //List<Information> informations =   informationService.selectInformationList();
+        model.addAttribute("pagemsg", informationService.findByPage(currentPage));
+        model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
+        return "inform";
     }
     @RequestMapping("/gopublish")
     public String gopublish(){
@@ -60,7 +70,8 @@ public class ShowController extends FrontBaseController {
         information.setTitle(title);
         information.setInfo(info);
         informationService.insert(information);
-        return "redirect:/information";
+        /*return "redirect:/information";*/
+        return "redirect:/inform";
     }
 
     @RequestMapping("/shome")

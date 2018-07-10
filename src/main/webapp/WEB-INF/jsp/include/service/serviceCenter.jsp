@@ -29,7 +29,7 @@
         <div class="price">
             <div class="middle-line">
                 <span class="s-price left">价格</span>
-                <span class="yen">￥</span><span class="s-price-num">${product.price}</span>
+                <span class="yen">￥</span><span class="s-price-num">${service.price}</span>
             </div>
         </div>
         <div class="history">

@@ -20,6 +20,7 @@
                 <li class="${light==4?'active':''}"><a href="../order/list">订单管理</a></li>
                 <li class="${light==5?'active':''}"><a href="../details/list">预约管理</a></li>
                 <li class="${light==6?'active':''}"><a href="../config/edit">网站设置</a></li>
+                <li class="${light==7?'active':''}"><a href="../inform/list">公告管理</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class=""><a href="../../../" target="_blank" >网站前台</a></li>

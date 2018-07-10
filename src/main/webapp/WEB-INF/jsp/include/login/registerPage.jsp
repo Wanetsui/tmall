@@ -29,8 +29,7 @@
            });
         });
     </script>
-
-
+    <div class="register-content">
     <form action="registerAdd" method="post" id="form">
     <table class="register-table">
         <tbody>
@@ -62,4 +61,5 @@
         </tbody>
     </table>
     </form>
+    </div>
 </main>

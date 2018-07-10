@@ -11,4 +11,5 @@
 <%@include file="include/header.jsp"%>
 <%@include file="include/logoBar.jsp"%>
 <%@include file="include/login/registerPage.jsp"%>
-<%@include file="include/login/loginFooter.jsp"%>
+<%--
+<%@include file="include/login/loginFooter.jsp"%>--%>

@@ -98,7 +98,7 @@ footer.footer-bottom .foot-image{
     display: block;
     width:1190px; /*猫头在1190居中后再右移*/
     height:31px;
-    background: url("../img/maotou.png") no-repeat 40px;
+    /*background: url("../img/maotou.png") no-repeat 40px;*/
     margin: 0 auto;
 }
 
@@ -1722,23 +1722,23 @@ footer.footer-bottom .login-text a{
 
 /*定义login页样式*/
 main.login{
-    background: rgb(84, 19, 168);
+    background: rgba(12, 0, 35, 0.51);
 }
 main.login .login-content{
     height:600px;
     width:1190px;
     margin: 0 auto;
-    background: url("../img/login.png") no-repeat;
+    background: url("../img/login.jpg") no-repeat;
     position: relative;
 }
 
 main.login .login-frame{
     height:400px;
     width:350px;
-    background: #fff;
+    background: rgba(112, 112, 112, 0.24);
     position: absolute;
-    right:100px;
-    top:100px;
+    right:350px;
+    top:70px;
     padding:40px 25px 0;
 }
 main.login .login-frame .login-tip{
@@ -1786,7 +1786,7 @@ main.login .login-frame .login-button button{
     width: 300px;
     height: 42px;
     line-height: 42px;
-    background-color: #ff0036;
+    background-color: rgba(6, 0, 1, 0.7);
     border: none;
     border-radius: 5px;
     color:white;
@@ -2035,6 +2035,13 @@ main.register{
     width:1190px;
     margin: 120px auto 180px;
 }
+main.register .register-content{
+    height:904px;
+    width:1190px;
+    margin: 0 auto;
+    background: url("../img/register.jpg") no-repeat;
+    position: relative;
+}
 main.register .register-table{
     width:430px;
     margin: 0 auto;
@@ -2067,7 +2074,7 @@ main.register .register-table .button-td button{
     height: 36px;
     border-radius: 2px;
     color: white;
-    background-color: #FF0036;
+    background-color: rgba(4, 0, 1, 0.75);
     border: none;
     margin-top: 20px;
 }

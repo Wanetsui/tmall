@@ -12,9 +12,95 @@
 <%@include file="include/header.jsp"%>
 <c:set var="home" value="home" />
 
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
 
+<!-- Header -->
+<header id="header">
+    <div class="inner">
+        <a href="index" class="logo"><strong>街坊四邻系统</strong>由15031215李怡萱设计完成</a>
+        <nav id="nav">
+            <a href="index">首页</a>
+            <a href="login">登陆</a>
+            <a href="register">注册</a>
+        </nav>
+        <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+    </div>
+</header>
 
-<section class="head-bar">
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <header>
+            <h1>欢迎来到街坊四邻系统</h1>
+        </header>
+
+        <div class="flex ">
+
+            <div>
+                <span class="icon fa-car"></span>
+                <h3><a href="home">在线商城</a></h3>
+                <p>社区便利 在线购买</p>
+                <p>果蔬粮食 上门配送</p>
+            </div>
+
+            <div>
+                <span class="icon fa-camera"></span>
+                <h3><a href="shome">家政服务</a></h3>
+                <p>社区家政 保洁清洗</p>
+                <p>家电维修 上门服务</p>
+            </div>
+
+            <div>
+                <span class="icon fa-bug"></span>
+                <h3> <a href="information">信息发布</a></h3>
+                <p>物业公告 社区通知</p>
+                <p>二手物品 信息交流</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+<%--
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h6{
+        font-family: 华文行楷;
+        font-size:100px;
+        text-align:center;
+        margin-top: 100px;
+    }
+    a{
+        font-style: italic;
+        font-size: 50px;
+        font-family: 华文行楷;
+        margin-top: 200px;
+        text-align:center;
+    }
+
+</style>
+</head>
+<body style="background:url('/img/index.jpg') no-repeat;">
+    <h6>街坊四邻系统</h6>
     <div class="a-menu">
         <span class="glyphicon glyphicon-link"></span>
         <a href="home">萱萱商城</a></li>
@@ -27,4 +113,6 @@
         <span class="glyphicon glyphicon-link"></span>
         <a href="information?currentPage=1">信息发布</a></li>
     </div>
-</section>
+</body>
+</html>
+--%>

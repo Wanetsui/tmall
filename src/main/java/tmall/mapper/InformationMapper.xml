@@ -37,4 +37,7 @@
   <select id="selectCount" resultType="int">
     select count(*) from information
   </select>
+  <insert id="insert" parameterType="tmall.pojo.Information" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+    INSERT  INTO information(title,info) VALUES (#{title},#{info})
+  </insert>
 </mapper>

@@ -33,7 +33,7 @@ public class TypeController extends AdminBaseController{
         c.setName(name);
         c.setRecommend(recommend);
         typeService.add(c);
-        fileUtil.saveImg(uploadedImageFile, "type", c.getId() + ".jpg");
+        //fileUtil.saveImg(uploadedImageFile, "type", c.getId() + ".jpg");
         return "redirect:list";
     }
 
@@ -48,6 +48,7 @@ public class TypeController extends AdminBaseController{
     @RequestMapping("update")
     public String update(Integer id, String name, Integer recommend,
                          @Nullable UploadedImageFile uploadedImageFile, HttpSession session) throws Exception {
+
         Type c = (Type) typeService.get(id);
         c.setRecommend(recommend);
         c.setName(name);

@@ -131,8 +131,8 @@ public class ShowController extends FrontBaseController {
     public String type(Integer id, @Nullable String sort, Model model) throws Exception {
         System.out.println("id  " + id);
         Type type = (Type) typeService.get(id);
-        List<Service> services = productService
-                .list("cid", type.getId(), "order", handleSort(sort), "stock_gt", 0);
+        List<Service> services = serviceService
+                .list("cid", type.getId());
         model.addAttribute("services", services);
         model.addAttribute("type", type);
         return "type";

@@ -144,7 +144,8 @@ header.index-top{
 }
 
 header.index-top .search{
-    background: #FF0036;
+    /*background: #FF0036;*/
+    background: rgba(9, 0, 2, 0.44);
     width:400px;
     height:42px;
     margin: 50px auto;
@@ -164,7 +165,8 @@ header.index-top .search input{
 header.index-top .search button{
     width:110px;
     border:0;/*取消边框*/
-    background: #FF0036;/*和背景色融为一体*/
+    /*background: #FF0036;*//*和背景色融为一体*/
+    background: rgba(9, 0, 2, 0.44);
     color:white;
     font-weight:bold;
     font-size:20px;
@@ -212,7 +214,8 @@ section.head-bar{
 section.head-bar .c-menu{
     display: inline-block;
     width:200px;
-    background: #FF0036;
+    /*background: #FF0036;*/
+    background: rgba(9, 0, 2, 0.44);
     height:36px;
     line-height: 36px;
     font-size:16px;
@@ -234,7 +237,8 @@ section.head-bar .r-menu a{ /*图片标签*/
     padding:0 10px;
 }
 section.head-bar .r-menu a:hover{ /*图片标签*/
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 
 section.head-bar .r-menu .text{ /*解决文字靠上的问题*/
@@ -249,7 +253,8 @@ section.head-bar .r-menu img{
 section.carousel{
     width: 100%;
     background: #f5f5f5;
-    border-top: 1.5px solid #FF0036;
+    border-top: 1.5px solid rgba(9, 0, 2, 0.44);
+    /*border-top: 1.5px solid #FF0036;*/
     /*height:500px;*/
 
 }
@@ -285,14 +290,16 @@ section.carousel .m-menu li {
 }
 section.carousel .m-menu li:hover {
     background: white;
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 section.carousel .m-menu a{
     color:#fff;
     padding-left:20px;
 }
 section.carousel .m-menu a:hover{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 section.carousel .m-menu span{
     color:#fff;
@@ -346,14 +353,15 @@ main.index .products .color-mark{
     display: inline-block;
     width:5px;
     height:18px;
-    background-color: #EA5F8D;
+    background-color: rgba(43, 19, 98, 0.43);
     vertical-align: middle; /*行居中有奇效*/
 }
 main.index .services .color-mark{
     display: inline-block;
     width:5px;
     height:18px;
-    background-color: #EA5F8D;
+   /* background-color: #EA5F8D;*/
+    background-color: rgba(43, 19, 98, 0.43);
     vertical-align: middle; /*行居中有奇效*/
 }
 main.index .products .category-title{
@@ -430,14 +438,16 @@ main.index .products .item-price{
     font-size: 18px;
     text-align: center;
     line-height: 18px;
-    color: #FF0036;
+    /*color: #FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     margin: 10px auto;
 }
 main.index .services .item-price{
     font-size: 18px;
     text-align: center;
     line-height: 18px;
-    color: #FF0036;
+    /*color: #FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     margin: 10px auto;
 }
 main.index .end-png{
@@ -464,6 +474,10 @@ main.index .end-png{
         width:1200px;
     }
     section.carousel .carousel-of-product{
+        width:1200px;
+        height:460px;
+    }
+    section.carousel .carousel-of-service{
         width:1200px;
         height:460px;
     }
@@ -497,7 +511,8 @@ header.search{
 }
 
 header.search .search{
-    background: #FF0036;
+    /*background: #FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     width:450px;
     height:36px;
     margin: -2px auto;
@@ -518,7 +533,8 @@ header.search .search input{
 header.search .search button{
     width:90px;
     border:0;/*取消边框*/
-    background: #FF0036;/*和背景色融为一体*/
+    /*background: #FF0036;*//*和背景色融为一体*/
+    background: rgba(9, 0, 2, 0.44);
     color:white;
     font-size:18px;
     letter-spacing: 4px;
@@ -582,7 +598,8 @@ section.select-bar span.glyphicon{
 }
 section.select-bar a.selected,section.select-bar a:hover{
     background: #F1EDEC;
-    color: #ff0036;
+    /*color: #ff0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 section.select-bar .price{
     margin-left:5px;
@@ -625,10 +642,12 @@ main.search .item{
     border: 1px solid #f5f5f5;
 }
 main.search .item:hover{
-    border:#FF0036 1px solid ;
+    border: rgba(9, 0, 2, 0.44)1px solid;
+   /* border:#FF0036 1px solid ;*/
 }
 main.search  .border:hover{
-    border:#FF0036 3px solid ;
+    border: rgba(9, 0, 2, 0.44) 3px solid ;
+    /*border:#FF0036 3px solid ;*/
 }
 main.search .item .content{
     width:210px;
@@ -640,7 +659,7 @@ main.search .item img.item-img{
     display: block;
 }
 main.search .item .item-price{
-    color: #ff0036;
+    color: rgba(9, 0, 2, 0.44);
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
@@ -739,7 +758,8 @@ header.service{
 }
 
 header.product .search{
-    background: #FF0036;
+    background: rgba(9, 0, 2, 0.44);
+    /*background: #FF0036;*/
     width:460px;
     height:36px;
     margin-top: -10px;
@@ -747,7 +767,8 @@ header.product .search{
     float:right;
 }
 header.service .search{
-    background: #FF0036;
+    background: rgba(9, 0, 2, 0.44);
+    /*background: #FF0036;*/
     width:460px;
     height:36px;
     margin-top: -10px;
@@ -780,7 +801,8 @@ header.service .search input{
 header.product .search button{
     width:90px;
     border:0;/*取消边框*/
-    background: #FF0036;/*和背景色融为一体*/
+    /*background: #FF0036;*//*和背景色融为一体*/
+    background: rgba(9, 0, 2, 0.44);
     color:white;
     font-size:18px;
     letter-spacing: 4px;
@@ -789,7 +811,8 @@ header.product .search button{
 header.service.search button{
     width:90px;
     border:0;/*取消边框*/
-    background: #FF0036;/*和背景色融为一体*/
+    /*background: #FF0036;*//*和背景色融为一体*/
+    background: rgba(9, 0, 2, 0.44);
     color:white;
     font-size:18px;
     letter-spacing: 4px;
@@ -936,7 +959,8 @@ section.property .o-price-num{
 }
 section.property .yen{
     font-size:16px;
-    color: #FF0036;
+    /*color: #FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 section.property .s-price{
     position: relative;
@@ -944,7 +968,9 @@ section.property .s-price{
 }
 section.property .s-price-num{
     font-size: 30px;
-    color: #FF0036;
+   /* color: #FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
+
     font-weight: bolder;
 }
 section.property .history{
@@ -967,7 +993,8 @@ section.property .history :first-child{
     border:none;
 }
 section.property .history .item em{
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-style: normal;
     font-weight: bold;
 }
@@ -1024,16 +1051,21 @@ section.property button{
     font-size: 16px;
 }
 section.property button.buy-button{
-    border: 1px solid #FF0036;
-    color: #FF0036;
+   /* border: 1px solid #FF0036;
+    color: #FF0036;*/
+    border: 1px solid rgba(9, 0, 2, 0.44);
+    color: rgba(9, 0, 2, 0.44);
+
     background-color: #ffeded;
     position: relative;
     left:40px;
 }
 section.property button.car-button{
-    background-color: #ff0036;
+   /* background-color: #ff0036;*/
+    background-color: rgba(9, 0, 2, 0.44);
     color: #fff;
-    border: 1px solid #ff0036;
+   /* border: 1px solid #ff0036;*/
+    border: 1px solid rgba(9, 0, 2, 0.44);
     position: relative;
     left:45px;
 
@@ -1106,8 +1138,10 @@ main.service-content .service-select a{
 main.product-content .product-select.selected{
     border-right:1px dotted #cfbfb1;
     border-left:1px dotted #cfbfb1;
-    border-top: 1px solid #FF0036;;
-    color:#FF0036;
+   /* border-top: 1px solid #FF0036;;
+    color:#FF0036;*/
+    border-top: 1px solid rgba(9, 0, 2, 0.44);
+    color: rgba(9, 0, 2, 0.44);
     position: relative;
     top:-1px;
     left:-1px;
@@ -1116,20 +1150,24 @@ main.product-content .product-select.selected{
 main.service-content .service-select.selected{
     border-right:1px dotted #cfbfb1;
     border-left:1px dotted #cfbfb1;
-    border-top: 1px solid #FF0036;;
-    color:#FF0036;
+   /* border-top: 1px solid #FF0036;;
+    color:#FF0036;*/
+    border-top: 1px solid rgba(9, 0, 2, 0.44);
+    color: rgba(9, 0, 2, 0.44);
     position: relative;
     top:-1px;
     left:-1px;
     height:49px;
 }
 main.product-content .product-select.selected a{
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-weight: 700;
     border: none;
 }
 main.service-content .service-select.selected a{
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-weight: 700;
     border: none;
 }
@@ -1139,7 +1177,8 @@ main.product-content .product-select.selected:before{
     height:0;
     width:0;
     border: 5px solid transparent;
-    border-top-color: #FF0036;
+    /*border-top-color: #FF0036;*/
+    border-top-color: rgba(9, 0, 2, 0.44);
     position: absolute;
     top:-1px;
     left:50%;
@@ -1151,7 +1190,8 @@ main.service-content .service-select.selected:before{
     height:0;
     width:0;
     border: 5px solid transparent;
-    border-top-color: #FF0036;
+    /*border-top-color: #FF0036;*/
+    border-top-color: rgba(9, 0, 2, 0.44);
     position: absolute;
     top:-1px;
     left:50%;
@@ -1264,12 +1304,14 @@ main.book .sum-top{
     border-bottom:1px solid #e6e6e6;
 }
 main.cart .sum-top .cart-sum-price-small,main.cart .sum-top .yen-small{
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-size: 14px;
     margin-right: 5px;
 }
 main.book .sum-top .book-sum-price-small,main.book .sum-top .yen-small{
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-size: 14px;
     margin-right: 5px;
 }
@@ -1339,12 +1381,14 @@ main.book .select-img{
     cursor: pointer;
 }
 main.cart .sum-bottom .cart-num{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-size: 18px;
     font-weight: bold;
 }
 main.book .sum-bottom .book-num{
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-size: 18px;
     font-weight: bold;
 }
@@ -1356,22 +1400,26 @@ main.book .sum-bottom .sum-text{
 }
 main.cart .sum-bottom .yen-big{
     margin-left: 10px;
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 main.book .sum-bottom .yen-big{
     margin-left: 10px;
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 main.cart .sum-bottom .cart-sum-price-big{
     font-size: 18px;
     font-weight: bold;
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     margin-right: 5px;
 }
 main.book .sum-bottom .book-sum-price-big{
     font-size: 18px;
     font-weight: bold;
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     margin-right: 5px;
 }
 main.cart table.cart-list{
@@ -1439,12 +1487,14 @@ main.book table.book-list .book-item-title{
     color:#3c3c3c;
 }
 main.cart table.cart-list .cart-item-title:hover{
-    color:#FF0036;
+  /*  color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     text-decoration: underline;
     cursor: pointer;
 }
 main.book table.book-list .book-item-title:hover{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     text-decoration: underline;
     cursor: pointer;
 }
@@ -1514,10 +1564,12 @@ main.book .book-change-button{
 
 }
 main.cart .cart-change-button:hover{
-    border:1px solid #FF0036;
+    /*border:1px solid #FF0036;*/
+    border:1px solid  rgba(9, 0, 2, 0.44);
 }
 main.book .book-change-button:hover{
-    border:1px solid #FF0036;
+    /*border:1px solid #FF0036;*/
+    border:1px solid  rgba(9, 0, 2, 0.44);
 }
 main.cart input{
     width:30px;
@@ -1540,12 +1592,14 @@ main.book input{
 
 main.cart .cart-item-sum{
     font-weight: 700;
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-size: 14px;
 }
 main.book .book-item-sum{
     font-weight: 700;
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-size: 14px;
 }
 main.cart .delete-button{
@@ -1590,7 +1644,8 @@ main.buy-page .address-table .left-column{
     vertical-align: top;
 }
 main.buy-page .address-table .red-star{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 
 main.buy-page .address-table .right-column{
@@ -1669,7 +1724,8 @@ main.buy-page .buy-item-price,main.buy-page .buy-item-num{
 main.buy-page .buy-item-sum{
     text-align: right;
     font-weight: bold;
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     padding-right: 20px !important;
 }
 main.buy-page .sum-bar{
@@ -1695,7 +1751,8 @@ main.buy-page .sum-bar .comment-input{
     resize: none;
 }
 main.buy-page .sum-bar .deliver-num{
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-weight: bold;
     font-size: 14px;
 }
@@ -1704,12 +1761,14 @@ main.buy-page .sum-bar .sum-num-td{
     padding-bottom : 20px;
 }
 main.buy-page .sum-bar .sum-num{
-    color:#FF0036;
+   /* color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-weight: bold;
     font-size: 18px;
 }
 main.buy-page .confirm-frame {
-    border: 1px solid #ff0036;
+    /*border: 1px solid #ff0036;*/
+    border: 1px solid rgba(9, 0, 2, 0.44);
     min-width: 230px;
     padding: 10px 23px 10px 20px;
 }
@@ -1724,7 +1783,8 @@ main.buy-page .confirm-frame .line .yen-big{
 }
 main.buy-page .confirm-frame .line .price-num{
     font-size: 26px;
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 main.buy-page .confirm-frame .line-small{
     line-height: 25px;
@@ -1737,7 +1797,8 @@ main.buy-page button{
     text-align: center;
     font-size: 14px;
     font-weight: 700;
-    background: #ff0036;
+    /*background: #ff0036;*/
+    background: rgba(9, 0, 2, 0.44);
     color: #fff;
     border: none;
     margin-bottom: 60px;
@@ -1820,7 +1881,8 @@ main.comment .comment-right-detail .comment-deliver{
     color:#666666;
 }
 main.comment .comment-right-detail .comment-price{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     font-size: 27px;
     font-weight: 700;
     position: relative;
@@ -1857,7 +1919,8 @@ main.comment .comment-bar{
     width:100%;
 }
 main.comment .comment-bar .comment-bar-text{
-    border-top:5px solid #FF0036;
+    /*border-top:5px solid #FF0036;*/
+    border-top:5px solid rgba(9, 0, 2, 0.44);
     border-right: 1px solid #d5d4d4;
     border-left: 1px solid #d5d4d4;
     width:180px;
@@ -1933,7 +1996,8 @@ main.comment .comment-form .comment-button{
     line-height: 25px;
     color: #fff;
     cursor: pointer;
-    background: #FF0036;
+    /*background: #FF0036;*/
+    background: rgba(9, 0, 2, 0.44);
     border:none;
     font-weight: 700;
     border-radius: 4px;
@@ -2012,7 +2076,8 @@ main.confirm-pay .bill-detail-table td img{
     width:50px;
 }
 main.confirm-pay .bill-detail-table td a:hover{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 main.confirm-pay .bill-detail-table .item-sum-price{
     font-size: 16px;
@@ -2027,7 +2092,8 @@ main.confirm-pay  .bill-detail-sum{
     border-bottom: 1px solid #DDDDDD;
 }
 main.confirm-pay .red-color{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
 }
 main.confirm-pay .pay-detail-table{
     width:600px;
@@ -2048,9 +2114,11 @@ main.confirm-pay .pay-detail-table .wangwang{
 main.confirm-pay .confirm-end{
     width:100%;
     height: 140px;
-    border:1px solid #FF0036;
+    /*border:1px solid #FF0036;*/
+    border:1px solid rgba(9, 0, 2, 0.44);
     padding:20px 80px;
-    color:red;
+    /*color:red;*/
+    color:grey;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 30px;
@@ -2190,11 +2258,13 @@ section.order-type div{
     height:33px;
 }
 section.order-type a:hover{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
     text-decoration: none;
 }
 section.order-type div.selected{
-    border-bottom: 2px solid #FF0036;
+   /* border-bottom: 2px solid #FF0036;*/
+    border-bottom: 2px solid rgba(9, 0, 2, 0.44);
 }
 section.order-type a{
     border-right: 1px solid #E8E8E8;
@@ -2206,7 +2276,8 @@ section.order-type a{
     text-decoration: none;
 }
 section.order-type div.selected a{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color:rgba(9, 0, 2, 0.44);
 }
 
 main.order-list{
@@ -2287,7 +2358,8 @@ main.order-list table .cart-item-title{
     color:#3c3c3c;
 }
 main.order-list table .cart-item-title:hover{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color:rgba(9, 0, 2, 0.44);
     cursor: pointer;
 }
 main.order-list table .cart-item-title-bottom{
@@ -2341,7 +2413,8 @@ main.order-list table .order-button.white{
     border: 1px solid #DCDCDC;
 }
 main.order-list table .order-button.white:hover{
-    border-color:#FF0036;
+    /*border-color:#FF0036;*/
+    border-color:rgba(9, 0, 2, 0.44);
 }
 main.order-list table .num-center{
     text-align: center;
@@ -2382,7 +2455,8 @@ main.pay-suc .payed-info li{
     padding-top: 5px;
 }
 main.pay-suc .payed-num{
-    color:#FF0036;
+    /*color:#FF0036;*/
+    color:rgba(9, 0, 2, 0.44);
     font-weight: 700;
     font-size: 14px;
 }
@@ -2402,7 +2476,8 @@ main.pay-suc .bold-word{
     font-weight: 700;
 }
 main.pay-suc .red-color{
-    color : #FF0036;
+    /*color : #FF0036;*/
+    color:rgba(9, 0, 2, 0.44);
 }
 /*N.注册页面*/
 main.register{
@@ -2507,7 +2582,8 @@ section.login-modal .login-frame .login-button button{
     width: 300px;
     height: 42px;
     line-height: 42px;
-    background-color: #ff0036;
+   /* background-color: #ff0036;*/
+    background-color:rgba(9, 0, 2, 0.44);
     border: none;
     border-radius: 5px;
     color:white;

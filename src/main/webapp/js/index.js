@@ -31,4 +31,10 @@ $(function () {
     $(".product-items .item").mouseleave(function(){
         $(this).css("border-color","");
     })
+    $(".service-items .item").mouseenter(function(){
+        $(this).css("border-color","#FF0036");
+    });
+    $(".service-items .item").mouseleave(function(){
+        $(this).css("border-color","");
+    })
 });

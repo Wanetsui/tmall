@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="title" value="家政服务首页 - ${website_name}" />
 <%@include file="include/header.jsp"%>
-<c:set var="home" value="home" />
+<c:set var="shome" value="shome" />
 <%@include file="include/topService.jsp"%>
 <%@include file="include/shome/homeSearch.jsp"%>
 <%@include file="include/shome/homeCenter.jsp"%>

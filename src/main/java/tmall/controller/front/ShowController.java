@@ -49,9 +49,9 @@ public class ShowController extends FrontBaseController {
     }*/
     @RequestMapping("/inform")
     public String inform(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model) throws Exception {
-        System.out.println(informationService.selectByPrimaryKey(1));
-        System.out.println(informationService.selectCount());
-
+//        System.out.println(informationService.selectByPrimaryKey(1));
+//        System.out.println(informationService.selectCount());
+        System.out.println(currentPage);
         //List<Information> informations =   informationService.selectInformationList();
         model.addAttribute("pagemsg", informationService.findByPage(currentPage));
         model.addAttribute("informations", informationService.findByPage(currentPage).getLists());

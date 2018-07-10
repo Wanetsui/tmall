@@ -259,6 +259,12 @@ section.carousel .carousel-of-product{
     height:360px;
     position: relative;
 }
+section.carousel .carousel-of-service{
+    width:930px;
+    margin: 0 auto;
+    height:360px;
+    position: relative;
+}
 section.carousel img.carousel-image{
     height:360px;
 }

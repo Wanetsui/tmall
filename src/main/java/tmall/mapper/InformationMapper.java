@@ -10,4 +10,5 @@ public interface InformationMapper {
     int selectCount();
     List<Information> findByPage(HashMap<String,Object> map);
     int insert(Information information);
+    int delete(int id);
 }

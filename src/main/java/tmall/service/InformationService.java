@@ -11,4 +11,5 @@ public interface InformationService {
     int selectCount();
     PageBean<Information> findByPage(int currentPage);
     int insert(Information information);
+    int delete(int id);
 }

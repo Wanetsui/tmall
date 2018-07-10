@@ -12,7 +12,8 @@
 
 <main class="info">
     <form action = "publish">
-        <p><label >标题：</label><input type="text" id="title"/></p>
-        <p><label >内容：</label><input type="text" id="context"/></p>
+        <p><label >标题：</label><input type="text" name="title"/></p>
+        <p><label >内容：</label><input type="text" name="context"/></p>
+        <input type="submit" value="Submit">提交
     </form>
 </main>

@@ -22,20 +22,10 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>                       <!-- http://kenwheeler.github.io/slick/ -->
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link rel="stylesheet" href="css/tooplate-style.css">
-    <link rel="stylesheet" href="css/main.css" />
+
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
 
 </head>
-<header id="header">
-    <div class="inner">
-        <nav id="nav">
-            <a href="index">首页</a>
-            <a href="login">登陆</a>
-            <a href="register">注册</a>
-        </nav>
-        <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-    </div>
-</header>
 <body>
 <div id="tm-bg"></div>
 <div id="tm-wrap">
@@ -54,7 +44,22 @@
                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="content">
                         <div class="grid">
-
+                            <div class="grid__item" id="home-link">
+                                <div class="product">
+                                    <div class="tm-nav-link">
+                                        <i class="fas fa-home fa-3x tm-nav-icon"></i>
+                                        <span class="tm-nav-text">首页</span>
+                                        <div class="product__bg"></div>
+                                    </div>
+                                    <div class="product__description">
+                                        <div class="row mb-3">
+                                            <div class="col-12">
+                                                <a href="index">首页</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="grid__item" id="team-link">
                                 <div class="product">
                                     <div class="tm-nav-link">

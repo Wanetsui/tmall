@@ -43,7 +43,7 @@
 
         <span class="pull-right">
             <c:if test="${!empty user}">
-                <a href="myOrder">我的预约</a>
+                <a href="myDetails">我的预约</a>
             </c:if>
             <a href="advance"><span class=" glyphicon glyphicon-book redColor"></span>
                 预约列表<c:if test="${!empty user}"><strong id="cart-number">0</strong>个</c:if></a>

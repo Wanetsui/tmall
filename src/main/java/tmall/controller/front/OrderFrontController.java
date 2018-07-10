@@ -348,8 +348,8 @@ public class OrderFrontController extends FrontBaseController {
     public String payeds(Integer oid, HttpSession session, Model model) throws Exception {
         User user = (User) session.getAttribute("user");
         Details details = (Details) detailsService.get(oid);
-        checkUser(user, details.getUser());
-        details.setStatus(Details.Status.waitDeliver);
+        //checkUser(user, details.getUser());
+        details.setStatus("waitDeliver");
         details.setPayDate(new Date());
         detailsService.update(details);
         model.addAttribute("details", details);

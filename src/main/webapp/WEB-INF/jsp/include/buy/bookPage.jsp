@@ -111,7 +111,17 @@
                 <td>
                     服务方式：
                     <select class="delivery-select">
-                        <option>上门服务 免费用</option>
+                        <option>上门服务一次免其他费用</option>
+                        <option>预交定金 价格面谈</option>
+                    </select>
+                    <span class="pull-right deliver-num">0.00</span>
+                </td>
+                <td>
+                    服务时长：
+                    <select class="delivery-select">
+                        <option>一次性</option>
+                        <option>包月</option>
+                        <option>定期</option>
                     </select>
                     <span class="pull-right deliver-num">0.00</span>
                 </td>

@@ -14,11 +14,11 @@
             <input type="text" placeholder="搜索 ${website_name} 服务类型/服务" name="keyword">
             <button class="search-button" type="submit">搜索</button>
         </form>
-        <ul class="search-below">
+       <%-- <ul class="search-below">
             <c:forEach items="${cs}" var="c" varStatus="vs">
                 <li><a href="type?id=${c.id}">${c.name}</a></li>
             </c:forEach>
-        </ul>
+        </ul>--%>
 
     </div>
 

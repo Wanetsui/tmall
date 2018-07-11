@@ -106,6 +106,7 @@
                     运送方式：
                     <select class="delivery-select">
                         <option>快递 免邮费</option>
+                        <option>自取 物业中心二楼</option>
                     </select>
                     <span class="pull-right deliver-num">0.00</span>
                 </td>

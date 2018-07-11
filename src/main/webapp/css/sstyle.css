@@ -145,38 +145,38 @@ img:hover {
 }
 
 /* service section */
-#service {
+#wuye {
   padding-top: 60px;
   padding-bottom: 80px;
   text-align: center;
 }
-#service h2 {
+#wuye h2 {
   border-left: 2px solid #f2af00;
   display: inline-block;
   padding: 10px 10px 10px 20px;
 }
-#service .plan {
+#wuye .plan {
   border: 2px solid #444;
   padding: 20px 20px 40px 20px;
   margin-top: 60px;
 }
-#service .plan .plan-title {
+#wuye .plan .plan-title {
   border-bottom: 2px solid #444;
   padding: 20px 10px 20px 10px;
   margin-bottom: 20px;
 }
-#service .plan small,
-#service .plan ul li {
+#wuye .plan small,
+#wuye .plan ul li {
   font-family: 'Raleway', sans-serif;
 }
-#service .plan ul {
+#wuye .plan ul {
   padding: 0;
 }
-#service .plan ul li {
+#wuye .plan ul li {
   display: block;
   padding: 16px 0px 16px 0px;
 }
-#service .plan .btn {
+#wuye .plan .btn {
   background: transparent;
   border: 2px solid #444;
   border-radius: 0px;
@@ -189,44 +189,44 @@ img:hover {
     -moz-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
 }
-#service .plan .btn:hover {
+#wuye .plan .btn:hover {
   background: #f2af00;
   border-color: transparent;
 }
 
 /* about section */
-#about {
+#tongzhi {
   padding-top: 60px;
   padding-bottom: 80px;
   text-align: center;
 }
-#about h2 {
+#tongzhi h2 {
   border-left: 2px solid #f2af00;
   display: inline-block;
   padding: 10px 10px 10px 20px;
 }
-#about .plan {
+#tongzhi .plan {
   border: 2px solid #444;
   padding: 20px 20px 40px 20px;
   margin-top: 60px;
 }
-#about .plan .plan-title {
+#tongzhi .plan .plan-title {
   border-bottom: 2px solid #444;
   padding: 20px 10px 20px 10px;
   margin-bottom: 20px;
 }
-#about .plan small,
-#about .plan ul li {
+#tongzhi .plan small,
+#tongzhi .plan ul li {
   font-family: 'Raleway', sans-serif;
 }
-#about .plan ul {
+#tongzhi .plan ul {
   padding: 0;
 }
-#about .plan ul li {
+#tongzhi .plan ul li {
   display: block;
   padding: 16px 0px 16px 0px;
 }
-#about .plan .btn {
+#tongzhi .plan .btn {
   background: transparent;
   border: 2px solid #444;
   border-radius: 0px;
@@ -239,7 +239,7 @@ img:hover {
     -moz-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
 }
-#about .plan .btn:hover {
+#tongzhi .plan .btn:hover {
   background: #f2af00;
   border-color: transparent;
 }
@@ -267,38 +267,38 @@ img:hover {
 }
 
 /* portfolio section */
-#portfolio {
+#ershou {
   padding-top: 60px;
   padding-bottom: 80px;
   text-align: center;
 }
-#portfolio h2 {
+#ershou h2 {
   border-left: 2px solid #f2af00;
   display: inline-block;
   padding: 10px 10px 10px 20px;
 }
-#portfolio .plan {
+#ershou .plan {
   border: 2px solid #444;
   padding: 20px 20px 40px 20px;
   margin-top: 60px;
 }
-#portfolio .plan .plan-title {
+#ershou .plan .plan-title {
   border-bottom: 2px solid #444;
   padding: 20px 10px 20px 10px;
   margin-bottom: 20px;
 }
-#portfolio .plan small,
-#portfolio .plan ul li {
+#ershou .plan small,
+#ershou .plan ul li {
   font-family: 'Raleway', sans-serif;
 }
-#portfolio .plan ul {
+#ershou .plan ul {
   padding: 0;
 }
-#portfolio .plan ul li {
+#ershou .plan ul li {
   display: block;
   padding: 16px 0px 16px 0px;
 }
-#portfolio .plan .btn {
+#ershou .plan .btn {
   background: transparent;
   border: 2px solid #444;
   border-radius: 0px;
@@ -311,7 +311,7 @@ img:hover {
     -moz-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
 }
-#portfolio .plan .btn:hover {
+#ershou .plan .btn:hover {
   background: #f2af00;
   border-color: transparent;
 }
@@ -383,38 +383,38 @@ img:hover {
 }
 
 /* pricing section */
-#pricing {
+#jiaoliu {
   padding-top: 60px;
   padding-bottom: 80px;
   text-align: center;
 }
-#pricing h2 {
+#jiaoliu h2 {
   border-left: 2px solid #f2af00;
   display: inline-block;
   padding: 10px 10px 10px 20px;
 }
-#pricing .plan {
+#jiaoliu .plan {
   border: 2px solid #444;
   padding: 20px 20px 40px 20px;
   margin-top: 60px;
 }
-#pricing .plan .plan-title {
+#jiaoliu .plan .plan-title {
   border-bottom: 2px solid #444;
   padding: 20px 10px 20px 10px;
   margin-bottom: 20px;
 }
-#pricing .plan small,
-#pricing .plan ul li {
+#jiaoliu .plan small,
+#jiaoliu .plan ul li {
   font-family: 'Raleway', sans-serif;
 }
-#pricing .plan ul {
+#jiaoliu .plan ul {
   padding: 0;
 }
-#pricing .plan ul li {
+#jiaoliu .plan ul li {
   display: block;
   padding: 16px 0px 16px 0px;
 }
-#pricing .plan .btn {
+#jiaoliu .plan .btn {
   background: transparent;
   border: 2px solid #444;
   border-radius: 0px;
@@ -427,7 +427,7 @@ img:hover {
     -moz-transition: all 0.4s ease-in-out;
     -ms-transition: all 0.4s ease-in-out;
 }
-#pricing .plan .btn:hover {
+#jiaoliu .plan .btn:hover {
   background: #f2af00;
   border-color: transparent;
 }

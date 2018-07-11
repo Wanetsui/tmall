@@ -33,14 +33,14 @@
                 <span class="icon icon-bar"></span>
                 <span class="icon icon-bar"></span>
             </button>
-            <a href="#home" class="navbar-brand smoothScroll">街坊四邻服务系统</a>
+            <a href="index" class="navbar-brand smoothScroll">街坊四邻服务系统</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#service" class="smoothScroll">物业公告</a></li>
-                <li><a href="#about" class="smoothScroll">社区通知</a></li>
-                <li><a href="#portfolio" class="smoothScroll">二手出售</a></li>
-                <li><a href="#pricing" class="smoothScroll">社区交流</a></li>
+                <li><a href="#wuye" class="smoothScroll">物业公告</a></li>
+                <li><a href="#tongzhi" class="smoothScroll">社区通知</a></li>
+                <li><a href="#ershou" class="smoothScroll">二手出售</a></li>
+                <li><a href="#jiaoliu" class="smoothScroll">社区交流</a></li>
                 <li><a href="#contact" class="smoothScroll">我要发布</a></li>
             </ul>
         </div>
@@ -59,7 +59,7 @@
 </div> -->
 
 <!-- pricing section -->
-<div id="service">
+<div id="wuye">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -83,7 +83,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${informations}" var="item">
+                            <c:forEach items="${informations}" var="item" >
+                                <c:if test="${item.catalog==1}">
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
@@ -93,6 +94,7 @@
                                         <span class="list-group-item-info">${item.createTime}</span>
                                     </td>
                                 </tr>
+                                </c:if>
                             </c:forEach>
 
                             </tbody>
@@ -117,7 +119,7 @@
 </div> -->
 
 <!-- pricing section -->
-<div id="about">
+<div id="tongzhi">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -142,6 +144,7 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item">
+                                <c:if test="${item.catalog==2}">
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
@@ -151,6 +154,7 @@
                                         <span class="list-group-item-info">${item.createTime}</span>
                                     </td>
                                 </tr>
+                               </c:if>
                             </c:forEach>
 
                             </tbody>
@@ -176,7 +180,7 @@
 </div> -->
 
 <!-- pricing section -->
-<div id="portfolio">
+<div id="ershou">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -201,6 +205,7 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item">
+                                <c:if test="${item.catalog==3}">
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
@@ -210,6 +215,7 @@
                                         <span class="list-group-item-info">${item.createTime}</span>
                                     </td>
                                 </tr>
+                               </c:if>
                             </c:forEach>
 
                             </tbody>
@@ -234,7 +240,7 @@
 </div> -->
 
 <!-- pricing section -->
-<div id="pricing">
+<div id="jiaoliu">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -259,6 +265,7 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item">
+                                <c:if test="${item.catalog==4}">
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
@@ -268,6 +275,7 @@
                                         <span class="list-group-item-info">${item.createTime}</span>
                                     </td>
                                 </tr>
+                                </c:if>
                             </c:forEach>
 
                             </tbody>

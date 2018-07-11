@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +11,13 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
 
-    <title>Minimax HTML5 Free Template</title>
+    <title>社区公告</title>
     <!-- stylesheet css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/nivo-lightbox.css">
     <link rel="stylesheet" href="css/nivo_themes/default/default.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sstyle.css">
     <!-- google web font css -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
 
@@ -84,7 +87,7 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"> <a href="#"></a>${item.title}</span>
+                                        <span class="item-title"> <a href="#">${item.title}</a></span>
                                     </td>
                                     <td>
                                         <span class="list-group-item-info">${item.createTime}</span>
@@ -142,7 +145,7 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"> <a href="#"></a>${item.title}</span>
+                                        <span class="item-title"> <a href="#">${item.title}</a></span>
                                     </td>
                                     <td>
                                         <span class="list-group-item-info">${item.createTime}</span>
@@ -201,7 +204,7 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"> <a href="#"></a>${item.title}</span>
+                                        <span class="item-title"> <a href="#">${item.title}</a></span>
                                     </td>
                                     <td>
                                         <span class="list-group-item-info">${item.createTime}</span>
@@ -259,7 +262,7 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"> <a href="#"></a>${item.title}</span>
+                                        <span class="item-title"> <a href="#">${item.title}</a></span>
                                     </td>
                                     <td>
                                         <span class="list-group-item-info">${item.createTime}</span>
@@ -298,11 +301,13 @@
             <form action="publish" method="post" role="form">
                 <div class="col-md-1 col-sm-1"></div>
                 <div class="col-md-10 col-sm-10">
-                    <div class="col-md-6 col-sm-6">
-                        <input name="name" type="text" class="form-control" id="name" placeholder="Name">
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+                    <div class="col-md-12 col-sm-12">
+                        <select class="form-control">
+                            <option>物业公告</option>
+                            <option>社区通知</option>
+                            <option>二手出售</option>
+                            <option>社区交流</option>
+                        </select>
                     </div>
                     <div class="col-md-12 col-sm-12">
                         <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">

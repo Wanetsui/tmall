@@ -45,7 +45,7 @@
 </script>
 
 <section class="details-type">
-    <div class="selected"><a href="#nowhere" details-status="all">所有订单</a></div>
+    <div class="selected"><a href="#nowhere" details-status="all">所有预约</a></div>
     <div><a href="#nowhere" details-status="waitPay">待付款</a></div>
     <div><a href="#nowhere" details-status="waitDelivery">待服务</a></div>
     <div><a href="#nowhere" details-status="waitConfirm">待确认</a></div>

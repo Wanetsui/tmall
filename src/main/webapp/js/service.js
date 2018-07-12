@@ -1,5 +1,6 @@
 $(function () {
     var stock = $("#inventory").attr("stock");
+    var s = 12;
     $("#button-1").click(function () {
         $(this).addClass("selected");
         $("#button-2").removeClass("selected");
@@ -63,12 +64,12 @@ $(function () {
         num = parseInt(num);
         if(isNaN(num) || num<=0 ){
             num = 1;
-        }else if(num>stock){
-            num = stock;
+        }else if(num>s){
+            num = s;
         }
         $(this).val(num);
     });
-   /* $("#decrease-number").click(function(){
+    $("#decrease-number").click(function(){
         var num = Number($("#buy-number").val());
         if(num>1){
             $("#buy-number").val(num-1);
@@ -76,8 +77,8 @@ $(function () {
     });
     $("#increase-number").click(function(){
         var num = Number($("#buy-number").val());
-        if(num<stock){
+        if(num<s){
             $("#buy-number").val(num+1);
         }
-    });*/
+    });
 });

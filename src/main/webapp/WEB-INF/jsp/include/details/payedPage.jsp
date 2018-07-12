@@ -19,7 +19,7 @@
     </div>
     <div class="payed-guide">
         您可以
-        <a href="myOrder" class="payed-guide-link">查看已订购的服务</a>
+        <a href="myDetails" class="payed-guide-link">查看已订购的服务</a>
         <a href="#nowhere" class="payed-guide-link">查看交易详情 </a>
     </div>
     <div class="payed-warning">

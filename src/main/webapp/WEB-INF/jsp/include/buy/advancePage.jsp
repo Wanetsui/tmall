@@ -34,6 +34,12 @@
                 <th class="price-per">
                     价格
                 </th>
+                <th class="item-num">
+                    小时
+                </th>
+                <th class="item-price">
+                    金额
+                </th>
                 <th class="operation">
                     操作
                 </th>
@@ -56,6 +62,11 @@
                     </td>
                     <td>
                         <span class="book-item-now-price">￥${item.service.price}</span>
+                    </td>
+                    <td>
+                        <div class="book-change">
+                            <a href="javascript:void(0);" class="book-decrease book-change-button">-</a><input value="${item.number}" class="item-num-input"><a href="javascript:void(0);" class="book-increase book-change-button">+</a>
+                        </div>
                     </td>
                     <td>
                         <span class="book-item-sum">￥${item.sum}</span>

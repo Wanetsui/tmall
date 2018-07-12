@@ -2253,7 +2253,17 @@ section.order-type{
     margin: 10px auto;
     border-bottom: 2px solid #E8E8E8;
 }
+section.details-type{
+    width:990px;
+    height:33px;
+    margin: 10px auto;
+    border-bottom: 2px solid #E8E8E8;
+}
 section.order-type div{
+    float:left;
+    height:33px;
+}
+section.details-type div{
     float:left;
     height:33px;
 }
@@ -2262,11 +2272,29 @@ section.order-type a:hover{
     color: rgba(9, 0, 2, 0.44);
     text-decoration: none;
 }
+section.details-type a:hover{
+    /*color:#FF0036;*/
+    color: rgba(9, 0, 2, 0.44);
+    text-decoration: none;
+}
 section.order-type div.selected{
    /* border-bottom: 2px solid #FF0036;*/
     border-bottom: 2px solid rgba(9, 0, 2, 0.44);
 }
+section.details-type div.selected{
+    /* border-bottom: 2px solid #FF0036;*/
+    border-bottom: 2px solid rgba(9, 0, 2, 0.44);
+}
 section.order-type a{
+    border-right: 1px solid #E8E8E8;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color:#000;
+    padding: 0 20px;
+    text-decoration: none;
+}
+section.details-type a{
     border-right: 1px solid #E8E8E8;
     display: inline-block;
     font-size: 16px;
@@ -2279,8 +2307,15 @@ section.order-type div.selected a{
     /*color:#FF0036;*/
     color:rgba(9, 0, 2, 0.44);
 }
-
+section.details-type div.selected a{
+    /*color:#FF0036;*/
+    color:rgba(9, 0, 2, 0.44);
+}
 main.order-list{
+    width:990px;
+    margin: 0 auto;
+}
+main.details-list{
     width:990px;
     margin: 0 auto;
 }
@@ -2288,10 +2323,23 @@ main.order-list table{
     width:100%;
     margin: 20px 0;
 }
+main.details-list table{
+    width:100%;
+    margin: 20px 0;
+}
 main.order-list table thead{
     border: 1px solid #E8E8E8;
 }
+main.details-list table thead{
+    border: 1px solid #E8E8E8;
+}
 main.order-list table th{
+    text-align: center;
+    font-weight: normal;
+    line-height: 38px;
+    background-color: #F5F5F5;
+}
+main.details-list table th{
     text-align: center;
     font-weight: normal;
     line-height: 38px;
@@ -2303,13 +2351,27 @@ main.order-list table td{
     color: #3C3C3C;
     padding:7px 10px;
 }
+main.details-list table td{
+    font-weight: normal;
+    color: #3C3C3C;
+    padding:7px 10px;
+}
 main.order-list table.line-table tr.item-body td{
+    padding:15px 10px;
+}
+main.details-list table.line-table tr.item-body td{
     padding:15px 10px;
 }
 main.order-list table.line-table{
     border: 2px solid #ECECEC;
 }
+main.details-list table.line-table{
+    border: 2px solid #ECECEC;
+}
 main.order-list table.line-table:hover{
+    border: 2px solid #aaa;
+}
+main.details-list table.line-table:hover{
     border: 2px solid #aaa;
 }
 main.order-list table .item-head{
@@ -2317,10 +2379,22 @@ main.order-list table .item-head{
     line-height: 20px;
     background: #F1F1F1;
 }
+main.details-list table .item-head{
+    height:20px;
+    line-height: 20px;
+    background: #F1F1F1;
+}
 main.order-list table .item-head .seller img{
     height:13px;
 }
+main.details-list table .item-head .seller img{
+    height:13px;
+}
 main.order-list table .item-head .delete{
+    text-align: right;
+    font-size: 16px;
+}
+main.details-list table .item-head .delete{
     text-align: right;
     font-size: 16px;
 }
@@ -2328,10 +2402,21 @@ main.order-list table .item-head .delete a{
     display: inline-block;
     margin: 0 10px;
 }
+main.details-list table .item-head .delete a{
+    display: inline-block;
+    margin: 0 10px;
+}
 main.order-list table .item-head .delete a:hover{
     color:#999;
 }
+main.details-list table .item-head .delete a:hover{
+    color:#999;
+}
 main.order-list table .item-head .time-and-order b{
+    margin-right: 10px;
+    font-size: 13px;
+}
+main.details-list table .item-head .time-and-details b{
     margin-right: 10px;
     font-size: 13px;
 }
@@ -2342,11 +2427,25 @@ main.order-list table .item-head .wangwang{
     background: url("../img/wangwang.gif") no-repeat 0 0;
     position: relative;
 }
+main.details-list table .item-head .wangwang{
+    display: inline-block;
+    width: 67px;
+    height: 22px;
+    background: url("../img/wangwang.gif") no-repeat 0 0;
+    position: relative;
+}
 main.order-list table .item-name{
     vertical-align: top;
     position: relative;
 }
+main.details-list table .item-name{
+    vertical-align: top;
+    position: relative;
+}
 main.order-list .line-table .item-body td {
+    vertical-align: top;
+}
+main.details-list .line-table .item-body td {
     vertical-align: top;
 }
 main.order-list table .cart-item-jpg{
@@ -2354,10 +2453,23 @@ main.order-list table .cart-item-jpg{
     height:80px;
     border:1px solid #eee;
 }
+main.details-list table .book-item-jpg{
+    width:80px;
+    height:80px;
+    border:1px solid #eee;
+}
 main.order-list table .cart-item-title{
     color:#3c3c3c;
 }
+main.details-list table .book-item-title{
+    color:#3c3c3c;
+}
 main.order-list table .cart-item-title:hover{
+    /*color:#FF0036;*/
+    color:rgba(9, 0, 2, 0.44);
+    cursor: pointer;
+}
+main.details-list table .bool-item-title:hover{
     /*color:#FF0036;*/
     color:rgba(9, 0, 2, 0.44);
     cursor: pointer;
@@ -2367,7 +2479,17 @@ main.order-list table .cart-item-title-bottom{
     bottom: 10px;
     height:20px;
 }
+main.details-list table .book-item-title-bottom{
+    position: absolute;
+    bottom: 10px;
+    height:20px;
+}
 main.order-list table  .cart-item-old-price{
+    display: block;
+    text-decoration: line-through;
+    color:#9c9c9c;
+}
+main.details-list table  .book-item-old-price{
     display: block;
     text-decoration: line-through;
     color:#9c9c9c;
@@ -2376,7 +2498,15 @@ main.order-list table  .cart-item-now-price{
     display: block;
     color:#3c3c3c;
 }
+main.details-list table  .book-item-now-price{
+    display: block;
+    color:#3c3c3c;
+}
 main.order-list table .price-td{
+    text-align: center;
+    border:solid 1px #ECECEC;
+}
+main.details-list table .price-td{
     text-align: center;
     border:solid 1px #ECECEC;
 }
@@ -2384,10 +2514,20 @@ main.order-list table .order-item-sum{
     font-weight: 700;
     font-size: 13px;
 }
+main.details-list table .details-item-sum{
+    font-weight: 700;
+    font-size: 13px;
+}
 main.order-list table .freight{
     display: block;
 }
+main.details-list table .freight{
+    display: block;
+}
 main.order-list table .button-td{
+
+}
+main.details-list table .button-td{
 
 }
 main.order-list table .order-button{
@@ -2401,13 +2541,35 @@ main.order-list table .order-button{
     text-align: center;
     margin: 0 auto;
 }
+main.details-list table .order-button{
+    display: block;
+    border-radius: 2px;
+    color:white;
+    font-weight:700;
+    border-width: 0;
+    width:80px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
 main.order-list table .order-button.blue{
+    background-color: #66B6FF;
+}
+main.details-list table .order-button.blue{
     background-color: #66B6FF;
 }
 main.order-list table .order-button.blue:hover{
     background-color: #118ADB;
 }
+main.details-list table .order-button.blue:hover{
+    background-color: #118ADB;
+}
 main.order-list table .order-button.white{
+    background-color: #FFF;
+    color:#3c3c3c;
+    border: 1px solid #DCDCDC;
+}
+main.details-list table .order-button.white{
     background-color: #FFF;
     color:#3c3c3c;
     border: 1px solid #DCDCDC;
@@ -2416,17 +2578,33 @@ main.order-list table .order-button.white:hover{
     /*border-color:#FF0036;*/
     border-color:rgba(9, 0, 2, 0.44);
 }
+main.details-list table .order-button.white:hover{
+    /*border-color:#FF0036;*/
+    border-color:rgba(9, 0, 2, 0.44);
+}
 main.order-list table .num-center{
     text-align: center;
 }
+main.details-list table .num-center{
+    text-align: center;
+}
 main.order-list table .border-left{
+    border-left:solid 1px #ECECEC;
+}
+main.details-list table .border-left{
     border-left:solid 1px #ECECEC;
 }
 @media screen and (min-width: 1230px){
     section.order-type {
         width: 1190px;
     }
+    section.details-type {
+        width: 1190px;
+    }
     main.order-list {
+        width: 1190px;
+    }
+    main.details-list {
         width: 1190px;
     }
 }

@@ -50,9 +50,9 @@
                 <td>
                     <button class="btn btn-primary btn-xs detail-btn">查看详情</button>
                     <c:if test="${o.statusEnum == 'waitDeliver'}">
-                        <a href="deliver?oid=${o.id}">
+                        <%--<a href="deliver?oid=${o.id}">
                             <button class="btn btn-primary btn-xs">预约</button>
-                        </a>
+                        </a>--%>
                         <a href="choice?oid=${o.id}&mobile=${o.mobile}">
                             <button class="btn btn-primary btn-xs">分配人员</button>
                         </a>
@@ -65,12 +65,28 @@
                         <div class="panel-heading">预约详情</div>
                         <div class="panel-body">
                             <table class="table table-striped">
+                                <tr>
+                                    <td>照片</td>
+                                    <td>用户名</td>
+                                    <td>用户地址</td>
+                                    <td>用户手机号</td>
+                                    <td>用户预约时间</td>
+                                    <td>服务结束时间</td>
+                                    <td>服务名称</td>
+                                    <td>服务时间/小时</td>
+                                    <td>价格/元</td>
+                                </tr>
                                 <c:forEach items="${o.detailsitems}" var="item" varStatus="vs">
                                     <tr>
                                         <td><img width="40px" height="40px" src="../../../${serviceImgDir}${item.service.image.path}"></td>
+                                        <td>${item.details.user.name}</td>
+                                        <td>${item.details.address}</td>
+                                        <td>${item.details.mobile}</td>
+                                        <td>${item.details.deliverDate}</td>
+                                        <td>${item.details.confirmDate}</td>
                                         <td>${item.service.name}</td>
-                                        <td>${item.number}个</td>
-                                        <td>价格${item.service.price}元</td>
+                                        <td>${item.number}</td>
+                                        <td>${item.service.price}</td>
                                     </tr>
                                 </c:forEach>
                             </table>

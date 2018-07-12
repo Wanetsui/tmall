@@ -20,7 +20,16 @@ function calculate(table) {
         if (!isNaN(Number($(this).attr("price-per")))) {
             if ($(this).attr("select") === "true") {
                 selectNum += Number($(this).attr("buy"));
-                sumPrice += Number($(this).attr("buy")) * Number($(this).attr("price-per"));
+                if(selectNum==3){
+                    sumPrice += Number($(this).attr("buy")) * Number($(this).attr("price-per"))*0.9;
+                }else if(selectNum==4){
+                    sumPrice += Number($(this).attr("buy")) * Number($(this).attr("price-per"))*0.8;
+                }else if(selectNum==5){
+                    sumPrice += Number($(this).attr("buy")) * Number($(this).attr("price-per"))*0.7;
+                }else{
+                    sumPrice += Number($(this).attr("buy")) * Number($(this).attr("price-per"));
+                }
+                /*sumPrice += Number($(this).attr("buy")) * Number($(this).attr("price-per"));*/
             } else {
                 allSelected = false;
             }
@@ -55,7 +64,7 @@ function changeCartNum(num,ciid){
         {"id":ciid,"num":num},
         function (result) {
             if(result !== "success"){
-                alert("添加出错，可能是库存不足");
+                alert("添加出错，可能是时间过长");
                 return false;
             }
             return true;
@@ -95,32 +104,51 @@ $(function () {
     $(".book-change-button").click(function () {
         var tr = $(this).parents("tr");
         var stock = Number($(tr).attr("stock"));
+        var s = 12;
         var pricePer = Number($(tr).attr("price-per"));
         var ciid = Number($(tr).attr("ciid"));
         var num = Number($(tr).find(".item-num-input").val());
-        if (num < stock && $(this).attr("class").indexOf("in") > 0) {
+        if (num < s && $(this).attr("class").indexOf("in") > 0) {
             $(tr).find(".item-num-input").val(++num);
         } else if (num > 1 && $(this).attr("class").indexOf("de") > 0) {
             $(tr).find(".item-num-input").val(--num);
         }
         changeCartNum(num,ciid);
         $(tr).attr("buy", num);
-        $(tr).find(".book-item-sum").text("￥" + (pricePer * num).toFixed(2));
+        if(num==3){
+            $(tr).find(".book-item-sum").text("￥" + (pricePer * num*0.9).toFixed(2));
+        }else if(num==4){
+            $(tr).find(".book-item-sum").text("￥" + (pricePer * num*0.8).toFixed(2));
+        }else if(num>=5){
+            $(tr).find(".book-item-sum").text("￥" + (pricePer * num*0.7).toFixed(2));
+        }else{
+            $(tr).find(".book-item-sum").text("￥" + (pricePer * num).toFixed(2));
+        }
         sumUpdate();
     });
     $(".item-num-input").keyup(function () {
         var tr = $(this).parents("tr");
         var stock = Number($(tr).attr("stock"));
+        var s = 12;
         var pricePer = Number($(tr).attr("price-per"));
         var num = parseInt(($(tr).find(".item-num-input").val()));
         if(isNaN(num) || num<0){
             num = 1;
-        }else if(num>stock) {
-            num = stock
+        }else if(num>s) {
+            num = s
         }
         $(tr).find(".item-num-input").val(num);
         $(tr).attr("buy", num);
-        $(tr).find(".book-item-sum").text("￥" + (pricePer * num).toFixed(2));
+        if(num==3){
+            $(tr).find(".book-item-sum").text("￥" + (pricePer * num*0.9).toFixed(2));
+        }else if(num==4){
+            $(tr).find(".book-item-sum").text("￥" + (pricePer * num*0.8).toFixed(2));
+        }else if(num>=5){
+            $(tr).find(".book-item-sum").text("￥" + (pricePer * num*0.7).toFixed(2));
+        }else{
+            $(tr).find(".book-item-sum").text("￥" + (pricePer * num).toFixed(2));
+        }
+        /*$(tr).find(".book-item-sum").text("￥" + (pricePer * num).toFixed(2));*/
         sumUpdate();
     });
     $(".delete-button").click(function () {

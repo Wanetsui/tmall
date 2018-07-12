@@ -11,6 +11,12 @@ import java.util.List;
 public class WorkerServiceImpl implements WorkerService {
     @Autowired
     WorkerMapper workerMapper;
+
+    @Override
+    public int update(String name) {
+        return workerMapper.update(name);
+    }
+
     @Override
     public List<Worker> selectWorkerList(int sid) {
         return workerMapper.selectWorkerList(sid);

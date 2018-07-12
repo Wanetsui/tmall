@@ -42,7 +42,7 @@
                 <td>${o.statusText}</td>
                 <td>${o.sum}</td>
                 <%--<td>${o.totalNumber}</td>--%>
-                <td>${o.user.name}</td>
+                <td>${o.receiver}</td>
                 <td><fmt:formatDate value="${o.createDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
                 <td><fmt:formatDate value="${o.payDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
                 <td><fmt:formatDate value="${o.deliverDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
@@ -79,7 +79,7 @@
                                 <c:forEach items="${o.detailsitems}" var="item" varStatus="vs">
                                     <tr>
                                         <td><img width="40px" height="40px" src="../../../${serviceImgDir}${item.service.image.path}"></td>
-                                        <td>${item.details.user.name}</td>
+                                        <td>${o.receiver}</td>
                                         <td>${item.details.address}</td>
                                         <td>${item.details.mobile}</td>
                                         <td>${item.details.deliverDate}</td>

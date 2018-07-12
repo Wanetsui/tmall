@@ -1,4 +1,4 @@
-<%--
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
@@ -311,12 +311,13 @@
                 <div class="col-md-1 col-sm-1"></div>
                 <div class="col-md-10 col-sm-10">
                     <div class="col-md-12 col-sm-12">
-                        <select class="form-control">
+                        <select class="form-control" name="select">
                             <option>物业公告</option>
                             <option>社区通知</option>
                             <option>二手出售</option>
                             <option>社区交流</option>
                         </select>
+
                     </div>
                     <div class="col-md-12 col-sm-12">
                         <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
@@ -375,4 +376,4 @@
 <script src="js/custom.js"></script>
 
 </body>
-</html>--%>
+</html>

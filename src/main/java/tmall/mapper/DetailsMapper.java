@@ -1,6 +1,10 @@
 package tmall.mapper;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 import tmall.pojo.Details;
 import tmall.pojo.DetailsExample;
 
@@ -60,4 +64,6 @@ public interface DetailsMapper extends BaseMapper<Details, DetailsExample> {
      * @mbg.generated
      */
     int updateByPrimaryKey(Details record);
+
+    int update(@Param("id") int id, @Param("date") Date date);
 }

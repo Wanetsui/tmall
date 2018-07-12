@@ -65,6 +65,11 @@ public class InformationServiceImpl  implements InformationService {
     }
 
     @Override
+    public int update(int id, String title, String info) {
+        return informationMapper.edit(id,title,info);
+    }
+
+    @Override
     public int delete(int id) {
         return informationMapper.delete(id);
     }

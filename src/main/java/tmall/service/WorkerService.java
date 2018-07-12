@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface WorkerService {
     List<Worker> selectWorkerList(int sid);
+    int update(String name);
 }

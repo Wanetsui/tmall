@@ -10,6 +10,7 @@
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="info" jdbcType="VARCHAR" property="info" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="catalog" jdbcType="INTEGER" property="catalog" />
   </resultMap>
 
 

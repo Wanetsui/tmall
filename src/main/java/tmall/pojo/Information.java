@@ -23,6 +23,16 @@ public class Information {
 
     private Date createTime;
 
+    private int catalog;
+
+    public int getCatalog() {
+        return catalog;
+    }
+
+    public void setCatalog(int catalog) {
+        this.catalog = catalog;
+    }
+
     public String getTitle() {
         return title;
     }

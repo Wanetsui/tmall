@@ -29,6 +29,21 @@ public class InformationController extends BaseController{
         return "redirect:list";
     }
 
+    @RequestMapping("edit")
+    public String edit(int id){
+        System.out.println(id);
+        informationService.delete(id);
+        return "redirect:list";
+    }
+
+    @RequestMapping("add")
+    public String add(int id){
+        System.out.println(id);
+        informationService.delete(id);
+        return "redirect:list";
+    }
+
+
 
 
 }

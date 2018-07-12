@@ -47,16 +47,26 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
         return "information";
     }*/
+//    @RequestMapping("/inform")
+//    public String inform(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model) throws Exception {
+////        System.out.println(informationService.selectByPrimaryKey(1));
+////        System.out.println(informationService.selectCount());
+//       // System.out.println(currentPage);
+//        //List<Information> informations =   informationService.selectInformationList();
+//       // model.addAttribute("pagemsg", informationService.findByPage(currentPage));
+//        model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
+//        return "inform";
+//    }
     @RequestMapping("/inform")
-    public String inform(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model) throws Exception {
+    public String info( Model model) throws Exception {
 //        System.out.println(informationService.selectByPrimaryKey(1));
 //        System.out.println(informationService.selectCount());
-        System.out.println(currentPage);
         //List<Information> informations =   informationService.selectInformationList();
-        model.addAttribute("pagemsg", informationService.findByPage(currentPage));
-        model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
+        model.addAttribute("informations", informationService.selectInformationList());
+        System.out.println(informationService.selectInformationList().size());
         return "inform";
     }
+
     @RequestMapping("/gopublish")
     public String gopublish(){
         return "publish";
@@ -88,6 +98,7 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("types", types);
         return "shome";
     }
+
 
     @RequestMapping("product")
     public String product(Integer id, Model model) throws Exception {

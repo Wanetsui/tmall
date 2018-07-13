@@ -98,7 +98,17 @@ public class ShowController extends FrontBaseController {
         information.setCatalog(catalog);
         information.setCreateTime(new Date());
         informationService.insert(information);
-        /*return "redirect:/information";*/
+
+
+        return "redirect:/inform";
+    }
+
+    @RequestMapping("keySearch")
+    public String KeySearch(String keyword,Model model){
+
+        List<Information> informationList = informationService.searchByKeyword("test");
+        System.out.println("keyword  :"+informationList.size());
+        model.addAttribute("searchResult",informationList);
         return "redirect:/inform";
     }
 

@@ -13,4 +13,5 @@ public interface InformationService {
     int insert(Information information);
     int delete(int id);
     int update(int id,String title,String  info);
+    List<Information> searchByKeyword(String keyword);
 }

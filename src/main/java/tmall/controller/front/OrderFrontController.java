@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.annotation.Auth;
+import tmall.annotation.Nullable;
 import tmall.exception.AuthException;
 import tmall.exception.ParameterException;
 import tmall.mapper.DetailsMapper;
@@ -13,6 +14,8 @@ import tmall.pojo.extension.DetailsExtension;
 
 import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -293,9 +296,10 @@ public class OrderFrontController extends FrontBaseController {
     }
     @RequestMapping("createDetails")
     public String createDetails(String address, String receiver,
-                              String mobile,
-                              String userMessage,
-                              HttpSession session) throws Exception {
+                                String mobile,
+                                String userMessage,
+                                @Nullable Timestamp start, @Nullable Timestamp end,
+                                HttpSession session) throws Exception {
         List<Advance> advances = (List<Advance>) session.getAttribute("advances");
         User user = (User) session.getAttribute("user");
         //简单校验下手机
@@ -310,6 +314,12 @@ public class OrderFrontController extends FrontBaseController {
         details.setMobile(mobile);
         details.setUserMessage(userMessage);
         details.setUser(user);
+        System.out.println(start);
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        System.out.println(start);
+//        System.out.println(sdf.parse(end));
+        details.setDeliverDate(start);
+        details.setConfirmDate(end);
         detailsService.createDetails(details, advances);
         return "redirect:payHome?oid=" + details.getId();
     }

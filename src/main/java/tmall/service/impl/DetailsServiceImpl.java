@@ -9,6 +9,7 @@ import tmall.pojo.extension.DetailsExtension;
 import tmall.service.*;
 
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -23,6 +24,12 @@ public class DetailsServiceImpl extends BaseServiceImpl<DetailsMapper,DetailsExa
     ServiceService serviceService;
     @Autowired
     DetailsMapper detailsMapper;
+
+    @Override
+    public int updateDate(int id,Date date) {
+        return detailsMapper.update(id,date);
+    }
+
     @Override
     public void createDetails(Details details, List<Advance> advances) throws Exception {
         String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSS").format(new Date())+ RandomUtils.nextInt();

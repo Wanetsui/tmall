@@ -8,6 +8,7 @@ import tmall.controller.BaseController;
 import tmall.pojo.Information;
 import tmall.service.InformationService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -30,9 +31,18 @@ public class InformationController extends BaseController{
     }
 
     @RequestMapping("edit")
-    public String edit(int id){
+    public String edit(int id,Model model){
         System.out.println(id);
-        informationService.delete(id);
+        model.addAttribute("id",id);
+        return "admin/editInform";
+    }
+    @RequestMapping("update")
+    public String edit(HttpServletRequest request){
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        String recommend = request.getParameter("recommend");
+        System.out.println(id+name+recommend);
+        informationService.update(Integer.valueOf(id),name,recommend);
         return "redirect:list";
     }
 

@@ -109,9 +109,9 @@
         </table>
         <label>预约时间：</label>
         <label>从</label>
-        <input type="text"  id="start" class="form_datetime1">
+        <input type="text"  name="start" class="form_datetime1">
         <label>到</label>
-        <input type="text" placeholder="结束时间" id="end" class="form_datetime2">
+        <input type="text" placeholder="结束时间" name="end" class="form_datetime2">
         <div class="buy-list-tip">确认订单信息</div>
         <table class="buy-list">
             <thead>

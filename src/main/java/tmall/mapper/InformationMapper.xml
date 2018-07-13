@@ -39,9 +39,12 @@
     select count(*) from information
   </select>
   <insert id="insert" parameterType="tmall.pojo.Information" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
-    INSERT  INTO information(title,info) VALUES (#{title},#{info})
+    INSERT  INTO information(title,info,catalog) VALUES (#{title},#{info},#{catalog})
   </insert>
   <delete id="delete">
     DELETE from information WHERE id = #{id}
   </delete>
+  <update id="edit">
+    UPDATE information set title = #{title} ,info = #{info} where id = #{id}
+  </update>
 </mapper>

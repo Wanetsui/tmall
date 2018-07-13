@@ -10,6 +10,7 @@ import tmall.pojo.extension.DetailsExtension;
 import tmall.util.Pagination;
 
 import javax.servlet.http.HttpSession;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -60,7 +61,10 @@ public class DetailsController extends AdminBaseController {
         detailWorker.setMobile(mobile);
         detailWorker.setWname(wname);
         detailWorkerService.insert(detailWorker);
-        return "admin/listDetails";
+        workerService.update(wname);
+//        Date assignDate = new Date();
+//        detailsService.updateDate(oid,assignDate);
+        return "redirect:list";
     }
 
 }

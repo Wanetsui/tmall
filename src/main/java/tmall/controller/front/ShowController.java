@@ -5,11 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import tmall.annotation.Auth;
 import tmall.annotation.Nullable;
 import tmall.pojo.*;
+import tmall.pojo.extension.UserExtension;
 import tmall.util.Pagination;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -57,6 +60,7 @@ public class ShowController extends FrontBaseController {
 //        model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
 //        return "inform";
 //    }
+    @Auth(User.Group.user)
     @RequestMapping("/inform")
     public String info( Model model) throws Exception {
 //        System.out.println(informationService.selectByPrimaryKey(1));
@@ -73,12 +77,26 @@ public class ShowController extends FrontBaseController {
     }
     @RequestMapping("/publish")
     public String publish(HttpServletRequest request){
-        String title =  request.getParameter("title");
-        String info =  request.getParameter("context");
-
+        String title =  request.getParameter("subject");
+        String info =  request.getParameter("message");
+        String select = request.getParameter("select");
+        System.out.println(select);
+        int catalog = 0;
+        if(select.equals("物业公告")){
+            catalog = 1;
+        }else if (select.equals("社区通知")){
+            catalog=2;
+        }else if (select.equals("二手出售")){
+            catalog=3;
+        }else if (select.equals("社区交流")){
+            catalog = 4;
+        }
+        System.out.println(catalog);
         Information information = new Information();
         information.setTitle(title);
         information.setInfo(info);
+        information.setCatalog(catalog);
+        information.setCreateTime(new Date());
         informationService.insert(information);
         /*return "redirect:/information";*/
         return "redirect:/inform";

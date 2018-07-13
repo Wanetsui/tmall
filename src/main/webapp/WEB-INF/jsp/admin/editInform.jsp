@@ -37,10 +37,10 @@
                         <label for="recommend" class="col-sm-2 control-label">信息内容</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="recommend" name="recommend"
-                                   placeholder="默认为0不推荐，首页不显示产品大图。优先级越高排越前" value="${information.info}">
+                                   placeholder="请输入信息内容" value="${information.info}">
                         </div>
                     </div>
-                    <input type="hidden" name="id" value="${information.id}">
+                    <input type="hidden" name="id" value="${id}">
 
                     <div class="form-group">
                         <div style="text-align: center">

@@ -287,4 +287,8 @@
       deleteAt = #{deleteAt,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+<update id="update">
+  UPDATE  details_ set deliverDate = #{date} where id = #{id}
+</update>
 </mapper>

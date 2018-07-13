@@ -9,6 +9,7 @@ import tmall.pojo.Information;
 import tmall.service.InformationService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -47,9 +48,28 @@ public class InformationController extends BaseController{
     }
 
     @RequestMapping("add")
-    public String add(int id){
+    /*public String add(int id){
         System.out.println(id);
         informationService.delete(id);
+        return "redirect:list";
+    }*/
+    public String add(String subject, String message, String recommend) throws Exception {
+        Information c = new Information();
+        c.setTitle(subject);
+        c.setInfo(message);
+        int catalog = 0;
+        if(recommend.equals("物业公告")){
+            catalog = 1;
+        }else if (recommend.equals("社区通知")){
+            catalog=2;
+        }else if (recommend.equals("二手出售")){
+            catalog=3;
+        }else if (recommend.equals("社区交流")){
+            catalog = 4;
+        }
+        c.setCatalog(catalog);
+        c.setCreateTime(new Date());
+        informationService.insert(c);
         return "redirect:list";
     }
 

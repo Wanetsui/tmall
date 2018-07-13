@@ -36,12 +36,18 @@
                 <td class="first-column left-column">详细地址<span class="red-star">*</span></td>
                 <td class="right-column"><textarea placeholder="建议您如实填写详细收货地址，例如接到名称，门牌号码，楼层和房间号等信息"
                                                    name="address"></textarea></td>
+
             </tr>
             <tr>
-                <td class="left-column">邮政编码</td>
-                <td class="right-column"><input type="text" placeholder="如果您不清楚邮递区号，请不要填写" name="post"></td>
+                <td class="left-column">运送方式</td>
+                <td class="right-column"> <select class="delivery-select">
+                    <option>商家免费上门配送</option>
+                    <option>自取 物业中心二楼</option>
+                </select></td>
             </tr>
+
             <tr>
+
                 <td class="left-column">收货人姓名<span class="red-star">*</span></td>
                 <td class="right-column"><input type="text" placeholder="长度不超过25个字符" name="receiver"></td>
             </tr>
@@ -102,19 +108,12 @@
                 <td rowspan="2" width="45%" class="comment-td">给卖家留言：
                     <textarea class="comment-input" name="userMessage" placeholder="选填:对本次交易的说明(建议填写已和卖家协商一致的内容)"></textarea>
                 </td>
-                <td>
-                    运送方式：
-                    <select class="delivery-select">
-                        <option>快递 免邮费</option>
-                        <option>自取 物业中心二楼</option>
-                    </select>
-                    <span class="pull-right deliver-num">0.00</span>
-                </td>
+
             </tr>
             <tr>
                 <td class="sum-num-td">
                 <span class="pull-right">
-                    店铺合计(含运费) <span class="sum-num">￥${sum}</span>
+                    店铺合计 <span class="sum-num">￥${sum}</span>
                 </span>
                 </td>
             </tr>

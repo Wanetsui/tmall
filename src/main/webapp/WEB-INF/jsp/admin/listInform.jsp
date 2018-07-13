@@ -52,24 +52,30 @@
             <div class="panel-body">
                 <form class="form-horizontal" method="post" id="add-form" action="add" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">标题</label>
+                        <label for="subject" class="col-sm-2 control-label">标题</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="name"
+                            <input type="text" class="form-control" id="subject" name="subject"
                                    placeholder="请输入标题">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">内容</label>
+                        <label for="message" class="col-sm-2 control-label">内容</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="name"
-                                   placeholder="请输入内容  ">
+                            <textarea type="text" class="form-control" id="message" name="message"
+                                      placeholder="请输入内容  "></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="recommend" class="col-sm-2 control-label">分类板块</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="recommend" name="recommend"
-                                   placeholder="1物业公告 2社区通知 3二手出售 4社区交流" value="0">
+                            <select id="recommend" name="recommend" class="form-control">
+                                <option>物业公告</option>
+                                <option>社区通知</option>
+                                <option>二手出售</option>
+                                <option>社区交流</option>
+                            </select>
+                            <%--<input type="text" class="form-control" id="recommend" name="recommend"
+                                   placeholder="1物业公告 2社区通知 3二手出售 4社区交流" value="0">--%>
                         </div>
                     </div>
 

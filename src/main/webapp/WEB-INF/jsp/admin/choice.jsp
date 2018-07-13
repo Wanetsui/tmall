@@ -9,119 +9,56 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>人员分配</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
-
-
-    <link href="css/font-awesome.css" rel="stylesheet" />
-
-    <link href="css/adminia.css" rel="stylesheet" />
-    <link href="css/adminia-responsive.css" rel="stylesheet" />
-
-    <link href="css/dashboard.css" rel="stylesheet" />
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
-
-<body>
-
-<div id="content">
-
-    <div class="container">
-
-        <div class="row">
+<c:set var="title" value="人员分配表"/>
+<%@include file="common/adminHeader.jsp" %>
 
 
 
-            <div class="span9">
+<div class="container" >
+    <ol class="breadcrumb">
+        <li class="active">人员分配表</li>
+    </ol>
+    <form action = "choice">
+        <table class="table table-hover table-striped">
+            <thead>
+            <tr>
+                <th scope="col">
+                    #
+                </th>
+                <th scope="col">
+                    姓名
+                </th>
+                <th scope="col">
+                    性别
+                </th>
+                <th scope="col">
+                    身份证号
+                </th>
+                <th scope="col">
+                    服务类别
+                </th>
+                <th scope="col">
+                    选择
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <jsp:useBean id="workers" scope="request" type="java.util.List"/>
+            <c:forEach items="${workers}" var="item">
+                <tr select="false" card ="${item.card}" catalog ="${item.catalog}" img ="${item.img}" name="${item.name}" gender="${item.gender}" id="${item.id}">
+                    <th scope="row">${item.id}</th>
+                    <td>${item.name}</td>
+                    <td>${item.gender}</td>
+                    <td>${item.card}</td>
+                    <td>${item.catalog}</td>
+                    <td><a href="assign?oid=${oid}&mobile=${mobile}&wname=${item.name}">分配</a></td>
+                </tr>
+            </c:forEach>
 
-                <div class="widget widget-table">
+            </tbody>
+        </table>
+    </form>
+</div>
 
-                    <div class="widget-header">
-                        <i class="icon-th-list"></i>
-                        <h3>人员分配表</h3>
-                    </div> <!-- /widget-header -->
-
-                    <div class="widget-content">
-                        <form action = "choice">
-                            <table class="table table-striped table-bordered">
-                                <thead>
-                                <tr>
-                                    <th class="item-name">
-                                        姓名
-                                    </th>
-                                    <th class="glyphicon-envelope">
-                                        性别
-                                    </th>
-                                    <th class="glyphicon-credit-card">
-                                        身份证号
-                                    </th>
-                                    <th class="typeahead">
-                                        服务类别
-                                    </th>
-                                    <th class="checkbox">
-                                        选择
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach items="${workers}" var="item">
-                                    <tr select="false" card ="${item.card}" catalog ="${item.catalog}" img ="${item.img}" name="${item.name}" gender="${item.gender}" id="${item.id}">
-                                        <input type="hidden" name="id" value="${item.id}">
-                                        <td>
-                                            <span class="item-name">${item.name}</span>
-                                        </td>
-                                        <td>
-                                            <span class="glyphicon-envelope">${item.gender}</span>
-                                        </td>
-                                        <td>
-                                            <span class="glyphicon-credit-card">${item.card}</span>
-                                        </td>
-                                        <td>
-                                            <span class="typeahead">${item.catalog}</span>
-                                        </td>
-                                        <td class="action-td">
-                                            <a href="assign?oid=${oid}&mobile=${mobile}&wname=${item.name}" class="btn btn-small btn-warning">
-                                                <i class="icon-ok"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-
-                                </tbody>
-                            </table>
-                        </form>
-
-
-
-
-
-                    </div> <!-- /widget-content -->
-
-                </div> <!-- /widget -->
-
-            </div> <!-- /span9 -->
-
-
-        </div> <!-- /row -->
-
-    </div> <!-- /container -->
-
-</div> <!-- /content -->
-
-<script src="js/jquery-1.7.2.min.js"></script>
-<script src="js/excanvas.min.js"></script>
-<script src="js/bootstrap.js"></script>
-
-
-</body>
-</html>
+<%@include file="common/adminPage.jsp" %>
+<%@include file="common/adminFooter.jsp" %>

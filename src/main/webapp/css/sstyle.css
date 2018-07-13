@@ -51,7 +51,7 @@ img:hover {
     margin: 0 !important;
   }
 .navbar-default .navbar-brand {
-    background: #dc5034;
+    background: rgba(12, 4, 3, 0.62);
     color: #fff;
     font-weight: bold;
     font-size: 30px;

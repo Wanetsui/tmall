@@ -19,9 +19,9 @@
 <nav class="top">
     <div class="top-bar">
         <span class="top-left">
-            <c:if test="${empty home}">
+            <%--<c:if test="${empty home}">--%>
             <span style="margin-left: 0"><span class=" glyphicon glyphicon-home redColor" style="margin-left: 0"></span><a href="./">首页</a></span>
-            </c:if>
+            <%--</c:if>--%>
             <span>欢迎来到${website_name}</span>
 
             <c:if test="${!empty user}">

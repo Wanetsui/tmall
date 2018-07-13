@@ -78,8 +78,11 @@
                                 <th class="item-title">
                                     标题
                                 </th>
+                                <th class="item-title">
+                                    内容
+                                </th>
                                 <th class="list-group-item-info">
-                                    创建时间
+                                    发布时间
                                 </th>
                             </tr>
                             </thead>
@@ -89,7 +92,10 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"> <a href="#">${item.title}</a></span>
+                                        <span class="item-title">${item.title}</span>
+                                    </td>
+                                    <td>
+                                        <span class="item-title"> ${item.info}</span>
                                     </td>
                                     <td>
                                         <span class="list-group-item-info">${item.createTime}</span>
@@ -138,8 +144,11 @@
                                 <th class="item-title">
                                     标题
                                 </th>
+                                <th class="item-title">
+                                    内容
+                                </th>
                                 <th class="list-group-item-info">
-                                    创建时间
+                                    发布时间
                                 </th>
                             </tr>
                             </thead>
@@ -149,7 +158,10 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"> <a href="#">${item.title}</a></span>
+                                        <span class="item-title">${item.title}</span>
+                                    </td>
+                                    <td>
+                                        <span class="item-title">${item.info}</span>
                                     </td>
                                     <td>
                                         <span class="list-group-item-info">${item.createTime}</span>
@@ -199,8 +211,11 @@
                                 <th class="item-title">
                                     标题
                                 </th>
+                                <th class="item-title">
+                                    内容
+                                </th>
                                 <th class="list-group-item-info">
-                                    创建时间
+                                    发布时间
                                 </th>
                             </tr>
                             </thead>
@@ -210,7 +225,10 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"> <a href="#">${item.title}</a></span>
+                                        <span class="item-title"> ${item.title}</span>
+                                    </td>
+                                    <td>
+                                        <span class="item-title"> ${item.info}</span>
                                     </td>
                                     <td>
                                         <span class="list-group-item-info">${item.createTime}</span>
@@ -259,8 +277,11 @@
                                 <th class="item-title">
                                     标题
                                 </th>
+                                <th class="item-title">
+                                    内容
+                                </th>
                                 <th class="list-group-item-info">
-                                    创建时间
+                                    发布时间
                                 </th>
                             </tr>
                             </thead>
@@ -270,7 +291,10 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"> <a href="#">${item.title}</a></span>
+                                        <span class="item-title"> ${item.title}</span>
+                                    </td>
+                                    <td>
+                                        <span class="item-title"> ${item.info}</span>
                                     </td>
                                     <td>
                                         <span class="list-group-item-info">${item.createTime}</span>
@@ -305,25 +329,25 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <h2>Keep in touch</h2>
+                <h2>我要发布</h2>
             </div>
             <form action="publish" method="post" role="form">
                 <div class="col-md-1 col-sm-1"></div>
                 <div class="col-md-10 col-sm-10">
                     <div class="col-md-12 col-sm-12">
                         <select class="form-control" name="select">
-                            <option>物业公告</option>
-                            <option>社区通知</option>
+                            <%--<option>物业公告</option>
+                            <option>社区通知</option>--%>
                             <option>二手出售</option>
                             <option>社区交流</option>
                         </select>
 
                     </div>
                     <div class="col-md-12 col-sm-12">
-                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
+                        <input name="subject" type="text" class="form-control" id="subject" placeholder="标题">
                     </div>
                     <div class="col-md-12 col-sm-12">
-                        <textarea name="message" rows="5" class="form-control" id="message" placeholder="Message"></textarea>
+                        <textarea name="message" rows="5" class="form-control" id="message" placeholder="详细内容           "></textarea>
                     </div>
                     <div class="col-md-8 col-sm-8">
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</p>

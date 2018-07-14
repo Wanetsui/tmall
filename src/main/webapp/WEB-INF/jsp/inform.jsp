@@ -90,7 +90,7 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item" varStatus="c">
-                                <c:if test="${item.catalog==1 and c.count>=1 and c.count<=10}">
+                                <c:if test="${item.catalog==1}">
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
@@ -136,11 +136,11 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item" varStatus="c">
-                                <c:if test="${item.catalog==2 and c.count>=1 and c.count<=10}">
+                                <c:if test="${item.catalog==2}">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
-                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</span>
+                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
                                         </td>
                                         <%--<td>
                                             <span class="item-title">${item.info}</span>
@@ -211,11 +211,11 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item" varStatus="c">
-                                <c:if test="${item.catalog==3 and c.count>=1 and c.count<=10}">
+                                <c:if test="${item.catalog==3}">
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"><a href="concrete?id=${item.id}"> ${item.title}</span>
+                                        <span class="item-title"><a href="concrete?id=${item.id}"> ${item.title}</a></span>
                                     </td>
                                     <%--<td>
                                         <span class="item-title"> ${item.info}</span>
@@ -257,11 +257,11 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item" varStatus="c">
-                                <c:if test="${item.catalog==4 and c.count>=1 and c.count<=10}">
+                                <c:if test="${item.catalog==4}">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
-                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</span>
+                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
                                         </td>
                                        <%-- <td>
                                             <span class="item-title"> ${item.info}</span>

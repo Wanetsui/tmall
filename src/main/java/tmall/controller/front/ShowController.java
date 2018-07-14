@@ -99,7 +99,7 @@ public class ShowController extends FrontBaseController {
             catalog=2;
         }else if (select.equals("二手出售")){
             catalog=3;
-        }else if (select.equals("社区交流")){
+        }else if (select.equals("失物招领")){
             catalog = 4;
         }
         System.out.println(catalog);

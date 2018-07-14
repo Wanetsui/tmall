@@ -140,7 +140,7 @@
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
-                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</span>
+                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
                                         </td>
                                         <%--<td>
                                             <span class="item-title">${item.info}</span>
@@ -215,7 +215,7 @@
                                 <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                     <input type="hidden" name="id" value="${item.id}">
                                     <td>
-                                        <span class="item-title"><a href="concrete?id=${item.id}"> ${item.title}</span>
+                                        <span class="item-title"><a href="concrete?id=${item.id}"> ${item.title}</a></span>
                                     </td>
                                     <%--<td>
                                         <span class="item-title"> ${item.info}</span>
@@ -261,7 +261,7 @@
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
-                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</span>
+                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
                                         </td>
                                        <%-- <td>
                                             <span class="item-title"> ${item.info}</span>

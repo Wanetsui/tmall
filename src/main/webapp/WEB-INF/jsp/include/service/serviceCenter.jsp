@@ -24,7 +24,7 @@
     </div>
     <div class="detail">
         <div class="service-title">
-            ${service.name}价格表
+            &nbsp&nbsp${service.name}价格表
         </div>
         <div <%--class="price"--%>>
             <table border="1" width="500" align="center">

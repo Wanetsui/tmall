@@ -85,10 +85,10 @@
                     </div>
                     <div class="col-md-12 col-sm-12">
                         <%--<textarea name="message" rows="5" class="form-control" id="message" placeholder="详细内容 "></textarea>--%>
-                            <textarea name="message" cols="20" rows="2" class="ckeditor" id="TextArea" placeholder="详细内容 "></textarea>
+                            <textarea name="message" cols="20" rows="2" class="ckeditor" id="message" placeholder="详细内容 "></textarea>
                     </div>
                     <script type="text/javascript">
-                        CKEDITOR.replace('TextArea');
+                        CKEDITOR.replace('message');
                     </script>
                     <div class="col-md-4 col-sm-4">
                         <input name="submit" type="submit" class="form-control" id="submit" value="提交信息">
@@ -114,6 +114,6 @@
 <script src="js/isotope.js"></script>
 <script src="js/imagesloaded.min.js"></script>
 <script src="js/custom.js"></script>
-<script src="js/ckeditor.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
 </body>
 </html>

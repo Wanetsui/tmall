@@ -1,7 +1,7 @@
-package tmall.mapper;
+package tmall.service;
 
 import tmall.pojo.OrderTime;
 
-public interface OrderTimeMapper {
+public interface OrderTimeService {
     int insert(OrderTime orderTime);
 }

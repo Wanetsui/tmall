@@ -276,7 +276,7 @@ public class OrderFrontController extends FrontBaseController {
     public String createOrder(String address, String post, String receiver,
                               String mobile,
                               String userMessage,
-                              Date start,
+                              @Nullable Date start,
                               HttpSession session) throws Exception {
         List<CartItem> cartItems = (List<CartItem>) session.getAttribute("cartItems");
         User user = (User) session.getAttribute("user");
@@ -292,9 +292,14 @@ public class OrderFrontController extends FrontBaseController {
         order.setMobile(mobile);
         order.setUserMessage(userMessage);
         order.setUser(user);
+        order.setConfirmDate(start);
         orderService.createOrder(order, cartItems);
+      //  OrderTime orderTime = new OrderTime();
         return "redirect:pay?oid=" + order.getId();
     }
+
+
+
     @RequestMapping("createDetails")
     public String createDetails(String address, String receiver,
                                 String mobile,

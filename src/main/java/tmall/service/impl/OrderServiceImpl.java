@@ -26,6 +26,8 @@ public class OrderServiceImpl extends BaseServiceImpl<OrderMapper,OrderExample>
     OrderItemService orderItemService;
     @Autowired
     ProductService productService;
+    @Autowired
+    OrderMapper orderMapper;
     @Override
     public void createOrder(Order order, List<CartItem> cartItems) throws Exception {
         String orderCode = new SimpleDateFormat("yyyyMMddHHmmssSS").format(new Date())+ RandomUtils.nextInt();
@@ -57,5 +59,10 @@ public class OrderServiceImpl extends BaseServiceImpl<OrderMapper,OrderExample>
             orderItemService.add(orderItem);
         }
 
+    }
+
+    @Override
+    public List<Order> orderBySendTime() {
+        return orderMapper.orderBySendTime();
     }
 }

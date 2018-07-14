@@ -19,6 +19,10 @@
     <ol class="breadcrumb">
         <li>商品订单</li>
     </ol>
+    <a href="orderBySendTime">
+        <button>按配送时间排序</button>
+    </a>
+
     <table class="table">
         <thead>
         <tr>
@@ -30,7 +34,7 @@
             <th scope="col">创建时间</th>
             <th scope="col">支付时间</th>
             <th scope="col">发货时间</th>
-            <th scope="col">确认收货时间</th>
+            <th scope="col">配送时间</th>
             <th scope="col" width="120px">操作</th>
         </tr>
         </thead>
@@ -39,7 +43,7 @@
         <c:forEach items="${orders}" var="o" varStatus="vs">
             <tr>
                 <th scope="row">${o.id}</th>
-                <td>${o.statusText}</td>
+                <td>${o.status}</td>
                 <td>${o.sum}</td>
                 <td>${o.totalNumber}</td>
                 <td>${o.user.name}</td>

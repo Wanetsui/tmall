@@ -12,4 +12,6 @@ public interface OrderService extends BaseService{
      * 添加订单
      */
     public void createOrder(Order order ,List<CartItem> cartItems) throws Exception;
+
+    List<Order> orderBySendTime();
 }

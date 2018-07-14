@@ -16,6 +16,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class ShowController extends FrontBaseController {
+    static String keyword = "";
     @RequestMapping("/")
     public String pageIndex(){
         return "index";
@@ -49,10 +50,20 @@ public class ShowController extends FrontBaseController {
         return "information";
     }*/
     @RequestMapping("/readmore")
-    public String readmore( Model model,int catalog) throws Exception {
+    public String readmore( Model model,int catalog,@Nullable String cata) throws Exception {
         model.addAttribute("informations", informationService.getInfomationsByCatalog(catalog));
         model.addAttribute("catalog", catalog);
         System.out.println(informationService.getInfomationsByCatalog(catalog).size());
+       if( cata == null) {
+
+       }else{
+           System.out.println("keyword:   "+keyword);
+           System.out.println("catalog:   "+cata);
+           int cat = Integer.valueOf(cata);
+           List<Information> informationList = informationService.searchByKeyword(keyword,cat);
+           System.out.println("keyword  :"+informationList.size());
+           model.addAttribute("searchResult",informationList);
+       }
         return "readmore";
     }
     @RequestMapping("/concrete")
@@ -77,8 +88,15 @@ public class ShowController extends FrontBaseController {
 //        System.out.println(informationService.selectByPrimaryKey(1));
 //        System.out.println(informationService.selectCount());
         //List<Information> informations =   informationService.selectInformationList();
-        model.addAttribute("informations", informationService.selectInformationList());
-        System.out.println(informationService.selectInformationList().size());
+        List<Information> informationList1 = informationService.getlimitInfomationsByCatalog(1);
+        List<Information> informationList2 = informationService.getlimitInfomationsByCatalog(2);
+        List<Information> informationList3 = informationService.getlimitInfomationsByCatalog(3);
+        List<Information> informationList4 = informationService.getlimitInfomationsByCatalog(4);
+        informationList1.addAll(informationList2);
+        informationList1.addAll(informationList3);
+        informationList1.addAll(informationList4);
+        model.addAttribute("informations", informationList1);
+        System.out.println(informationList1.size());
         return "inform";
     }
     @Auth(User.Group.user)
@@ -114,13 +132,18 @@ public class ShowController extends FrontBaseController {
         return "redirect:/inform";
     }
 
-    @RequestMapping("keySearch")
-    public String KeySearch(String keyword,Model model){
-
-        List<Information> informationList = informationService.searchByKeyword("test");
+    @RequestMapping("searchInfo")
+    public String KeySearch(HttpServletRequest request,Model model){
+         keyword = request.getParameter("keyword");
+        String catalog = request.getParameter("catalog");
+        System.out.println("keyword:   "+keyword);
+        System.out.println("catalog:   "+catalog);
+        int cata = Integer.valueOf(catalog);
+        List<Information> informationList = informationService.searchByKeyword(keyword,cata);
         System.out.println("keyword  :"+informationList.size());
         model.addAttribute("searchResult",informationList);
-        return "redirect:/inform";
+
+        return "redirect:/readmore?cata="+catalog+"&keyword="+keyword+"&catalog="+catalog;
     }
 
     @RequestMapping("/shome")

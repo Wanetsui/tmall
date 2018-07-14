@@ -60,4 +60,6 @@ public interface OrderMapper extends BaseMapper<Order, OrderExample> {
      * @mbg.generated
      */
     int updateByPrimaryKey(Order record);
+
+    List<Order> orderBySendTime();
 }

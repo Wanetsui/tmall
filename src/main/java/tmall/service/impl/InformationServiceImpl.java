@@ -65,13 +65,18 @@ public class InformationServiceImpl  implements InformationService {
     }
 
     @Override
-    public List<Information> searchByKeyword(String keyword) {
-        return informationMapper.searchByKeyword(keyword);
+    public List<Information> searchByKeyword(String keyword,int cata) {
+        return informationMapper.searchByKeyword(keyword,cata);
     }
 
     @Override
     public List<Information> getInfomationsByCatalog(int catalog) {
         return informationMapper.getInformationsByCatalog(catalog);
+    }
+
+    @Override
+    public List<Information> getlimitInfomationsByCatalog(int catalog) {
+        return informationMapper.getlimitInformationsByCatalog(catalog);
     }
 
     @Override

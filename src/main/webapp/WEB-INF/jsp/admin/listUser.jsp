@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="用户管理"/>
+<c:set var="title" value="用户信息"/>
 <%@include file="common/adminHeader.jsp" %>
 <c:set var="light" value="1"/>
 <%@include file="common/adminNavigator.jsp" %>
@@ -17,7 +17,7 @@
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li>用户管理</li>
+        <li>用户信息</li>
     </ol>
     <table class="table table-hover table-striped">
         <thead>

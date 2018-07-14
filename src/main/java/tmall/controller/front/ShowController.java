@@ -1,6 +1,5 @@
 package tmall.controller.front;
 
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import tmall.annotation.Auth;
 import tmall.annotation.Nullable;
 import tmall.pojo.*;
-import tmall.pojo.extension.UserExtension;
 import tmall.util.Pagination;
 
 import javax.servlet.http.HttpServletRequest;
@@ -50,6 +48,18 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
         return "information";
     }*/
+    @RequestMapping("/readmore")
+    public String readmore( Model model) throws Exception {
+        model.addAttribute("informations", informationService.selectInformationList());
+        System.out.println(informationService.selectInformationList().size());
+        return "readmore";
+    }
+    @RequestMapping("/concrete")
+    public String concrete( Model model) throws Exception {
+        model.addAttribute("informations", informationService.selectInformationList());
+        System.out.println(informationService.selectInformationList().size());
+        return "concrete";
+    }
 //    @RequestMapping("/inform")
 //    public String inform(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage, Model model) throws Exception {
 ////        System.out.println(informationService.selectByPrimaryKey(1));
@@ -60,7 +70,7 @@ public class ShowController extends FrontBaseController {
 //        model.addAttribute("informations", informationService.findByPage(currentPage).getLists());
 //        return "inform";
 //    }
-    @Auth(User.Group.user)
+    /*@Auth(User.Group.user)*/
     @RequestMapping("/inform")
     public String info( Model model) throws Exception {
 //        System.out.println(informationService.selectByPrimaryKey(1));
@@ -70,7 +80,7 @@ public class ShowController extends FrontBaseController {
         System.out.println(informationService.selectInformationList().size());
         return "inform";
     }
-
+    @Auth(User.Group.user)
     @RequestMapping("/gopublish")
     public String gopublish(){
         return "publish";

@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value="预约管理"/>
+<c:set var="title" value="服务预约"/>
 <%@include file="common/adminHeader.jsp" %>
 <c:set var="light" value="5"/>
 <%@include file="common/adminNavigator.jsp" %>
@@ -17,7 +17,7 @@
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li>预约管理</li>
+        <li>服务预约</li>
     </ol>
     <table class="table">
         <thead>

@@ -13,10 +13,10 @@
     <form action = "buys">
         <div class="sum-top">
             <div class="pull-right">
-                <span>已选商品（不含运费）</span>
+                <span>价格</span>
                 <span class="yen-small">￥</span>
                 <span class="book-sum-price-small book-sum-price">0.00</span>
-                <button class="crate-order-small crate-order">结 算</button>
+                <button class="crate-order-small crate-order">去结算</button>
             </div>
         </div>
 
@@ -93,7 +93,7 @@
                 <span class="sum-text">合计</span>
                 <span class="yen-big">￥</span>
                 <span class="book-sum-price book-sum-price-big">0.00</span>
-                <button class="crate-order-big crate-order" type="submit">结 算</button>
+                <button class="crate-order-big crate-order" type="submit">去结算</button>
             </div>
         </div>
     </form>

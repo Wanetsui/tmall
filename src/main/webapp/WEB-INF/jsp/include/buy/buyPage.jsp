@@ -34,13 +34,14 @@
             <tbody>
             <tr>
                 <td class="first-column left-column">详细地址<span class="red-star">*</span></td>
-                <td class="right-column"><textarea placeholder="建议您如实填写详细收货地址，例如接到名称，门牌号码，楼层和房间号等信息"
-                                                   name="address"></textarea></td>
+                <td class="right-column"><input placeholder="请您如实填写详细收货地址"
+                                                   name="address"></input></td>
 
             </tr>
             <tr>
                 <td class="left-column">运送方式</td>
-                <td class="right-column"> <select class="delivery-select">
+                <td class="right-column">
+                    <select class="delivery-select" name="post">
                     <option>商家免费上门配送</option>
                     <option>自取 物业中心二楼</option>
                 </select></td>
@@ -133,7 +134,7 @@
             </div>
         </div>
         <button class="submit-order pull-right clear" type="submit" id="submit">
-            提交订单
+            提交订单并支付
         </button>
     </form>
 </main>

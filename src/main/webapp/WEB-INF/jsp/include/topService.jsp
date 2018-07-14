@@ -26,9 +26,9 @@
 <nav class="top">
     <div class="top-bar">
         <span class="top-left">
-            <c:if test="${empty shome}">
+            <%--<c:if test="${empty shome}">--%>
                 <span style="margin-left: 0"><span class=" glyphicon glyphicon-home redColor" style="margin-left: 0"></span><a href="./">首页</a></span>
-            </c:if>
+            <%--</c:if>--%>
             <span>欢迎来到${website_name}</span>
 
             <c:if test="${!empty user}">
@@ -48,7 +48,7 @@
             <a href="advance"><span class=" glyphicon glyphicon-book redColor"></span>
                 预约列表<c:if test="${!empty user}"><strong id="cart-number">0</strong>个</c:if></a>
             <c:if test="${user.group=='admin' || user.group=='superAdmin'}">
-                <a href="admin/">网站后台</a>
+                <a href="admin/">系统后台</a>
             </c:if>
         </span>
     </div>

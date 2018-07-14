@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
 
-<c:set var="title" value=" 服务分类管理 - 服务管理"/>
+<c:set var="title" value=" 服务管理 - 服务管理"/>
 <%@include file="common/adminHeader.jsp" %>
 <c:set var="light" value="3"/>
 <%@include file="common/adminNavigator.jsp" %>
@@ -17,7 +17,7 @@
 
 <div class="container" >
     <ol class="breadcrumb">
-        <li><a href="../type/list">所有分类</a></li>
+        <li><a href="../type/list">服务分类</a></li>
         <li>${type.name}</li>
         <li>服务管理</li>
     </ol>

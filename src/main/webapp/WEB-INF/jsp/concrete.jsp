@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: WaneT
-  Date: 2018/7/9
-  Time: 20:08
+  Date: 2018/7/14
+  Time: 11:05
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -30,28 +30,30 @@
 
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse">
-
 <!-- navigation -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
             </button>
             <a href="index" class="navbar-brand smoothScroll">街坊四邻服务系统</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#wuye" class="smoothScroll">物业公告</a></li>
-                <li><a href="#tongzhi" class="smoothScroll">社区通知</a></li>
-                <li><a href="#ershou" class="smoothScroll">二手出售</a></li>
-                <li><a href="#jiaoliu" class="smoothScroll">失物招领</a></li>
+                <li><a href="readmore?catalog=1" <%--class="smoothScroll"--%>>物业公告</a></li>
+                <li><a href="readmore?catalog=2" >社区通知</a></li>
+                <li><a href="readmore?catalog=3" >二手出售</a></li>
+                <li><a href="readmore?catalog=4" >失物招领</a></li>
                 <li><a href="gopublish" >我要发布</a></li>
             </ul>
         </div>
-
     </div>
 </div>
+
+<!-- divider section -->
 <div class="container">
     <div class="row">
         <div class="col-md-1 col-sm-1"></div>
@@ -62,42 +64,35 @@
     </div>
 </div>
 
-<!-- contact section -->
-<div id="contact">
+<!-- pricing section -->
+<div id="wuye">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <h2>发布信息</h2>
-            </div>
-            <form action="publish" method="post" role="form">
-                <div class="col-md-1 col-sm-1"></div>
-                <div class="col-md-10 col-sm-10">
-                    <div class="col-md-12 col-sm-12">
-                        <select class="form-control" name="select">
-                            <option>二手出售</option>
-                            <option>失物招领</option>
-
-                        </select>
-
-                    </div>
-                    <div class="col-md-12 col-sm-12">
-                        <input name="subject" type="text" class="form-control" id="subject" placeholder="标题">
-                    </div>
-                    <div class="col-md-12 col-sm-12">
-                        <textarea name="message" rows="5" class="form-control" id="message" placeholder="详细内容           "></textarea>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <input name="submit" type="submit" class="form-control" id="submit" value="提交信息">
-                    </div>
+            <div class="col-md-12 col-sm-18 col-xs-30">
+                <div class="plan">
+                    <%-- <div class="plan-title">
+                         <h3>物业公告</h3>
+                     </div>--%>
+                    <form action = "info">
+                        <table class="info-list">
+                            <c:forEach items="${informations}" var="item" >
+                                <c:if test="">
+                                        <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
+                                            <input type="hidden" name="id" value="${item.id}">
+                                            <td>
+                                                <span class="item-title"><a href="#">${item.info}</a></span>
+                                            </td>
+                                        </tr>
+                                </c:if>
+                            </c:forEach>
+                        </table>
+                    </form>
                 </div>
-                <div class="col-md-1 col-sm-1"></div>
-            </form>
+            </div>
+
         </div>
     </div>
 </div>
-
-<!-- scrolltop section -->
-<a href="#top" class="go-top"><i class="fa fa-angle-up"></i></a>
 
 
 <!-- javascript js -->

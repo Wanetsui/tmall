@@ -72,7 +72,7 @@
                                 <option>物业公告</option>
                                 <option>社区通知</option>
                                 <option>二手出售</option>
-                                <option>社区交流</option>
+                                <option>失物招领</option>
                             </select>
                             <%--<input type="text" class="form-control" id="recommend" name="recommend"
                                    placeholder="1物业公告 2社区通知 3二手出售 4社区交流" value="0">--%>

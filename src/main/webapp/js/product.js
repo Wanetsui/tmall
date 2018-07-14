@@ -31,10 +31,12 @@ $(function () {
                 var num = $("#buy-number").val();
                 var cartLink = $("#cart-link").attr("href")+"&num="+num;
                 $.get(cartLink,function (result) {
+                    alert("添加成功");
                     if(result === "success"){
-                        $("#cart-button").text("已加入购物车");
-                        $("#cart-button").attr("disabled","disabled");
-                        $("#cart-button").css({"background":"lightgray","border-color":"lightgray","color":"black"});
+                        $("#cart-button").text("加入购物车");
+                        $("#cart-button").attr("enabled","enabled");
+                        //$("#cart-button").attr("disabled","disabled");
+                        /*$("#cart-button").css({"background":"lightgray","border-color":"lightgray","color":"black"});*/
                         return true;
                     }
                     if(result==="OutOfStock"){

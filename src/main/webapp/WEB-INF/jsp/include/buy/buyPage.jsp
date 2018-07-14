@@ -1,6 +1,33 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
+<script type="text/javascript">
+    $(".form_datetime1").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+    $(function(){
+        $("#start").datetimepicker({
+            format:'yyyy-mm-dd hh:ii:ss',  //格式  如果只有yyyy-mm-dd那就是0000-00-00
+            autoclose:true,//选择后是否自动关闭
+            minView:0,//最精准的时间选择为日期  0-分 1-时 2-日 3-月
+            language:  'zh-CN', //中文
+            weekStart: 1, //一周从星期几开始
+            todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            // daysOfWeekDisabled:"1,2,3", //一周的周几不能选 格式为"1,2,3"  数组格式也行
+            todayBtn : true,  //在底部是否显示今天
+            todayHighlight :false, //今天是否高亮显示
+            keyboardNavigation:true, //方向图标改变日期  必须要有img文件夹 里面存放图标
+            showMeridian:false,  //是否出现 上下午
+            initialDate:new Date()
+            //startDate: "2017-01-01" //日期开始时间 也可以是new Date()只能选择以后的时间
+        }).on("changeDate",function(){
+            var start = $("#start").val();
+            //$("#end").datetimepicker("setStartDate",start);
+        });
+    });
+</script>
 <script>
     $(function () {
         $(".comment-input").click(function () {
@@ -51,6 +78,12 @@
 
                 <td class="left-column">收货人姓名<span class="red-star">*</span></td>
                 <td class="right-column"><input type="text" placeholder="长度不超过25个字符" name="receiver"></td>
+            </tr>
+            <tr>
+                <td class="left-column">请选择配送时间<span class="red-star">*</span></td>
+                <td class="right-column">
+                    <input type="text"  id="start" name="start" class="form_datetime1">
+                </td>
             </tr>
             <tr>
                 <td class="left-column">手机号码 <span class="red-star">*</span></td>

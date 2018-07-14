@@ -47,4 +47,7 @@
   <update id="edit">
     UPDATE information set title = #{title} ,info = #{info} where id = #{id}
   </update>
+  <select id="searchByKeyword" resultMap="BaseResultMap">
+    SELECT * from information where title like concat('%',#{keyword},'%')
+  </select>
 </mapper>

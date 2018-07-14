@@ -65,6 +65,11 @@ public class InformationServiceImpl  implements InformationService {
     }
 
     @Override
+    public List<Information> searchByKeyword(String keyword) {
+        return informationMapper.searchByKeyword(keyword);
+    }
+
+    @Override
     public int update(int id, String title, String info) {
         return informationMapper.edit(id,title,info);
     }

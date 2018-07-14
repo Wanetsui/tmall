@@ -49,15 +49,16 @@ public class ShowController extends FrontBaseController {
         return "information";
     }*/
     @RequestMapping("/readmore")
-    public String readmore( Model model) throws Exception {
-        model.addAttribute("informations", informationService.selectInformationList());
-        System.out.println(informationService.selectInformationList().size());
+    public String readmore( Model model,int catalog) throws Exception {
+        model.addAttribute("informations", informationService.getInfomationsByCatalog(catalog));
+        model.addAttribute("catalog", catalog);
+        System.out.println(informationService.getInfomationsByCatalog(catalog).size());
         return "readmore";
     }
     @RequestMapping("/concrete")
-    public String concrete( Model model) throws Exception {
-        model.addAttribute("informations", informationService.selectInformationList());
-        System.out.println(informationService.selectInformationList().size());
+    public String concrete( Model model,int id) throws Exception {
+        model.addAttribute("informations", informationService.selectByPrimaryKey(id));
+        System.out.println(informationService.selectByPrimaryKey(id).getTitle());
         return "concrete";
     }
 //    @RequestMapping("/inform")
@@ -136,7 +137,6 @@ public class ShowController extends FrontBaseController {
         model.addAttribute("types", types);
         return "shome";
     }
-
 
     @RequestMapping("product")
     public String product(Integer id, Model model) throws Exception {

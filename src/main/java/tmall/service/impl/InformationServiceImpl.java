@@ -70,6 +70,11 @@ public class InformationServiceImpl  implements InformationService {
     }
 
     @Override
+    public List<Information> getInfomationsByCatalog(int catalog) {
+        return informationMapper.getInformationsByCatalog(catalog);
+    }
+
+    @Override
     public int update(int id, String title, String info) {
         return informationMapper.edit(id,title,info);
     }

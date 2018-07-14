@@ -50,4 +50,7 @@
   <select id="searchByKeyword" resultMap="BaseResultMap">
     SELECT * from information where title like concat('%',#{keyword},'%')
   </select>
+  <select id="getInformationsByCatalog" resultMap="BaseResultMap">
+    SELECT * FROM information WHERE catalog = #{catalog}
+  </select>
 </mapper>

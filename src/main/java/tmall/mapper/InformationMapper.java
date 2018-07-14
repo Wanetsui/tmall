@@ -15,4 +15,5 @@ public interface InformationMapper {
     int delete(int id);
     int edit(@Param("id") int id,@Param("title") String title,@Param("info") String info);
     List<Information> searchByKeyword(@Param("keyword")String keyword);
+    List<Information> getInformationsByCatalog(int catalog);
 }

@@ -120,7 +120,7 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item" >
-                                <c:if test="'<%=catalog%>==1'">
+                                <c:if test="${catalog==1 }">
                                 <c:if test="${item.catalog==1 }">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
@@ -136,7 +136,7 @@
                                     </tr>
                                 </c:if>
                                 </c:if>
-                                <c:if test="'<%=catalog%>==2'">
+                                <c:if test="${catalog==2 }">
                                 <c:if test="${item.catalog==2 }">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
@@ -152,8 +152,8 @@
                                     </tr>
                                 </c:if>
                                 </c:if>
-                                <c:if test="'<%=catalog%>==3'">
-                                <c:if test="${catalog==3 and item.catalog==3 }">
+                                <c:if test="${catalog==3 }">
+                                <c:if test="${item.catalog==3 }">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
@@ -168,8 +168,8 @@
                                     </tr>
                                 </c:if>
                                 </c:if>
-                                <c:if test="'<%=catalog%>==3'">
-                                <c:if test="${catalog==4 and item.catalog==4 }">
+                                <c:if test="${catalog==4 }">
+                                <c:if test="${item.catalog==4 }">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>

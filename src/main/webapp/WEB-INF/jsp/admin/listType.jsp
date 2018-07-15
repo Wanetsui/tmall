@@ -40,7 +40,7 @@
                 <td>${c.recommend}</td>
                 <td><img src="../../../${typeImgDir}${c.imgPath}" height="40px"></td>
                 <td>${c.name}</td>
-                <td><a href="../property/list?cid=${c.id}"><span class="glyphicon glyphicon-list-alt"></span></a></td>
+                <td><a href="../sproperty/list?cid=${c.id}"><span class="glyphicon glyphicon-list-alt"></span></a></td>
                 <td><a href="../service/list?cid=${c.id}"><span class="glyphicon glyphicon-book"></span></a></td>
                 <td><a href="edit?id=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td><a href="delete?id=${c.id}" class="delete-button"><span class="glyphicon glyphicon-trash"></span></a></td>

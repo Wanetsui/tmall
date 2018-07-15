@@ -5,11 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.annotation.Auth;
+import tmall.annotation.Nullable;
 import tmall.pojo.*;
 import tmall.pojo.extension.DetailsExtension;
 import tmall.util.Pagination;
 
 import javax.servlet.http.HttpSession;
+import java.lang.annotation.Native;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -21,11 +23,17 @@ public class DetailsController extends AdminBaseController {
     HttpSession session;
     @Auth(User.Group.admin)
     @RequestMapping("list")
-    public String list(Model model, Pagination pagination) throws Exception {
-        List<Details> details = detailsService.
-                list("pagination", pagination, "depth", 3);
-        System.out.println(details.size());
-        model.addAttribute("detailses", details);
+    public String list(Model model, Pagination pagination, @Nullable String flag) throws Exception {
+        if(flag == null) {
+            List<Details> details = detailsService.
+                    list("pagination", pagination, "depth", 3);
+            model.addAttribute("detailses", details);
+        }
+        else{
+            List<Details> details = detailsService.
+                    list("pagination", pagination, "depth", 3, "order", "deliverDate desc");
+            model.addAttribute("detailses", details);
+        }
         return "admin/listDetails";
     }
 
@@ -62,9 +70,12 @@ public class DetailsController extends AdminBaseController {
         detailWorker.setWname(wname);
         detailWorkerService.insert(detailWorker);
         workerService.update(wname);
-//        Date assignDate = new Date();
-//        detailsService.updateDate(oid,assignDate);
         return "redirect:list";
+    }
+
+    @RequestMapping("orderBydeliverTime")
+    public String orderBydeliverTime(){
+        return "redirect:list?flag=1";
     }
 
 }

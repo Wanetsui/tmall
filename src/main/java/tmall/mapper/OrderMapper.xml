@@ -300,4 +300,8 @@
       deleteAt = #{deleteAt,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="orderBySendTime"  resultMap="BaseResultMap">
+    SELECT * from order_ ORDER BY confirmDate DESC
+  </select>
 </mapper>

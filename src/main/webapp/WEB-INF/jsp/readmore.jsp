@@ -35,6 +35,12 @@
     Integer catalog = Integer.parseInt(str);
 %>
 <!-- navigation -->
+<%--<div class="search">
+    <form action="searchInfo" >
+        <input type="text" value=" " name="keyword">
+        <button class="search-button" type="submit">搜索</button>
+    </form>
+</div>--%>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -60,13 +66,28 @@
 <!-- divider section -->
 <div class="container">
     <div class="row">
-        <div class="col-md-1 col-sm-1"></div>
-        <div class="col-md-10 col-sm-10">
-            <hr>
-        </div>
-        <div class="col-md-1 col-sm-1"></div>
-    </div>
-</div>
+        <div class="row">
+            <c:if test="catalog==1">
+                <div class="col-md-12 col-sm-12">
+                    <h2>物业公告</h2>
+                </div>
+            </c:if>
+            <c:if test="catalog==2">
+                <div class="col-md-12 col-sm-12">
+                    <h2>社区通知</h2>
+                </div>
+            </c:if>
+            <c:if test="catalog==3">
+                <div class="col-md-12 col-sm-12">
+                    <h2>二手出售</h2>
+                </div>
+            </c:if>
+            <c:if test="catalog==4">
+                <div class="col-md-12 col-sm-12">
+                    <h2>失物招领</h2>
+                </div>
+            </c:if>
+
 
 <!-- pricing section -->
 <div id="wuye">
@@ -92,12 +113,6 @@
                     <h2>失物招领</h2>
                 </div>
             </c:if>
-            <div class="search">
-    <form action="searchInfo" >
-        <input type="text" value=" " name="keyword">
-        <button class="search-button" type="submit">搜索</button>
-    </form>
-</div>
             <div class="col-md-12 col-sm-18 col-xs-30">
                 <div class="plan">
                     <%-- <div class="plan-title">
@@ -120,12 +135,12 @@
                             </thead>
                             <tbody>
                             <c:forEach items="${informations}" var="item" >
-                                <c:if test="'<%=catalog%>==1'">
+                                <c:if test="${catalog==1 }">
                                 <c:if test="${item.catalog==1 }">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
-                                            <span class="item-title"><a href="#">${item.title}</a></span>
+                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
                                         </td>
                                             <%--<td>
                                                 <span class="item-title"> <a href="#">${item.info}</span>
@@ -136,12 +151,12 @@
                                     </tr>
                                 </c:if>
                                 </c:if>
-                                <c:if test="'<%=catalog%>==2'">
+                                <c:if test="${catalog==2 }">
                                 <c:if test="${item.catalog==2 }">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
-                                            <span class="item-title"><a href="#">${item.title}</a></span>
+                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
                                         </td>
                                             <%--<td>
                                                 <span class="item-title"> <a href="#">${item.info}</span>
@@ -152,12 +167,12 @@
                                     </tr>
                                 </c:if>
                                 </c:if>
-                                <c:if test="'<%=catalog%>==3'">
-                                <c:if test="${catalog==3 and item.catalog==3 }">
+                                <c:if test="${catalog==3 }">
+                                <c:if test="${item.catalog==3 }">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
-                                            <span class="item-title"><a href="#">${item.title}</a></span>
+                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
                                         </td>
                                             <%--<td>
                                                 <span class="item-title"> <a href="#">${item.info}</span>
@@ -168,12 +183,12 @@
                                     </tr>
                                 </c:if>
                                 </c:if>
-                                <c:if test="'<%=catalog%>==3'">
-                                <c:if test="${catalog==4 and item.catalog==4 }">
+                                <c:if test="${catalog==4 }">
+                                <c:if test="${item.catalog==4 }">
                                     <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
-                                            <span class="item-title"><a href="#">${item.title}</a></span>
+                                            <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
                                         </td>
                                             <%--<td>
                                                 <span class="item-title"> <a href="#">${item.info}</span>
@@ -194,6 +209,52 @@
 
         </div>
     </div>
+
+
+
+        <div class="container">
+            <form action="searchInfo" >
+                <input type="text" value=" " name="keyword">
+                <input type="hidden" name="catalog" value="${catalog}">
+                <button class="search-button" type="submit">搜索</button>
+            </form>
+        </div>
+        <form action = "info">
+            <table class="info-list">
+                <thead>
+                <tr>
+                    <th class="item-title">
+                        标题
+                    </th>
+                    <%--<th class="item-title">
+                        内容
+                    </th>--%>
+                    <th class="list-group-item-info">
+                        发布时间
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${searchResult}" var="item" >
+
+                            <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
+                                <input type="hidden" name="id" value="${item.id}">
+                                <td>
+                                    <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>
+                                </td>
+                                    <%--<td>
+                                        <span class="item-title"> <a href="#">${item.info}</span>
+                                    </td>--%>
+                                <td>
+                                    <span class="list-group-item-info">${item.createTime}</span>
+                                </td>
+                            </tr>
+
+                </c:forEach>
+
+                </tbody>
+            </table>
+        </form>
 </div>
 
 

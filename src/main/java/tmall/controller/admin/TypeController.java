@@ -33,7 +33,7 @@ public class TypeController extends AdminBaseController{
         c.setName(name);
         c.setRecommend(recommend);
         typeService.add(c);
-        //fileUtil.saveImg(uploadedImageFile, "type", c.getId() + ".jpg");
+       fileUtil.saveImg(uploadedImageFile, "type", c.getId() + ".jpg");
         return "redirect:list";
     }
 

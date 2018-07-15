@@ -75,16 +75,12 @@
                      </div>--%>
                     <form action = "info">
                         <table class="info-list">
-                            <c:forEach items="${informations}" var="item" >
-                                <c:if test="">
-                                        <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
-                                            <input type="hidden" name="id" value="${item.id}">
+                                        <tr select="false" title="${informations.title}" info="${informations.info}" createTime="${informations.createTime}" id="${informations.id}">
+                                            <input type="hidden" name="id" value="${informations.id}">
                                             <td>
-                                                <span class="item-title"><a href="#">${item.info}</a></span>
+                                                <span class="item-title"><a href="#">${informations.info}</a></span>
                                             </td>
                                         </tr>
-                                </c:if>
-                            </c:forEach>
                         </table>
                     </form>
                 </div>

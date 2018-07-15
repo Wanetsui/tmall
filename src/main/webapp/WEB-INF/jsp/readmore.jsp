@@ -35,12 +35,6 @@
     Integer catalog = Integer.parseInt(str);
 %>
 <!-- navigation -->
-<div class="search">
-    <form action="searchInfo" >
-        <input type="text" value=" " name="keyword">
-        <button class="search-button" type="submit">搜索</button>
-    </form>
-</div>
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -98,6 +92,12 @@
                     <h2>失物招领</h2>
                 </div>
             </c:if>
+            <div class="search">
+    <form action="searchInfo" >
+        <input type="text" value=" " name="keyword">
+        <button class="search-button" type="submit">搜索</button>
+    </form>
+</div>
             <div class="col-md-12 col-sm-18 col-xs-30">
                 <div class="plan">
                     <%-- <div class="plan-title">

@@ -1,5 +1,7 @@
 package tmall.controller.admin;
 
+import org.junit.AfterClass;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +10,7 @@ import tmall.annotation.Nullable;
 import tmall.pojo.Category;
 import tmall.pojo.Type;
 import tmall.pojo.User;
+import tmall.service.ImgService;
 import tmall.util.Pagination;
 import tmall.util.UploadedImageFile;
 
@@ -17,6 +20,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin/type")
 public class TypeController extends AdminBaseController{
+    @Autowired
+    private ImgService imgService;
     @Auth(User.Group.admin)
     @RequestMapping("list")
     public String list(Model model, Pagination pagination) throws Exception {
@@ -33,6 +38,10 @@ public class TypeController extends AdminBaseController{
         c.setName(name);
         c.setRecommend(recommend);
         typeService.add(c);
+       String path =   imgService.uploadIMG(uploadedImageFile.getImage(),c.getId());
+        System.out.println("======================================");
+        System.out.println(path);
+        System.out.println("===========================================");
        fileUtil.saveImg(uploadedImageFile, "type", c.getId() + ".jpg");
         return "redirect:list";
     }

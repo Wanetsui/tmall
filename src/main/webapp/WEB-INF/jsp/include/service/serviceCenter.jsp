@@ -13,11 +13,11 @@
 <section class="property">
     <div class="gallery">
         <div class="pic-border">
-            <img src="${serviceImgDir}${serviceTopImages[0].path}" id="big-show">
+            <img src="/img/service/${serviceTopImages[0].path}" id="big-show">
         </div>
         <div class="pic-ls" id="pic-ls">
             <C:forEach items="${serviceTopImages}" var="img" varStatus="vs">
-                <img src="${serviceImgDir}${img.path}" big-image="${serviceImgDir}${img.path}" class="sm-image ${vs.count == 1?'selected':''}">
+                <img src="/img/service/${img.path}" big-image="/img/service/${img.path}" class="sm-image ${vs.count == 1?'selected':''}">
             </C:forEach>
         </div>
         <div id="div4load" style="display:none;"></div>

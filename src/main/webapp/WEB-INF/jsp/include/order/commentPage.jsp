@@ -11,7 +11,7 @@
 
 <main class="comment">
     <div class="comment-left-jpg">
-        <img src="${productImgDir}${orderItem.product.image.path}">
+        <img src="/img/product/${orderItem.product.image.path}">
     </div>
     <div class="comment-right-detail">
         <div class="comment-detail-title">

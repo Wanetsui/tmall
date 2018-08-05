@@ -31,7 +31,7 @@
             <tbody>
             <c:forEach items="${details.detailsItems}" var="oi" varStatus="vs">
                 <tr>
-                    <td><img src="${serviceImgDir}${oi.service.image.path}"></td>
+                    <td><img src="/img/service/${oi.service.image.path}"></td>
                     <td class="item-title"><a href="#nowhere">${oi.service.name}</a></td>
                     <td>￥${oi.service.price}</td>
                     <td>上门服务费用 0.00</td>

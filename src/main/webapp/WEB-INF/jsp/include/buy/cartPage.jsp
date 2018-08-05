@@ -46,7 +46,7 @@
                 <input type="hidden" name="ciid" value="${item.id}">
                 <td>
                     <img src="img/noselect.png" class="select-img">
-                    <img src="${productImgDir}${item.product.image.path}" class="cart-item-jpg">
+                    <img src="/img/product/${item.product.image.path}" class="cart-item-jpg">
                 </td>
                 <td class="item-name">
                     <a class="cart-item-title" href="product?id=${item.product.id}">${item.product.name}</a>

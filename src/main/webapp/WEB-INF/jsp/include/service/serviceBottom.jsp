@@ -26,7 +26,7 @@
         </div>
         <div class="service-content-part">
             <c:forEach items="${serviceDetailImages}" var="img" varStatus="vs">
-                <img src="${serviceImgDir}${img.path}">
+                <img src="/img/service/${img.path}">
             </c:forEach>
         </div>
     </div>

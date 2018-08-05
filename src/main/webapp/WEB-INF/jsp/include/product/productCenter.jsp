@@ -6,11 +6,11 @@
 <section class="property">
     <div class="gallery">
         <div class="pic-border">
-            <img src="${productImgDir}${productTopImages[0].path}" id="big-show">
+            <img src="/img/product/${productTopImages[0].path}" id="big-show">
         </div>
         <div class="pic-ls" id="pic-ls">
             <C:forEach items="${productTopImages}" var="img" varStatus="vs">
-                <img src="${productImgDir}${img.path}" big-image="${productImgDir}${img.path}" class="sm-image ${vs.count == 1?'selected':''}">
+                <img src="/img/product/${img.path}" big-image="/img/product/${img.path}" class="sm-image ${vs.count == 1?'selected':''}">
             </C:forEach>
         </div>
         <div id="div4load" style="display:none;"></div>

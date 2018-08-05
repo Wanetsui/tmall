@@ -38,7 +38,9 @@
             <tr>
                 <th scope="row">${c.id}</th>
                 <td>${c.recommend}</td>
-                <td><img src="../../../${categoryImgDir}${c.imgPath}" height="40px"></td>
+                <%--<td><img src="../../../${categoryImgDir}${c.imgPath}" height="40px"></td>--%>
+                    <td><img src="../../img/category/${c.imgPath}" height="40px"></td>
+
                 <td>${c.name}</td>
                 <td><a href="../property/list?cid=${c.id}"><span class="glyphicon glyphicon-list-alt"></span></a></td>
                 <td><a href="../product/list?cid=${c.id}"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>

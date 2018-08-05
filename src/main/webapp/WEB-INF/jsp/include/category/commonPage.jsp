@@ -9,7 +9,7 @@
                 <div class="border" price="${p.nowPrice}">
                     <div class="item">
                         <div class="content">
-                            <img class="item-img" src="${productImgDir}${p.image.path}">
+                            <img class="item-img" src="/img/product/${p.image.path}">
                             <div class="item-price">
                                 ￥${p.nowPrice}
                             </div>

@@ -86,7 +86,7 @@
         <c:forEach items="${o.orderItems}" var="oi" varStatus="vs2">
         <tr class="item-body">
             <td width="100px">
-                <img src="${productImgDir}${oi.product.image.path}" class="cart-item-jpg">
+                <img src="/img/product/${oi.product.image.path}" class="cart-item-jpg">
             </td>
             <td class="item-name">
                 <a class="cart-item-title" href="product?id=${oi.product.id}">${oi.product.name}</a>

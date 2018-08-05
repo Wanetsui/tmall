@@ -23,7 +23,6 @@
         <context:include-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-    <context:component-scan base-package="tmall.aspect"/>
 
     <!--启动AspectJ支持-->
     <aop:aspectj-autoproxy proxy-target-class="true" />
@@ -33,12 +32,16 @@
 
     <!--静态资源的访问-->
     <mvc:default-servlet-handler />
-    <!-- 拦截器 -->
-    <mvc:interceptors>
-        <bean class="tmall.interceptor.AuthInterceptor"/>
-        <bean class="tmall.interceptor.ConfigInterceptor"/>
-        <bean class="tmall.interceptor.CategoryNamesBelowSearchInterceptor"/>
-    </mvc:interceptors>
+     <!---->
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="tmall.interceptor.MyInterceptor">-->
+
+
+            <!--</bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 
     <!-- 定位jsp -->
     <bean

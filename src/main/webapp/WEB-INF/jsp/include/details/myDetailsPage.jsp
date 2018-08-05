@@ -84,7 +84,7 @@
             <c:forEach items="${o.detailsItems}" var="oi" varStatus="vs2">
                 <tr class="item-body">
                     <td width="100px">
-                        <img src="${serviceImgDir}${oi.service.image.path}" class="book-item-jpg">
+                        <img src="/img/service/${oi.service.image.path}" class="book-item-jpg">
                     </td>
                     <td class="item-name">
                         <a class="book-item-title" href="service?id=${oi.service.id}">${oi.service.name}</a>

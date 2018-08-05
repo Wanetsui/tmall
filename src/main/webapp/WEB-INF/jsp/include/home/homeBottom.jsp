@@ -16,7 +16,7 @@
                     <c:forEach items="${c.products}" var="p" varStatus="vs">
                     <a href="product?id=${p.id}">
                         <div class="item">
-                            <img src="${productImgDir}${p.image.path}">
+                            <img src="/img/product/${p.image.path}">
                             <div class="item-title">${p.name}</div>
                             <div class="item-price">￥${p.nowPrice}</div>
                         </div>

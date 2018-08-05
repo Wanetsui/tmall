@@ -135,7 +135,7 @@
             <tbody>
             <c:forEach items="${advance}" var="item" varStatus="vs">
                 <tr class="buy-item">
-                    <td class="buy-item-image"><img src="${serviceImgDir}${item.service.image.path}"></td>
+                    <td class="buy-item-image"><img src="/img/service/${item.service.image.path}"></td>
                     <td class="buy-item-name"><a href="service?service.id=${item.service.id}">${item.service.name}</a>
                         <div class="cart-item-title-bottom">
                             <img title="支持信用卡支付" src="img/creditcard.png">

@@ -114,7 +114,7 @@
             <tbody>
             <c:forEach items="${cartItems}" var="item" varStatus="vs">
             <tr class="buy-item">
-                <td class="buy-item-image"><img src="${productImgDir}${item.product.image.path}"></td>
+                <td class="buy-item-image"><img src="/img/product/${item.product.image.path}"></td>
                 <td class="buy-item-name"><a href="product?product.id=${item.product.id}">${item.product.name}</a>
                     <div class="cart-item-title-bottom">
                         <img title="支持信用卡支付" src="img/creditcard.png">

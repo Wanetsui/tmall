@@ -25,7 +25,7 @@
         </div>
         <div class="product-content-part">
             <c:forEach items="${productDetailImages}" var="img" varStatus="vs">
-                <img src="${productImgDir}${img.path}">
+                <img src="/img/product/${img.path}">
             </c:forEach>
         </div>
     </div>

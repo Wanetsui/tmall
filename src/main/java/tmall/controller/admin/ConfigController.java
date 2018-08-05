@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/admin/config")
-public class ConfigController extends AdminBaseController {
+public class  ConfigController extends AdminBaseController {
     @Auth(User.Group.admin)
     @RequestMapping("edit")
     public String edit(Model model) throws Exception {
@@ -25,8 +25,8 @@ public class ConfigController extends AdminBaseController {
     public String update(Integer[] id, String[] value, HttpSession session) throws Exception {
         configService.update(id, value, "value");
         //使设置马上生效
-        session.removeAttribute("productImgDir");
-        session.removeAttribute("ServiceImgDir");
+        session.removeAttribute("/img/product/");//ProductImgDir
+        session.removeAttribute("ServiceImgDir");//ServiceImgDir
         return "redirect:edit";
     }
 

@@ -43,7 +43,7 @@
         <c:forEach items="${services}" var="p" varStatus="vs">
             <tr>
                 <th scope="row">${p.id}</th>
-                <td><img src="../../../${serviceImgDir}${p.image.path}" height="30px"></td>
+                <td><img src="../../../img/service/${p.image.path}" height="30px"></td>
                 <td>${p.name}</td>
                 <td>${p.subTitle}</td>
                 <td>${p.price}</td>

@@ -9,5 +9,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <section class="banner">
-    <img src="${typeImgDir}${service.type.imgPath}">
+    <img src="/img/type/${service.type.imgPath}">
 </section>

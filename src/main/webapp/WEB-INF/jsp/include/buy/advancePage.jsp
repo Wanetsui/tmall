@@ -51,7 +51,7 @@
                     <input type="hidden" name="ciid" value="${item.id}">
                     <td>
                         <img src="img/noselect.png" class="select-img">
-                        <img src="${serviceImgDir}${item.service.image.path}" class="book-item-jpg">
+                        <img src="/img/service/${item.service.image.path}" class="book-item-jpg">
                     </td>
                     <td class="item-name">
                         <a class="book-item-title" href="service?id=${item.service.id}">${item.service.name}</a>

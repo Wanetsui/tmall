@@ -26,7 +26,7 @@
             <tbody>
             <c:forEach items="${order.orderItems}" var="oi" varStatus="vs">
             <tr>
-                <td><img src="${productImgDir}${oi.product.image.path}"></td>
+                <td><img src="/img/product/${oi.product.image.path}"></td>
                 <td class="item-title"><a href="#nowhere">${oi.product.name}</a></td>
                 <td>￥${oi.product.nowPrice}</td>
                 <td>${oi.number}</td>

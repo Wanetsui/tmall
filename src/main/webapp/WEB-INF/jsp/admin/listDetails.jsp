@@ -81,7 +81,7 @@
                                 </tr>
                                 <c:forEach items="${o.detailsitems}" var="item" varStatus="vs">
                                     <tr>
-                                        <td><img width="40px" height="40px" src="../../../${serviceImgDir}${item.service.image.path}"></td>
+                                        <td><img width="40px" height="40px" src="../../../img/service/${item.service.image.path}"></td>
                                         <td>${o.receiver}</td>
                                         <td>${item.details.address}</td>
                                         <td>${item.details.mobile}</td>

@@ -37,7 +37,7 @@
             <c:if test="${!empty productCoverImage}">
                 <tr>
                     <th scope="row">${productCoverImage.id}</th>
-                    <td><img src="../../../${productImgDir}${productCoverImage.path}" height="50px"></td>
+                    <td><img src="../../..//img/product/${productCoverImage.path}" height="50px"></td>
                     <td><a href="delete?id=${productCoverImage.id}" class="delete-button"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
@@ -86,7 +86,7 @@
             <c:forEach items="${productTopImages}" var="ti" varStatus="vs">
                 <tr>
                     <th scope="row">${ti.id}</th>
-                    <td><img src="../../../${productImgDir}${ti.path}" height="50px"></td>
+                    <td><img src="../../../img/product/${ti.path}" height="50px"></td>
                     <td><a href="  delete?id=${ti.id}" class="delete-button"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
@@ -135,7 +135,7 @@
             <c:forEach items="${productDetailImages}" var="ti" varStatus="vs">
                 <tr>
                     <th scope="row">${ti.id}</th>
-                    <td><img src="../../../${productImgDir}${ti.path}" height="50px"></td>
+                    <td><img src="../../../img/product/${ti.path}" height="50px"></td>
                     <td><a href="delete?id=${ti.id}" class="delete-button"><span
                             class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>

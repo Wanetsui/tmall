@@ -32,7 +32,9 @@ public class FileUtil implements ServletContextAware {
     public void saveImg(UploadedImageFile uploadedImageFile, String type, String imgName) throws Exception {
         Map<String, String> config = configService.map();
         String relativeFolderPath = config.get("path_" + type + "_img");
-        File imageFolder = new File(servletContext.getRealPath(relativeFolderPath));
+      //  File imageFolder = new File(servletContext.getRealPath(relativeFolderPath));
+//        String name = "woaiwanying_"+type+imgName;
+        File imageFolder = new File(relativeFolderPath);
         if (!imageFolder.exists())
             imageFolder.mkdirs();
         File imageFile = new File(imageFolder, imgName);

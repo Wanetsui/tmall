@@ -16,7 +16,7 @@
                 <div class="border" price="${p.price}">
                     <div class="item">
                         <div class="content">
-                            <img class="item-img" src="${serviceImgDir}${p.image.path}">
+                            <img class="item-img" src="/img/service/${p.image.path}">
                             <div class="item-price">
                                 ￥${p.price}
                             </div>

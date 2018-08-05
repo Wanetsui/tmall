@@ -23,7 +23,7 @@
                     <c:forEach items="${c.services}" var="p" varStatus="vs">
                         <a href="service?id=${p.id}">
                             <div class="item">
-                                <img src="${serviceImgDir}${p.image.path}">
+                                <img src="/img/service/${p.image.path}">
                                 <div class="item-title">${p.name}</div>
                                 <div class="item-price">￥${p.price}</div>
                             </div>

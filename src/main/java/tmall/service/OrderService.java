@@ -14,4 +14,6 @@ public interface OrderService extends BaseService{
     public void createOrder(Order order ,List<CartItem> cartItems) throws Exception;
 
     List<Order> orderBySendTime();
+
+    List<Order> orderByAddress();
 }

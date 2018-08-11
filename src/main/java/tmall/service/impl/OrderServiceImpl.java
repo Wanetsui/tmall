@@ -65,4 +65,9 @@ public class OrderServiceImpl extends BaseServiceImpl<OrderMapper,OrderExample>
     public List<Order> orderBySendTime() {
         return orderMapper.orderBySendTime();
     }
+
+    @Override
+    public List<Order> orderByAddress() {
+        return orderMapper.orderByAddress();
+    }
 }

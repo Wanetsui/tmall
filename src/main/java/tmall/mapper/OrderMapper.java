@@ -62,4 +62,7 @@ public interface OrderMapper extends BaseMapper<Order, OrderExample> {
     int updateByPrimaryKey(Order record);
 
     List<Order> orderBySendTime();
+
+    List<Order> orderByAddress();
+
 }

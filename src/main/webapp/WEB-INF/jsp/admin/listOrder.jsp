@@ -22,7 +22,9 @@
     <a href="orderBySendTime">
         <button>按配送时间排序</button>
     </a>
-
+    <a href="orderByAddress">
+        <button>按配送地址排序</button>
+    </a>
     <table class="table">
         <thead>
         <tr>
@@ -35,6 +37,7 @@
             <th scope="col">支付时间</th>
             <th scope="col">发货时间</th>
             <th scope="col">配送时间</th>
+            <th scope="col">配送地址</th>
             <th scope="col" width="120px">操作</th>
         </tr>
         </thead>
@@ -51,6 +54,7 @@
                 <td><fmt:formatDate value="${o.payDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
                 <td><fmt:formatDate value="${o.deliverDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
                 <td><fmt:formatDate value="${o.confirmDate}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                <td>${o.address}</td>
                 <td>
                     <button class="btn btn-primary btn-xs detail-btn">查看详情</button>
                     <c:if test="${o.statusEnum == 'waitDeliver'}">

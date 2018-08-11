@@ -304,4 +304,8 @@
   <select id="orderBySendTime"  resultMap="BaseResultMap">
     SELECT * from order_ ORDER BY confirmDate DESC
   </select>
+
+  <select id="orderByAddress"  resultMap="BaseResultMap">
+    SELECT * from order_ ORDER BY address DESC
+  </select>
 </mapper>

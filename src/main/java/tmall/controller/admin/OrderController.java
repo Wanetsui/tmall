@@ -20,11 +20,15 @@ public class OrderController extends AdminBaseController {
     public String list(Model model, Pagination pagination, @Nullable String flag) throws Exception {
         if (flag == null){
             List<Order> orders = orderService.
-                    list("pagination", pagination, "depth", 3);
+                    list("pagination", pagination, "depth", 5);
             model.addAttribute("orders", orders);
-        }else{
+        }else  if(flag.equals("1")){
             List<Order> orders = orderService.
-                    list("pagination", pagination, "depth", 3, "order", "confirmDate desc");
+                    list("pagination", pagination, "depth", 5, "order", "confirmDate desc");
+            model.addAttribute("orders", orders);
+        }else  if(flag.equals("2")){
+            List<Order> orders = orderService.
+                    list("pagination", pagination, "depth", 5, "order", "address desc");
             model.addAttribute("orders", orders);
         }
 
@@ -48,5 +52,11 @@ public class OrderController extends AdminBaseController {
         System.out.println(orders.size());
         return "redirect:list?flag=1";
     }
-
+    @RequestMapping("orderByAddress")
+    public String orderByAddress(Model model){
+        List<Order> orders = orderService.orderByAddress();
+        model.addAttribute("orders", orders);
+        System.out.println(orders.size());
+        return "redirect:list?flag=2";
+    }
 }

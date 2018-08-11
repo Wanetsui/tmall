@@ -75,7 +75,7 @@
                      </div>--%>
                     <form action = "info">
                         <table class="info-list">
-                                        <tr select="false" title="${informations.title}" info="${informations.info}" createTime="${informations.createTime}" id="${informations.id}">
+                                        <%--<tr select="false" title="${informations.title}" info="${informations.info}" createTime="${informations.createTime}" id="${informations.id}">--%>
                                             <input type="hidden" name="id" value="${informations.id}">
                                             <td>
                                                 <span class="item-title"><a href="#">${informations.info}</a></span>

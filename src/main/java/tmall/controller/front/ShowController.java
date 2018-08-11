@@ -60,7 +60,7 @@ public class ShowController extends FrontBaseController {
            System.out.println("keyword:   "+keyword);
            System.out.println("catalog:   "+cata);
            int cat = Integer.valueOf(cata);
-           List<Information> informationList = informationService.searchByKeyword(keyword,cat);
+           List<Inform> informationList = informationService.searchByKeyword(keyword,cat);
            System.out.println("keyword  :"+informationList.size());
            model.addAttribute("searchResult",informationList);
        }
@@ -88,10 +88,10 @@ public class ShowController extends FrontBaseController {
 //        System.out.println(informationService.selectByPrimaryKey(1));
 //        System.out.println(informationService.selectCount());
         //List<Information> informations =   informationService.selectInformationList();
-        List<Information> informationList1 = informationService.getlimitInfomationsByCatalog(1);
-        List<Information> informationList2 = informationService.getlimitInfomationsByCatalog(2);
-        List<Information> informationList3 = informationService.getlimitInfomationsByCatalog(3);
-        List<Information> informationList4 = informationService.getlimitInfomationsByCatalog(4);
+        List<Inform> informationList1 = informationService.getlimitInfomationsByCatalog(1);
+        List<Inform> informationList2 = informationService.getlimitInfomationsByCatalog(2);
+        List<Inform> informationList3 = informationService.getlimitInfomationsByCatalog(3);
+        List<Inform> informationList4 = informationService.getlimitInfomationsByCatalog(4);
         informationList1.addAll(informationList2);
         informationList1.addAll(informationList3);
         informationList1.addAll(informationList4);
@@ -139,7 +139,7 @@ public class ShowController extends FrontBaseController {
         System.out.println("keyword:   "+keyword);
         System.out.println("catalog:   "+catalog);
         int cata = Integer.valueOf(catalog);
-        List<Information> informationList = informationService.searchByKeyword(keyword,cata);
+        List<Inform> informationList = informationService.searchByKeyword(keyword,cata);
         System.out.println("keyword  :"+informationList.size());
         model.addAttribute("searchResult",informationList);
 

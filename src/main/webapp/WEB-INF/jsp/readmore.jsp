@@ -169,7 +169,7 @@
                                 </c:if>
                                 <c:if test="${catalog==3 }">
                                 <c:if test="${item.catalog==3 }">
-                                    <tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">
+                                    <%--<tr select="false" title="${item.title}" info="${item.info}" createTime="${item.createTime}" id="${item.id}">--%>
                                         <input type="hidden" name="id" value="${item.id}">
                                         <td>
                                             <span class="item-title"><a href="concrete?id=${item.id}">${item.title}</a></span>

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tmall.controller.BaseController;
+import tmall.pojo.Inform;
 import tmall.pojo.Information;
 import tmall.service.InformationService;
 
@@ -19,7 +20,7 @@ public class InformationController extends BaseController{
     InformationService informationService;
     @RequestMapping("list")
     public String show(Model model){
-       List<Information> informationList =  informationService.selectInformationList();
+       List<Inform> informationList =  informationService.selectInformationList();
        model.addAttribute("informations",informationList);
        return "admin/listInform";
     }

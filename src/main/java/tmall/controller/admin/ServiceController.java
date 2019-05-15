@@ -27,7 +27,7 @@ public class ServiceController extends AdminBaseController {
     }
 
     @RequestMapping("add")
-    public String add(Integer cid, String name, String subTitle, Integer stock) throws Exception {
+    public String add(Integer cid, String name, String subTitle, BigDecimal nowPrice, Integer stock) throws Exception {
         Service p = new Service();
         p.setCid(cid);
         p.setName(name);
@@ -35,7 +35,7 @@ public class ServiceController extends AdminBaseController {
         p.setStock(stock);
         p.setCreateDate(new Date());
         p.setSaleCount(0);
-
+        p.setPrice(nowPrice);
         serviceService.add(p);
         return "redirect:list?cid=" + cid;
     }
@@ -49,13 +49,13 @@ public class ServiceController extends AdminBaseController {
     }
 
     @RequestMapping("update")
-    public String update(Integer id, String name, String subTitle,
-                         BigDecimal originalPrice, BigDecimal nowPrice, Integer stock) throws Exception {
+    public String update(Integer id, String name, String subTitle, BigDecimal nowPrice, Integer stock) throws Exception {
 
         Service p = (Service) serviceService.get(id);
         p.setName(name);
         p.setSubTitle(subTitle);
         p.setStock(stock);
+        p.setPrice(nowPrice);
         serviceService.update(p);
         return "redirect:list?cid=" + p.getType().getId();
     }

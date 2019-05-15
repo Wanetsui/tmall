@@ -16,16 +16,23 @@ function calculate(table) {
     var selectNum = 0;
     var sumPrice = 0;
     var allSelected = true;
+    var param = "";
     $(table).find("tr").each(function () {
         if (!isNaN(Number($(this).attr("price-per")))) {
             if ($(this).attr("select") === "true") {
+                console.log("true")
                 selectNum += Number($(this).attr("buy"));
                 sumPrice += Number($(this).attr("buy")) * Number($(this).attr("price-per"));
+                param += $(this).children("input").val()+",";
+                console.log(param);
             } else {
+                console.log("false")
+
                 allSelected = false;
             }
         }
     });
+    $("#ciid-id").val(param)
     return [selectNum, sumPrice.toFixed(2), allSelected];
 }
 

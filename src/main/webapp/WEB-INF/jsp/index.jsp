@@ -25,12 +25,18 @@
 <!-- Header -->
 <header id="header">
     <div class="inner">
-        <a href="index" class="logo"><strong>街坊四邻服务系统</strong>由15031215李怡萱设计完成</a>
-        <nav id="nav">
-            <a href="index">首页</a>
-            <a href="login">登录</a>
-            <a href="register">注册</a>
-        </nav>
+        <a href="index" class="logo"><strong>街坊四邻服务系统</strong></a>
+        <span>欢迎</span>
+
+        <c:if test="${!empty user}">
+            ${user.name}
+            <a href="#" id="logout">退出</a>
+        </c:if>
+        <c:if test="${empty user}">
+            <a href="login" id="login">请登录</a>
+            <a href="register">免费注册</a>
+        </c:if>
+        </span>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
     </div>
 </header>

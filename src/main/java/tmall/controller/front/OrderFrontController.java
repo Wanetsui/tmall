@@ -216,27 +216,38 @@ public class OrderFrontController extends FrontBaseController {
     }
 
     @RequestMapping("buy")
-    public String buy(Integer[] ciid, Model model, HttpSession session) throws Exception {
+    public String buy(String ciid, Model model, HttpSession session) throws Exception {
         List<CartItem> cartItems = new ArrayList<>();
         User user = (User) session.getAttribute("user");
         int totalNum = 0;
         BigDecimal sum = new BigDecimal(0);
-        for (Integer id : ciid) {
-            CartItem cartItem = null;
-            if (id == -1) {
-                //由buyOne跳转而来
-                cartItem = (CartItem) session.getAttribute("tempCartItem");
-            } else {
-                //由购物车跳转而来
-                cartItem = (CartItem) cartItemService.get(id);
+        String [] ciidss = ciid.split(",");
+        Integer [] ciida = new Integer[ciidss.length];
+        int count = 0;
+        for (String string:ciidss){
+            if (string!=""){
+                ciida[count] = Integer.valueOf(string);
+                count++;
             }
-            // 检查
-            checkUser(user, cartItem.getUser());
+        }
+        for (Integer id : ciida) {
+            if (id != null){
+                CartItem cartItem = null;
+                if (id == -1) {
+                    //由buyOne跳转而来
+                    cartItem = (CartItem) session.getAttribute("tempCartItem");
+                } else {
+                    //由购物车跳转而来
+                    cartItem = (CartItem) cartItemService.get(id);
+                }
+                // 检查
+                checkUser(user, cartItem.getUser());
 
-            totalNum += cartItem.getNumber();
-            sum = sum.add(cartItem.getSum());
-            cartItems.add(cartItem);
+                totalNum += cartItem.getNumber();
+                sum = sum.add(cartItem.getSum());
+                cartItems.add(cartItem);
 
+            }
         }
         session.setAttribute("cartItems", cartItems);
         model.addAttribute("totalNum", totalNum);
@@ -276,7 +287,7 @@ public class OrderFrontController extends FrontBaseController {
     public String createOrder(String address, String post, String receiver,
                               String mobile,
                               String userMessage,
-                              @Nullable Date start,
+                              String start,
                               HttpSession session) throws Exception {
         List<CartItem> cartItems = (List<CartItem>) session.getAttribute("cartItems");
         User user = (User) session.getAttribute("user");
@@ -292,7 +303,8 @@ public class OrderFrontController extends FrontBaseController {
         order.setMobile(mobile);
         order.setUserMessage(userMessage);
         order.setUser(user);
-        order.setConfirmDate(start);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        order.setConfirmDate(sdf.parse(start));
         orderService.createOrder(order, cartItems);
       //  OrderTime orderTime = new OrderTime();
         return "redirect:pay?oid=" + order.getId();

@@ -10,6 +10,7 @@ import tmall.pojo.*;
 import tmall.util.Pagination;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.List;
 
@@ -22,8 +23,16 @@ public class ShowController extends FrontBaseController {
         return "index";
     }
     @RequestMapping("/index")
-    public String loginIn( Model model){
-
+    public String loginIn( Model model,HttpSession session){
+        User user = null;
+        if (session.getAttribute("user") != null){
+            System.out.println(session.getAttribute("user"));
+             user = (User)session.getAttribute("user");
+        }else {
+            System.out.println("yes");
+        }
+        model.addAttribute("user",user);
+        System.out.println("test");
         return "index";
     }
     @RequestMapping("/home")
